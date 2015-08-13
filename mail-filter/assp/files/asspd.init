@@ -1,0 +1,23 @@
+#!/sbin/runscript
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/assp/files/asspd.init,v 1.2 2010/08/26 15:22:19 patrick Exp $
+
+depend() {
+        need net
+}
+
+start() {
+	[[ ! -d /run/assp ]] && mkdir /run/assp
+        ebegin "Starting ASSP"
+        start-stop-daemon -b -m --start --quiet --startas /usr/share/assp/assp.pl \
+                --pidfile /run/assp/asspd.pid -- /var/lib/assp/
+                       2<&1 >> /var/log/assp/assp.log
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping ASSP"
+        start-stop-daemon --stop --retry TERM/5/KILL/10 --quiet --pidfile /run/assp/asspd.pid
+        eend $?
+}
