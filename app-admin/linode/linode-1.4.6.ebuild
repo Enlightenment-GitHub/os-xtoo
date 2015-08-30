@@ -24,8 +24,3 @@ RDEPEND="dev-perl/Crypt-SSLeay
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/cli-${PV}
-
-#src_install() {
-
-#}
-
