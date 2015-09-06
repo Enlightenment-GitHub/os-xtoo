@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-RDEPEND="virtual/perl-Module-Build"
+RDEPEND="dev-perl/Module-Build"
 DEPEND="${RDEPEND}"
 
 SRC_TEST="do"
