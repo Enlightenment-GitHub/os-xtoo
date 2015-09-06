@@ -17,8 +17,8 @@ KEYWORDS="~amd64"
 IUSE="test"
 
 RDEPEND="virtual/perl-Time-Local"
-#	dev-perl/Set-Crontab"
 DEPEND="${RDEPEND}
+	dev-perl/Module-Build
 	virtual/perl-ExtUtils-MakeMaker
 	test? ( dev-perl/Test-Deep )"
 

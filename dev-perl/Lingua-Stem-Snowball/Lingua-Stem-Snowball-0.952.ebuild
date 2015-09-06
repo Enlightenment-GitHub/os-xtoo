@@ -15,11 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-#RDEPEND="dev-perl/Time-modules"
-#	dev-perl/Set-Crontab"
-#DEPEND="${RDEPEND}
-#	virtual/perl-ExtUtils-MakeMaker
-#	test? ( dev-perl/Test-Deep )"
+RDEPEND=""
+DEPEND="${RDEPEND}
+	dev-perl/Module-Build"
 
 SRC_TEST="do"
 
