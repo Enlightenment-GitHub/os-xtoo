@@ -27,9 +27,4 @@ DEPEND=">=virtual/jdk-1.8"
 
 S="${WORKDIR}/jetty.alpn-${MY_P}/"
 
-#JAVA_GENTOO_CLASSPATH="jetty-io-${SLOT},jetty-server-${SLOT},jetty-util-${SLOT}"
 JAVA_SRC_DIR="src/main/java"
-
-java_prepare() {
-	java-pkg_clean
-}
