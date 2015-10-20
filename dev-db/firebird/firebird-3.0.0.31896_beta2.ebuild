@@ -4,25 +4,24 @@
 
 EAPI=5
 
-inherit flag-o-matic eutils autotools multilib user readme.gentoo versionator
+inherit autotools eutils flag-o-matic multilib readme.gentoo user versionator
 
 MY_P=${PN/f/F}-$(replace_version_separator 4 -)
 MY_P=${MY_P/beta/Beta}
+MY_MM="$(get_version_component_range 1-2)"
 
 DESCRIPTION="A relational database offering many ANSI SQL:2003 and some SQL:2008 features"
 HOMEPAGE="http://www.firebirdsql.org/"
 SRC_URI="
-	mirror://sourceforge/${PN}/${PN}/3.0-Beta_2/${MY_P}.tar.bz2
-	 doc? (	ftp://ftpc.inprise.com/pub/interbase/techpubs/ib_b60_doc.zip )"
+	mirror://sourceforge/${PN}/${PN}/${MY_MM}-Beta_2/${MY_P}.tar.bz2
+	doc? ( ftp://ftpc.inprise.com/pub/interbase/techpubs/ib_b60_doc.zip )"
 
 LICENSE="IDPL Interbase-1.0"
 SLOT="0"
-KEYWORDS="~amd64 -ia64 ~x86"
+KEYWORDS="~amd64 ~x86"
 
-IUSE="doc client xinetd examples debug"
-REQUIRED_USE="
-	client? ( !xinetd )
-"
+IUSE="doc client debug examples xinetd"
+REQUIRED_USE="client? ( !xinetd )"
 
 CDEPEND="
 	dev-libs/libedit
@@ -44,10 +43,10 @@ S="${WORKDIR}/${MY_P}"
 
 pkg_setup() {
 	enewgroup firebird 450
-	enewuser firebird 450 /bin/bash /usr/$(get_libdir)/firebird firebird
+	enewuser firebird 450 /bin/sh /usr/$(get_libdir)/firebird firebird
 }
 
-function check_sed() {
+check_sed() {
 	MSG="sed of $3, required $2 lines modified $1"
 	einfo "${MSG}"
 	[[ $1 -ge $2 ]] || die "${MSG}"
@@ -57,7 +56,8 @@ src_unpack() {
 	unpack "${MY_P}.tar.bz2"
 	if use doc; then
 		# Unpack docs
-		mkdir "${WORKDIR}/manuals" && cd "${WORKDIR}/manuals" || die
+		mkdir "manuals" || die
+		cd "manuals" || die
 		unpack ib_b60_doc.zip
 	fi
 }
@@ -151,22 +151,18 @@ src_install() {
 
 	use client && return
 
-	# if statement for ebuild install testing
 	einfo "Renaming isql -> fbsql"
-	[[ -e bin/isql ]] && mv bin/isql bin/fbsql
+	mv bin/isql bin/fbsql || die
 
 	local bins="fbsql fbsvcmgr fbtracemgr gbak gfix gpre gsec gsplit gstat nbackup qli"
-	for bin in ${bins[@]}; do
+	for bin in ${bins}; do
 		dobin bin/${bin}
 	done
 
 	local sbins="fbguard fb_lock_print firebird"
-	for sbin in ${sbins[@]}; do
+	for sbin in ${sbins}; do
 		dosbin bin/${sbin}
 	done
-
-#	Temp should not be necessary, need to patch/fix
-#	dosym "${D}"/usr/$(get_libdir)/libib_util.so /usr/$(get_libdir)/${PN}/lib/libib_util.so
 
 	exeinto /usr/bin/${PN}
 	exeopts -m0755
@@ -177,12 +173,12 @@ src_install() {
 
 	exeinto /usr/$(get_libdir)/firebird/intl
 	dolib.so intl/libfbintl.so
-	dosym "${D}"/usr/$(get_libdir)/libfbintl.so /usr/$(get_libdir)/${PN}/intl/fbintl
-	dosym "${D}"/etc/${PN}/fbintl.conf /usr/$(get_libdir)/${PN}/intl/fbintl.conf
+	dosym /usr/$(get_libdir)/libfbintl.so /usr/$(get_libdir)/${PN}/intl/fbintl
+	dosym /etc/${PN}/fbintl.conf /usr/$(get_libdir)/${PN}/intl/fbintl.conf
 
 	exeinto /usr/$(get_libdir)/${PN}/plugins
 	local plugins="libEngine12.so libLegacy_Auth.so libLegacy_UserManager.so libSrp.so libudr_engine.so"
-	for plugin in ${plugins[@]}; do
+	for plugin in ${plugins}; do
 		dolib.so plugins/${plugin}
 		dosym "${D}"/usr/$(get_libdir)/${plugin} \
 			/usr/$(get_libdir)/${PN}/plugins/${plugin}
@@ -194,7 +190,7 @@ src_install() {
 	doexe UDF/*.so
 
 	insinto /usr/share/${PN}/upgrade
-	doins "${S}"/src/misc/upgrade/*
+	doins -r "${S}"/src/misc/upgrade/*
 
 	insinto /etc/${PN}
 	insopts -m0644 -o firebird -g firebird
@@ -237,9 +233,9 @@ pkg_config() {
 
 	# if found /etc/security2.gdb from previous install, backup, and restore as
 	# /etc/security3.fdb
-	if [ -f "${ROOT}/etc/firebird/security2.gdb" ] ; then
+	if [[ -f "${ROOT}/etc/firebird/security2.gdb" ]] ; then
 		# if we have scurity2.fdb already, back it 1st
-		if [ -f "${ROOT}/etc/firebird/security3.fdb" ] ; then
+		if [[ -f "${ROOT}/etc/firebird/security3.fdb" ]] ; then
 			cp "${ROOT}/etc/firebird/security3.fdb" "${ROOT}/etc/firebird/security3.fdb.old"
 		fi
 		gbak -B "${ROOT}/etc/firebird/security2.gdb" "${ROOT}/etc/firebird/security2.gbk"
@@ -259,26 +255,26 @@ pkg_config() {
 	fi
 
 	# we need to enable local access to the server
-	if [ ! -f "${ROOT}/etc/hosts.equiv" ] ; then
+	if [[ ! -f "${ROOT}/etc/hosts.equiv" ]] ; then
 		touch "${ROOT}/etc/hosts.equiv"
 		chown root:0 "${ROOT}/etc/hosts.equiv"
 		chmod u=rw,go=r "${ROOT}/etc/hosts.equiv"
 	fi
 
 	# add 'localhost.localdomain' to the hosts.equiv file...
-	if [ grep -q 'localhost.localdomain$' "${ROOT}/etc/hosts.equiv" 2>/dev/null ] ; then
+	if grep -q 'localhost.localdomain$' "${ROOT}/etc/hosts.equiv" ; then
 		echo "localhost.localdomain" >> "${ROOT}/etc/hosts.equiv"
 		einfo "Added localhost.localdomain to ${ROOT}/etc/hosts.equiv"
 	fi
 
 	# add 'localhost' to the hosts.equiv file...
-	if [ grep -q 'localhost$' "${ROOT}/etc/hosts.equiv" 2>/dev/null ] ; then
+	if grep -q 'localhost$' "${ROOT}/etc/hosts.equiv" ; then
 		echo "localhost" >> "${ROOT}/etc/hosts.equiv"
 		einfo "Added localhost to ${ROOT}/etc/hosts.equiv"
 	fi
 
 	HS_NAME=`hostname`
-	if [ grep -q ${HS_NAME} "${ROOT}/etc/hosts.equiv" 2>/dev/null ] ; then
+	if grep -q ${HS_NAME} "${ROOT}/etc/hosts.equiv" ; then
 		echo "${HS_NAME}" >> "${ROOT}/etc/hosts.equiv"
 		einfo "Added ${HS_NAME} to ${ROOT}/etc/hosts.equiv"
 	fi
