@@ -4,6 +4,9 @@
 
 EAPI="5"
 
+AUTOTOOLS_AUTORECONF="yes"
+AUTOTOOLS_IN_SOURCE_BUILD=1
+
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
 
@@ -29,6 +32,8 @@ S=${WORKDIR}/${P}/src/main
 
 MY_S="${S}"
 
+ECONF_SOURCE="${S}/native-package"
+
 JAVA_SRC_DIR="java"
 
 java_prepare() {
@@ -38,7 +43,7 @@ java_prepare() {
 
 	mv ../c src || die
 
-	SOURCES=$( ls src | tr "\n" " " ) || die
+	SOURCES=$( ls src/*.c | tr "\n" " " ) || die
 
 	echo "pkglib_LTLIBRARIES = lib${PN}.la
 lib${PN/-/_}_la_SOURCES = ${SOURCES}
@@ -54,24 +59,19 @@ lib${PN/-/_}_la_LDFLAGS = -avoid-version -module -shared -export-dynamic" \
 		-e "s|WITH_OSX_UNIVERSAL|#WITH_OSX_UNIVERSAL|" \
 		configure.ac || die
 
-	AT_M4DIR="m4" eautoreconf
+	autotools-utils_src_prepare
 }
+
 src_configure(){
-	# Nasty but seems to be required for to find configure file
-	S="${S}/native-package"
 	autotools-utils_src_configure
-	mv -v ${WORKDIR}/${P}_build/* ${S}/src || die
-	S="${MY_S}"
 }
 
 src_compile() {
 	java-pkg-simple_src_compile
-	cd native-package/src || die
-	emake
+	autotools-utils_src_compile
 }
 
 src_install() {
 	java-pkg_newjar netty-tcnative.jar
-	cd native-package/src || die
-	emake DESTDIR="${D}" install
+	autotools-utils_src_install
 }
