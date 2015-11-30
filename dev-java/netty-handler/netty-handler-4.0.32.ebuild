@@ -19,8 +19,10 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-CDEPEND="dev-java/bcpkix:0
-	dev-java/bcprov:0
+BC_SLOT="1.52"
+
+CDEPEND="dev-java/bcpkix:${BC_SLOT}
+	dev-java/bcprov:${BC_SLOT}
 	dev-java/jetty-alpn-api:0
 	dev-java/jetty-npn-api:0
 	dev-java/${MY_PN}-buffer:0
@@ -42,7 +44,7 @@ DEPEND=">=virtual/jdk-1.6
 S="${WORKDIR}/${MY_PN}-${MY_P}.Final/${PN/${MY_PN}-}"
 
 EANT_BUILD_TARGET="package"
-EANT_GENTOO_CLASSPATH="bcpkix,bcprov,jetty-alpn-api,jetty-npn-api,${MY_PN}-buffer,${MY_PN}-codec,${MY_PN}-common,${MY_PN}-transport,${MY_PN}-tcnative"
+EANT_GENTOO_CLASSPATH="bcpkix-${BC_SLOT},bcprov-${BC_SLOT},jetty-alpn-api,jetty-npn-api,${MY_PN}-buffer,${MY_PN}-codec,${MY_PN}-common,${MY_PN}-transport,${MY_PN}-tcnative"
 JAVA_ANT_REWRITE_CLASSPATH="true"
 
 EANT_TEST_GENTOO_CLASSPATH="${EANT_GENTOO_CLASSPATH},ant-core,junit-4"
