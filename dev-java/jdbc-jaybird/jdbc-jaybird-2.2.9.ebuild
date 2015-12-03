@@ -21,10 +21,10 @@ CDEPEND="dev-java/junit:4
 	dev-java/log4j:0"
 
 RDEPEND="${CDEPEND}
-	>=virtual/jre-1.6"
+	>=virtual/jre-1.8"
 
 DEPEND="${CDEPEND}
-	>=virtual/jdk-1.6
+	>=virtual/jdk-1.8
 	app-arch/unzip
 	jni? ( dev-java/cpptasks )
 	test? ( dev-java/ant-junit:0 )"
