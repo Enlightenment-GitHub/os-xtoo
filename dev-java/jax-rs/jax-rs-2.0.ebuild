@@ -10,7 +10,7 @@ DESCRIPTION="Reference implementation of the Java API for RESTful Services"
 HOMEPAGE="https://jax-rs-spec.java.net/"
 DOWNLOAD_PAGE="http://download.oracle.com/otndocs/jcp/${PN/-/}-${PV/./_}_rev_${REV}-mrel-spec/index.html"
 SRC_URI="javax.ws.rs-api-${PV}.rev.${REV}-sources.jar"
-
+RESTRICT="fetch"
 LICENSE="oracle-jsr339"
 SLOT="2"
 KEYWORDS="~amd64 ~ppc ~x86"
