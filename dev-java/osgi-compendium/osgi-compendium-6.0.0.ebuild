@@ -9,7 +9,7 @@ JAVA_PKG_IUSE="doc source"
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="OSGi Service Platform Compendium API (Companion Code)"
-HOMEPAGE="http://wiki.osgi.org/wiki/Release_4.3"
+HOMEPAGE="https://www.osgi.org/developer/specifications/"
 SRC_URI="https://osgi.org/download/r$(get_major_version)/osgi.cmpn-${PV}.jar"
 
 LICENSE="Apache-2.0 OSGi-Specification-2.0"
