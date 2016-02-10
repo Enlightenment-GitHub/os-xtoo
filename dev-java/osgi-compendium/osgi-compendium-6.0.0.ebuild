@@ -20,7 +20,7 @@ CDEPEND="dev-java/glassfish-persistence:0
 	dev-java/osgi-annotation:0
 	dev-java/osgi-core-api:0
 	dev-java/osgi-foundation:0
-	dev-java/tomcat-servlet-api:4.0"
+	java-virtuals/servlet-api:4.0"
 
 DEPEND="${CDEPEND}
 	>=virtual/jdk-1.7
@@ -36,7 +36,7 @@ JAVA_GENTOO_CLASSPATH="
 	osgi-core-api
 	osgi-foundation
 	glassfish-persistence
-	tomcat-servlet-api-4.0
+	servlet-api-4.0
 "
 
 java_prepare() {
