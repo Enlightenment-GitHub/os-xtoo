@@ -13,7 +13,7 @@ HOMEPAGE="http://www.osgi.org/Specifications/HomePage"
 SRC_URI="http://www.osgi.org/download/r$(get_major_version)/osgi.enterprise-${PV}.jar"
 
 LICENSE="Apache-2.0"
-SLOT="6"
+SLOT="5"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
