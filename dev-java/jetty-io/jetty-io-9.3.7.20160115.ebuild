@@ -1,6 +1,5 @@
-# Copyright 2015 Obsidian-Studios, Inc.
+# Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
@@ -11,7 +10,7 @@ inherit java-pkg-2 java-pkg-simple
 DESCRIPTION="Jetty's IO Utils"
 
 MY_PN="jetty"
-MY_PV="${PV/2015/v2015}"
+MY_PV="${PV/2016/v2016}"
 MY_P="${MY_PN}-${MY_PV}"
 
 SLOT="$(get_version_component_range 1-2)"
