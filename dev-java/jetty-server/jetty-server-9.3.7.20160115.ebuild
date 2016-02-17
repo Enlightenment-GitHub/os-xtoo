@@ -11,7 +11,7 @@ inherit java-pkg-2 java-pkg-simple
 DESCRIPTION="Jetty's server API (not the server itself)"
 
 MY_PN="jetty"
-MY_PV="${PV/2015/v2015}"
+MY_PV="${PV/2016/v2016}"
 MY_P="${MY_PN}-${MY_PV}"
 
 SLOT="$(get_version_component_range 1-2)"
@@ -26,6 +26,7 @@ CDEPEND="dev-java/jetty-http:${SLOT}
 	dev-java/jetty-jmx:${SLOT}
 	dev-java/jetty-util:${SLOT}
 	java-virtuals/servlet-api:3.1"
+# Fails to build with 4.0 :(
 
 RDEPEND="${CDEPEND}
 	>=virtual/jre-1.8"
@@ -35,7 +36,13 @@ DEPEND="${CDEPEND}
 
 S="${WORKDIR}/${MY_PN}.project-${MY_P}/${PN}/"
 
-JAVA_GENTOO_CLASSPATH="jetty-http-${SLOT},jetty-io-${SLOT},jetty-jmx-${SLOT},jetty-util-${SLOT},servlet-api-3.1"
+JAVA_GENTOO_CLASSPATH="
+	jetty-http-${SLOT}
+	jetty-io-${SLOT}
+	jetty-jmx-${SLOT}
+	jetty-util-${SLOT}
+	servlet-api-3.1
+"
 JAVA_SRC_DIR="src/main/java"
 
 java_prepare() {
