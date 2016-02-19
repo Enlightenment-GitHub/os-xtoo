@@ -84,22 +84,14 @@ S="${WORKDIR}"
 # src_compile for simple bare source java packages. Finds all *.java
 # sources in ${JAVA_SRC_DIR}, compiles them with the classpath
 # calculated from ${JAVA_GENTOO_CLASSPATH}, and packages the resulting
-# classes to ${JAVA_JAR_FILENAME}.
+# classes to ${JAVA_JAR_FILENAME}. Use ${JAVA_ADDRES_ARGS} to pass 
+# arguments to java-pkg_addres automatically called now.
 java-pkg-simple_src_compile() {
 	local sources=sources.lst classes=target/classes apidoc=target/api
 
 	# gather sources
 	find ${JAVA_SRC_DIR:-*} -name \*.java > ${sources}
 	mkdir -p ${classes} || die "Could not create target directory"
-
-	# gather properties files
-	local my_pwd="$(pwd)"
-	for src_dir in ${JAVA_SRC_DIR:-*}; do
-		cd "${my_pwd}/${src_dir}"
-		find . -name *.properties \
-			-exec cp --parents -t "${my_pwd}/${classes}" {} \;
-	done
-	cd "${my_pwd}"
 
 	# compile
 	local classpath="${JAVA_GENTOO_CLASSPATH_EXTRA}" dependency
@@ -130,6 +122,9 @@ java-pkg-simple_src_compile() {
 		jar_args="cfm ${JAVA_JAR_FILENAME} ${classes}/META-INF/MANIFEST.MF"
 	fi
 	jar ${jar_args} -C ${classes} . || die "jar failed"
+
+	# Add resources in the sources to the jar
+	java-pkg_addres ${JAVA_JAR_FILENAME} ${JAVA_SRC_DIR} ${JAVA_ADDRES_ARGS}
 }
 
 # @FUNCTION: java-pkg-simple_src_install
