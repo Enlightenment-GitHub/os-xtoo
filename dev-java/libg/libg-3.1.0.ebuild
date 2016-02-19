@@ -1,6 +1,5 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
@@ -21,9 +20,7 @@ RDEPEND=">=virtual/jre-1.7"
 
 S="${WORKDIR}/bnd-${PV}.REL/aQute.${PN}"
 
-JAVA_GENTOO_CLASSPATH="
-"
-JAVA_SRC_DIR="src/aQute/"
+JAVA_SRC_DIR="src/"
 
 java_prepare() {
 	java-pkg_clean
