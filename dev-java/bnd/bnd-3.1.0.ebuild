@@ -43,7 +43,7 @@ JAVA_GENTOO_CLASSPATH="
 	osgi-core-api-6
 	snakeyaml
 "
-JAVA_SRC_DIR="src/aQute/bnd/"
+JAVA_SRC_DIR="src/"
 
 java_prepare() {
 	java-pkg_clean
