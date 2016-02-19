@@ -1,6 +1,5 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
@@ -23,11 +22,11 @@ CDEPEND="dev-java/libg:3
 	dev-java/osgi-ds:0
 	dev-java/osgi-util:0"
 
-DEPEND=">=virtual/jdk-1.8
-	${CDEPEND}"
+DEPEND="${CDEPEND}
+	>=virtual/jdk-1.8"
 
-RDEPEND=">=virtual/jre-1.8
-	${CDEPEND}"
+RDEPEND="${CDEPEND}
+	>=virtual/jre-1.8"
 
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.${PN}"
 
@@ -49,4 +48,3 @@ java_prepare() {
 		rm -rf test* || die "Failed to remove tests."
 #	fi
 }
-
