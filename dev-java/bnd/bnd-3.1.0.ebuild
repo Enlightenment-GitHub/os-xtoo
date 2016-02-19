@@ -1,6 +1,5 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
@@ -24,11 +23,11 @@ CDEPEND="dev-java/ant-core:0
 	dev-java/osgi-core-api:6
 	dev-java/snakeyaml:0"
 
-DEPEND=">=virtual/jdk-1.7
-	${CDEPEND}"
+DEPEND="${CDEPEND}
+	>=virtual/jdk-1.8"
 
-RDEPEND=">=virtual/jre-1.7
-	${CDEPEND}"
+RDEPEND="${CDEPEND}
+	>=virtual/jre-1.8"
 
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.${PN}"
 
