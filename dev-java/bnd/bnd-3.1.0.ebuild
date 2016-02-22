@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="A swiss army knife for OSGi"
@@ -13,7 +15,7 @@ LICENSE="Apache-2.0"
 SLOT="3"
 KEYWORDS="~amd64 ~x86"
 
-CDEPEND="dev-java/ant-core:0
+CP_DEPEND="dev-java/ant-core:0
 	dev-java/aqute-remote:${SLOT}
 	dev-java/aqute-repository:${SLOT}
 	dev-java/aqute-resolve:${SLOT}
@@ -23,25 +25,14 @@ CDEPEND="dev-java/ant-core:0
 	dev-java/osgi-core-api:6
 	dev-java/snakeyaml:0"
 
-DEPEND="${CDEPEND}
+DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
-RDEPEND="${CDEPEND}
+RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.${PN}"
 
-JAVA_GENTOO_CLASSPATH="
-	ant-core
-	aqute-remote-${SLOT}
-	aqute-repository-${SLOT}
-	aqute-resolve-${SLOT}
-	bndlib-${SLOT}
-	libg-${SLOT}
-	osgi-compendium-5
-	osgi-core-api-6
-	snakeyaml
-"
 JAVA_SRC_DIR="src/"
 
 java_prepare() {
