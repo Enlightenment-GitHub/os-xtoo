@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 MY_PN=${PN/aqute/aQute}
@@ -16,18 +18,16 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-CDEPEND="dev-java/bndlib:3"
+CP_DEPEND="dev-java/bndlib:3"
 
 DEPEND="app-arch/unzip
-	${CDEPEND}
+	${CP_DEPEND}
 	>=virtual/jdk-1.7"
 
-RDEPEND="${CDEPEND}
+RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.7"
 
 S="${WORKDIR}/"
-
-JAVA_GENTOO_CLASSPATH="bndlib-3"
 
 JAVA_SRC_DIR="OSGI-OPT/src"
 
