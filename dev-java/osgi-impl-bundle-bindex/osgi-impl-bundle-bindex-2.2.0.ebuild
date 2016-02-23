@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 MY_PN="org.${PN//-/.}"
@@ -15,30 +17,22 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-CDEPEND="dev-java/ant-core:0
+CP_DEPEND="dev-java/ant-core:0
 	dev-java/bndlib:3
 	dev-java/kxml:2
 	dev-java/osgi-core-api:5
 	dev-java/osgi-obr:0
-	dev-java/xmlpull"
+	dev-java/xmlpull:0"
 
 DEPEND="app-arch/unzip
-	${CDEPEND}
-	>=virtual/jdk-1.7"
+	${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
-RDEPEND="${CDEPEND}
-	>=virtual/jre-1.7"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
 S="${WORKDIR}/"
 
-JAVA_GENTOO_CLASSPATH="
-	ant-core
-	bndlib-3
-	kxml-2
-	osgi-core-api-5
-	osgi-obr
-	xmlpull
-"
 JAVA_SRC_DIR="OSGI-OPT/src/"
 
 java_prepare() {
