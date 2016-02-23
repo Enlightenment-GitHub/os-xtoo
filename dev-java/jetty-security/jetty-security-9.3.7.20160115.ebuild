@@ -3,7 +3,7 @@
 
 EAPI="5"
 
-JAVA_PKG_USE="doc source"
+JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-pkg-simple
 
@@ -20,25 +20,19 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="Apache-2.0"
 IUSE=""
 
-CDEPEND="dev-java/jetty-http:${SLOT}
+CP_DEPEND="dev-java/jetty-http:${SLOT}
 	dev-java/jetty-server:${SLOT}
 	dev-java/jetty-util:${SLOT}
 	java-virtuals/servlet-api:4.0"
 
-RDEPEND="${CDEPEND}
+RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-DEPEND="${CDEPEND}
+DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
 S="${WORKDIR}/${MY_PN}.project-${MY_P}/${PN}/"
 
-JAVA_GENTOO_CLASSPATH="
-	jetty-http-${SLOT}
-	jetty-server-${SLOT}
-	jetty-util-${SLOT}
-	servlet-api-4.0
-"
 JAVA_SRC_DIR="src/main/java"
 
 java_prepare() {
