@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="aQute Resolve"
@@ -15,29 +17,21 @@ KEYWORDS="~amd64 ~x86"
 
 OSGI_SLOT="5"
 
-CDEPEND="dev-java/aqute-repository:${SLOT}
+CP_DEPEND="dev-java/aqute-repository:${SLOT}
 	dev-java/bndlib:${SLOT}
 	dev-java/felix-resolver:0
 	dev-java/libg:${SLOT}
 	dev-java/osgi-compendium:${OSGI_SLOT}
 	dev-java/osgi-core-api:${OSGI_SLOT}"
 
-DEPEND=">=virtual/jdk-1.7
-	${CDEPEND}"
+DEPEND="${CP_DEPEND}
+	>=virtual/jdk-1.7"
 
-RDEPEND=">=virtual/jre-1.7
-	${CDEPEND}"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.7"
 
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.resolve"
 
-JAVA_GENTOO_CLASSPATH="
-	aqute-repository-${SLOT}
-	bndlib-${SLOT}
-	felix-resolver
-	libg-${SLOT}
-	osgi-compendium-${OSGI_SLOT}
-	osgi-core-api-${OSGI_SLOT}
-"
 JAVA_SRC_DIR="src/"
 
 java_prepare() {
