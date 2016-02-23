@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="Felix Framework"
@@ -15,16 +17,15 @@ SRC_URI="mirror://apache/felix/${MY_P}-source-release.tar.gz"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-CDEPEND="dev-java/osgi-core-api:6"
+CP_DEPEND="dev-java/osgi-core-api:6"
 
-DEPEND="${CDEPEND}
-	>=virtual/jdk-1.7"
+DEPEND="${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
-RDEPEND="${CDEPEND}
-	>=virtual/jre-1.7"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
 S="${WORKDIR}/${MY_P}"
 
-JAVA_GENTOO_CLASSPATH="osgi-core-api-6"
 JAVA_SRC_DIR="src/main"
 
