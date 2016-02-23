@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="aQute Repository"
@@ -15,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 
 JETTY_SLOT="9.3"
 
-CDEPEND="dev-java/aqute-jpm-clnt:0
+CP_DEPEND="dev-java/aqute-jpm-clnt:0
 	dev-java/aqute-services-services:0
 	dev-java/aqute-services-struct:0
 	dev-java/bndlib:${SLOT}
@@ -34,34 +36,14 @@ CDEPEND="dev-java/aqute-jpm-clnt:0
 	dev-java/xstream
 	java-virtuals/servlet-api:4.0"
 
-DEPEND=">=virtual/jdk-1.7
-	${CDEPEND}"
+DEPEND="${CP_DEPEND}
+	>=virtual/jdk-1.7"
 
-RDEPEND=">=virtual/jre-1.7
-	${CDEPEND}"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.7"
 
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.repository"
 
-JAVA_GENTOO_CLASSPATH="
-	aqute-jpm-clnt
-	aqute-services-services
-	aqute-services-struct
-	bndlib-${SLOT}
-	jetty-continuation-${JETTY_SLOT}
-	jetty-http-${JETTY_SLOT}
-	jetty-io-${JETTY_SLOT}
-	jetty-security-${JETTY_SLOT}
-	jetty-server-${JETTY_SLOT}
-	jetty-util-${JETTY_SLOT}
-	libg-${SLOT}
-	osgi-compendium-5
-	osgi-core-api-5
-	osgi-impl-bundle-bindex
-	osgi-impl-bundle-repoindex-api-${SLOT}
-	osgi-impl-bundle-repoindex-lib-${SLOT}
-	servlet-api-4.0
-	xstream
-"
 JAVA_SRC_DIR="src/aQute"
 
 java_prepare() {
