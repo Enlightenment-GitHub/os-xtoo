@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 MY_P="${PN}-parent-${PV}"
@@ -15,9 +17,9 @@ LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=">=virtual/jdk-1.7"
+DEPEND=">=virtual/jdk-1.8"
 
-RDEPEND=">=virtual/jre-1.7"
+RDEPEND=">=virtual/jre-1.8"
 
 S="${WORKDIR}/${PN}-${MY_P}"
 
