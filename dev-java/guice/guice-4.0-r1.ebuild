@@ -4,7 +4,6 @@
 EAPI="5"
 
 JAVA_PKG_IUSE="source"
-WANT_ANT_TASKS="dev-java/bnd:3 dev-java/jarjar:1"
 
 inherit java-pkg-2 java-ant-2
 
@@ -32,6 +31,7 @@ RDEPEND="${CP_DEPEND}
 DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
+EANT_ANT_TASKS="bnd-3,jarjar-1"
 JAVA_PKG_BSFIX_NAME="build.xml common.xml"
 JAVA_ANT_REWRITE_CLASSPATH="yes"
 
