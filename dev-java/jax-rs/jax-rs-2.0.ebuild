@@ -1,5 +1,8 @@
+# Copyright 2016 Obsidian-Studios, Inc.
+# Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
+
 JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-pkg-simple
@@ -16,16 +19,10 @@ SLOT="2"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-COMMON_DEP=""
+DEPEND="app-arch/unzip
+	>=virtual/jdk-1.8"
 
-DEPEND=">=virtual/jdk-1.7
-	app-arch/unzip
-	${COMMON_DEP}"
-
-RDEPEND=">=virtual/jre-1.7
-	${COMMON_DEP}"
-
-#S="${WORKDIR}"
+RDEPEND=">=virtual/jre-1.8"
 
 pkg_nofetch() {
 
@@ -36,12 +33,4 @@ pkg_nofetch() {
 	einfo "Place the file ${SRC_URI} in:"
 	einfo " ${DISTDIR}"
 
-}
-
-src_compile() {
-	java-pkg-simple_src_compile
-}
-
-src_install() {
-	java-pkg-simple_src_install
 }
