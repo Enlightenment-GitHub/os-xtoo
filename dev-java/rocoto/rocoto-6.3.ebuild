@@ -3,7 +3,7 @@
 
 EAPI="5"
 
-JAVA_PKG_USE="doc source"
+JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-pkg-simple
 
@@ -15,23 +15,18 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="Apache-2.0"
 IUSE=""
 
-CDEPEND="dev-java/guava:18
+CP_DEPEND="dev-java/guava:19
 	dev-java/guice:4
 	dev-java/javax-inject:0"
 
-RDEPEND="${CDEPEND}
-	>=virtual/jre-1.7"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
-DEPEND="${CDEPEND}
-	>=virtual/jdk-1.7"
+DEPEND="${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
 S="${WORKDIR}/${PN}-${P}"
 
-JAVA_GENTOO_CLASSPATH="
-	guava-18
-	guice-4
-	javax-inject
-"
 JAVA_SRC_DIR="src/main/java"
 
 java_prepare() {
