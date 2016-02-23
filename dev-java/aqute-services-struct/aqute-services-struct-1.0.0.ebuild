@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 MY_PN=${PN/aqute/aQute}
