@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="OSGi Bundle Repository Indexer cli"
@@ -13,29 +15,21 @@ LICENSE="Apache-2.0"
 SLOT="3"
 KEYWORDS="~amd64 ~x86"
 
-CDEPEND="dev-java/args4j:2
+CP_DEPEND="dev-java/args4j:2
 	dev-java/osgi-compendium:4
 	dev-java/osgi-core-api:4
 	dev-java/osgi-impl-bundle-repoindex-api:${SLOT}
 	dev-java/osgi-impl-bundle-repoindex-lib:${SLOT}
 	dev-java/pojosr-framework:0"
 
-DEPEND=">=virtual/jdk-1.7
-	${CDEPEND}"
+DEPEND="${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
-RDEPEND=">=virtual/jre-1.7
-	${CDEPEND}"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
 S="${WORKDIR}/bnd-${PV}.REL/org.${PN//-/.}"
 
-JAVA_GENTOO_CLASSPATH="
-	args4j-2
-	osgi-compendium-4
-	osgi-core-api-4
-	osgi-impl-bundle-repoindex-api-${SLOT}
-	osgi-impl-bundle-repoindex-lib-${SLOT}
-	pojosr-framework
-"
 JAVA_SRC_DIR="src/"
 
 java_prepare() {
