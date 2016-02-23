@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -13,28 +12,22 @@ HOMEPAGE="http://www.osgi.org/Specifications/HomePage"
 SRC_URI="http://www.osgi.org/download/r$(get_major_version)/osgi.enterprise-${PV}.jar"
 
 LICENSE="Apache-2.0"
-SLOT="6"
+SLOT="$(get_major_version)"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-CDEPEND="dev-java/glassfish-persistence:0
+CP_DEPEND="dev-java/glassfish-persistence:0
 	dev-java/osgi-annotation:0
 	dev-java/osgi-core-api:${SLOT}
 	java-virtuals/servlet-api:4.0"
 
-RDEPEND="${CDEPEND}
-	>=virtual/jre-1.7"
+DEPEND="app-arch/unzip
+	${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
-DEPEND="${CDEPEND}
-	>=virtual/jdk-1.7
-	app-arch/unzip"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
-JAVA_GENTOO_CLASSPATH="
-	glassfish-persistence
-	osgi-annotation
-	osgi-core-api-${SLOT}
-	servlet-api-4.0
-"
 JAVA_SRC_DIR="OSGI-OPT/src"
 
 java_prepare() {
