@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="A swiss army knife for OSGi"
@@ -15,30 +17,22 @@ KEYWORDS="~amd64 ~x86"
 
 OSGI_SLOT="5"
 
-CDEPEND="dev-java/libg:3
+# Do not change order, osgi-ds MUST come before others
+CP_DEPEND="dev-java/libg:3
 	dev-java/osgi-annotation:0
+	dev-java/osgi-ds:0
 	dev-java/osgi-compendium:${OSGI_SLOT}
 	dev-java/osgi-core-api:${OSGI_SLOT}
-	dev-java/osgi-ds:0
 	dev-java/osgi-util:0"
 
-DEPEND="${CDEPEND}
+DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
-RDEPEND="${CDEPEND}
+RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.${PN}"
 
-# Do not change order, osgi-ds MUST come before others
-JAVA_GENTOO_CLASSPATH="
-	libg-${SLOT}
-	osgi-annotation
-	osgi-ds
-	osgi-compendium-${OSGI_SLOT}
-	osgi-core-api-${OSGI_SLOT}
-	osgi-util
-"
 JAVA_SRC_DIR="src/"
 
 java_prepare() {
