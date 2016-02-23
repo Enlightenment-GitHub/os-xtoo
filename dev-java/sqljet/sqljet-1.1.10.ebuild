@@ -3,7 +3,7 @@
 
 EAPI="5"
 
-JAVA_PKG_USE="doc source"
+JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-pkg-simple
 
@@ -15,17 +15,16 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-2"
 IUSE=""
 
-CDEPEND="dev-java/antlr:3.5"
+CP_DEPEND="dev-java/antlr:3.5"
 
-RDEPEND="${CDEPEND}
-	>=virtual/jre-1.7"
+DEPEND="${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
-DEPEND="${CDEPEND}
-	>=virtual/jdk-1.7"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
 S="${WORKDIR}/${P}"
 
-JAVA_GENTOO_CLASSPATH="antlr-3.5"
 JAVA_SRC_DIR="${PN}/src/main/java"
 
 java_prepare() {
