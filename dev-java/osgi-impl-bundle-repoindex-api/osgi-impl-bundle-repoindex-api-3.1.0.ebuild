@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="OSGi Bundle Repository Indexer API"
@@ -13,17 +15,16 @@ LICENSE="Apache-2.0"
 SLOT="3"
 KEYWORDS="~amd64 ~x86"
 
-CDEPEND="dev-java/bndlib:${SLOT}"
+CP_DEPEND="dev-java/bndlib:${SLOT}"
 
-DEPEND=">=virtual/jdk-1.7
-	${CDEPEND}"
+DEPEND=">=virtual/jdk-1.8
+	${CP_DEPEND}"
 
-RDEPEND=">=virtual/jre-1.7
-	${CDEPEND}"
+RDEPEND=">=virtual/jre-1.8
+	${CP_DEPEND}"
 
 S="${WORKDIR}/bnd-${PV}.REL/org.${PN//-/.}"
 
-JAVA_GENTOO_CLASSPATH="bndlib-${SLOT}"
 JAVA_SRC_DIR="src/"
 
 java_prepare() {
