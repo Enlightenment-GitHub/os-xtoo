@@ -19,18 +19,15 @@ SLOT="3"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-BND_SLOT="3"
-
-CDEPEND="dev-java/bsh:0
-	dev-java/bnd:${BND_SLOT}
-	dev-java/log4j:0
-	java-virtuals/jmx"
+CP_DEPEND="dev-java/bsh:0
+	dev-java/bnd:3
+	dev-java/log4j:0"
 
 DEPEND="app-arch/unzip
-	${CDEPEND}
+	${CP_DEPEND}
 	>=virtual/jdk-1.7"
 
-RDEPEND="${CDEPEND}
+RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.7"
 
 S="${WORKDIR}/${MY_PN}-${MY_P}"
@@ -44,8 +41,6 @@ java_prepare() {
 
 	cd "${S}/lib" || die
 	java-pkg_jar-from bsh
-	java-pkg_jar-from log4j
-	java-pkg_jar-from --virtual jmx
 
 	#if ! use test; then
 		rm -vr "${S}"/tests/{junit,other,junit-functional}/org \
@@ -53,10 +48,10 @@ java_prepare() {
 	#fi
 }
 
-JAVA_ANT_ENCODING="ISO-8859-1"
-
 EANT_ANT_TASKS="bnd-3"
 EANT_BUILD_TARGET="jgroups.jar"
+JAVA_ANT_ENCODING="ISO-8859-1"
+JAVA_ANT_REWRITE_CLASSPATH="yes"
 
 src_install() {
 	java-pkg_newjar dist/jgroups-*.jar ${PN}.jar
