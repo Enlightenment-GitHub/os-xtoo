@@ -3,6 +3,8 @@
 
 EAPI="5"
 
+JAVA_PKG_IUSE="doc source"
+
 inherit java-pkg-2 java-pkg-simple
 
 MY_PN=${PN/aqute/aQute}
@@ -16,25 +18,21 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-CDEPEND="dev-java/aqute-services-struct:0
+CP_DEPEND="dev-java/aqute-services-struct:0
 	dev-java/bndlib:3
+	dev-java/libg:3
 	java-virtuals/servlet-api:4.0"
 
 DEPEND="app-arch/unzip
-	${CDEPEND}
+	${CP_DEPEND}
 	>=virtual/jdk-1.7"
 
-RDEPEND="${CDEPEND}
+RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.7"
 
 S="${WORKDIR}/"
 
-JAVA_GENTOO_CLASSPATH="
-	aqute-services-struct
-	bndlib-3
-	servlet-api-4.0
-"
-JAVA_SRC_DIR="OSGI-OPT/src/aQute/service"
+JAVA_SRC_DIR="OSGI-OPT/src/"
 
 java_prepare() {
 	java-pkg_clean
