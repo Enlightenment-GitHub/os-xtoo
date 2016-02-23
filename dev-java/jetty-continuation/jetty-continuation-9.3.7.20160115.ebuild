@@ -1,10 +1,9 @@
-# Copyright 2015 Obsidian-Studios, Inc.
+# Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
-JAVA_PKG_USE="doc source"
+JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-pkg-simple
 
@@ -21,17 +20,16 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="Apache-2.0"
 IUSE=""
 
-CDEPEND="java-virtuals/servlet-api:4.0"
+CP_DEPEND="java-virtuals/servlet-api:4.0"
 
-RDEPEND="${CDEPEND}
+RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-DEPEND="${CDEPEND}
+DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
 S="${WORKDIR}/${MY_PN}.project-${MY_P}/${PN}/"
 
-JAVA_GENTOO_CLASSPATH="servlet-api-4.0"
 JAVA_SRC_DIR="src/main/java"
 
 java_prepare() {
