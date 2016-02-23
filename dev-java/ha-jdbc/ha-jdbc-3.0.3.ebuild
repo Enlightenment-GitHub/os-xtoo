@@ -1,10 +1,10 @@
-# Copyright 2015 Obsidian-Studios, Inc.
+# Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI="5"
 
-JAVA_PKG_USE="doc source"
+JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-pkg-simple
 
@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="Apache-2.0"
 IUSE=""
 
-CDEPEND="dev-java/berkeley-db-je:0
+CP_DEPEND="dev-java/berkeley-db-je:0
 	dev-java/commons-codec:0
 	dev-java/commons-logging:0
 	dev-java/commons-pool:0
@@ -33,31 +33,21 @@ CDEPEND="dev-java/berkeley-db-je:0
 #	sys-libs/db:6.0[java]
 
 
-RDEPEND="${CDEPEND}
+RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-DEPEND="${CDEPEND}
+DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
 S="${WORKDIR}/${P}/"
 
-JAVA_GENTOO_CLASSPATH="
-	berkeley-db-je
-	commons-codec
-	commons-logging
-	commons-pool
-	jboss-logging
-	jgroups-3
-	slf4j-api
-	sqljet
-"
 JAVA_SRC_DIR="src/main/java"
 
 java_prepare() {
 	java-pkg_clean
 
 	# Change from Java Edition to Regular
-	# does not work
+	# does not build/compile
 #	sed -i -e "s|cat.je.|cat.db.|g" \
 #		${S}/src/main/java/net/sf/hajdbc/state/bdb/*.java || die
 }
