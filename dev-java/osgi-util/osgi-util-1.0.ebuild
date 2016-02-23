@@ -1,6 +1,5 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
@@ -17,22 +16,17 @@ LICENSE="Apache-2.0 OSGi-Specification-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-CDEPEND="dev-java/osgi-annotation:0
+CP_DEPEND="dev-java/osgi-annotation:0
 	dev-java/osgi-core-api:6"
 
-DEPEND="${CDEPEND}
-	>=virtual/jdk-1.7
-	app-arch/unzip"
+DEPEND="app-arch/unzip
+	${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
-RDEPEND="${CDEPEND}
-	>=virtual/jre-1.7"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
 JAVA_SRC_DIR="OSGI-OPT/src/org/osgi/util"
-
-JAVA_GENTOO_CLASSPATH="
-	osgi-annotation
-	osgi-core-api-6
-"
 
 java_prepare() {
 	java-pkg_clean
