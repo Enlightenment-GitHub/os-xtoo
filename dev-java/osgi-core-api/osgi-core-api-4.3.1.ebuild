@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -16,10 +16,10 @@ SLOT="$(get_major_version)"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=virtual/jre-1.7"
+DEPEND="app-arch/unzip
+	>=virtual/jdk-1.8"
 
-DEPEND=">=virtual/jdk-1.7
-	app-arch/unzip"
+RDEPEND=">=virtual/jre-1.8"
 
 JAVA_SRC_DIR="OSGI-OPT/src"
 

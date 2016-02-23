@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -17,16 +16,15 @@ SLOT="6"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-CDEPEND="dev-java/osgi-annotation:0"
+CP_DEPEND="dev-java/osgi-annotation:0"
 
-RDEPEND="${CDEPEND}
-	>=virtual/jre-1.7"
+DEPEND="app-arch/unzip
+	${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
-DEPEND="${CDEPEND}
-	>=virtual/jdk-1.7
-	app-arch/unzip"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
-JAVA_GENTOO_CLASSPATH="osgi-annotation"
 JAVA_SRC_DIR="OSGI-OPT/src"
 
 java_prepare() {
