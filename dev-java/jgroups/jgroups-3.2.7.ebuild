@@ -20,10 +20,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 CP_DEPEND="dev-java/bsh:0
-	dev-java/bnd:3
 	dev-java/log4j:0"
 
 DEPEND="app-arch/unzip
+	dev-java/bnd:3
 	${CP_DEPEND}
 	>=virtual/jdk-1.7"
 
@@ -37,7 +37,10 @@ java_prepare() {
 
 	# Required for newer BND, not sure how it worked with older
 	sed -i -e 's|classpath="${bndclasspath}|classpath="${compile.dir}|' \
-		"${S}/build.xml" || die
+		"${S}/build.xml" || die "Could not fix bnd in build.xml"
+
+	sed -i -e "/Bundle-Required*/d" "${S}/conf/jgroups.bnd" \
+		|| die "Could not remove BREE from jgroups.bnd"
 
 	cd "${S}/lib" || die
 	java-pkg_jar-from bsh
@@ -53,6 +56,11 @@ EANT_BUILD_TARGET="jgroups.jar"
 JAVA_ANT_ENCODING="ISO-8859-1"
 JAVA_ANT_REWRITE_CLASSPATH="yes"
 
+src_compile() {
+	EANT_GENTOO_CLASSPATH_EXTRA+=":$(java-pkg_getjars --build-only bnd-3)"
+	java-pkg-2_src_compile
+}
+
 src_install() {
 	java-pkg_newjar dist/jgroups-*.jar ${PN}.jar
 
@@ -64,4 +72,3 @@ src_install() {
 	use source && java-pkg_dosrc src/*
 
 }
-
