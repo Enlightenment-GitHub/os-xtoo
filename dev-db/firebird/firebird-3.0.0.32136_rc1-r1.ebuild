@@ -223,7 +223,12 @@ src_install() {
 	keepdir /var/log/${PN}
 	keepdir /var/run/${PN}
 
-	use examples && docinto examples
+	if use examples; then
+		docinto examples
+		insinto /usr/share/${PN}/examples
+		insopts -m0660 -o firebird -g firebird
+		doins -r ${S}/examples/* ${S}/gen/examples/employee.fdb
+	fi
 }
 
 pkg_postinst() {
