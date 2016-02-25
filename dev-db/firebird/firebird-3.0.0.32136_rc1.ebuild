@@ -1,6 +1,5 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/firebird/firebird-2.5.3.26780.0-r1.ebuild,v 1.2 2015/03/21 14:57:55 jlec Exp $
 
 EAPI=5
 
@@ -100,8 +99,15 @@ src_prepare() {
 }
 
 src_configure() {
-	filter-flags -fprefetch-loop-arrays
-	filter-mfpmath sse
+
+# Necessary to remove/replace -fomit-frame-pointer with -fno-omit-frame-pointer
+# https://github.com/Obsidian-StudiosInc/os-xtoo/issues/1#issuecomment-188736865
+
+	filter-flags -fomit-frame-pointer -fprefetch-loop-arrays
+	append-flags -fno-omit-frame-pointer
+
+# Might be legacy
+#	filter-mfpmath sse
 
 	econf \
 		--prefix=/usr/$(get_libdir)/firebird \
