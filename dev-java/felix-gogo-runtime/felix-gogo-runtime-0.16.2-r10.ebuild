@@ -1,6 +1,5 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
@@ -16,11 +15,11 @@ SRC_URI="mirror://apache/felix/${MY_P}-project.tar.gz"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=">=virtual/jdk-1.7
-	dev-java/osgi-compendium:0
-	dev-java/osgi-core-api:0"
+DEPEND="dev-java/osgi-compendium:6
+	dev-java/osgi-core-api:6
+	>=virtual/jdk-1.8"
 
-RDEPEND=">=virtual/jre-1.7"
+RDEPEND=">=virtual/jre-1.8"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -38,7 +37,7 @@ java_prepare() {
 JAVA_ANT_REWRITE_CLASSPATH="true"
 
 src_compile() {
-	EANT_EXTRA_ARGS="-Dgentoo.classpath=$(java-pkg_getjar --build-only osgi-core-api osgi-core-api.jar):$(java-pkg_getjar --build-only osgi-compendium osgi-compendium.jar)"
+	EANT_EXTRA_ARGS="-Dgentoo.classpath=$(java-pkg_getjar --build-only osgi-core-api-6 osgi-core-api.jar):$(java-pkg_getjar --build-only osgi-compendium-6 osgi-compendium.jar)"
 
 	java-pkg-2_src_compile
 }
