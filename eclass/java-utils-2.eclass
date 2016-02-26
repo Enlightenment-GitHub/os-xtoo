@@ -243,10 +243,18 @@ java-pkg_doexamples() {
 # corresponding resource tree. The target directory as well as
 # sources.lst, MANIFEST.MF, *.class, *.jar, and *.java files are
 # automatically excluded. Symlinks are always followed. Additional
-# arguments are passed through to find.
+# arguments are passed through to find. JAVA_ADDRES_DIRS can be used
+# to pass more than one directory for inclusion.
 #
 # @CODE
 #	java-pkg_addres ${PN}.jar resources ! -name "*.html"
+#
+#	JAVA_ADDRES_DIRS="src/main/java src/main/resources"
+#	java-pkg_addres ${PN}.jar
+#
+#	JAVA_ADDRES_DIRS="src/main/java"
+#	java-pkg_addres ${PN}.jar resources ! -name "*.html"
+#
 # @CODE
 #
 # @param $1 - jar file
@@ -255,15 +263,19 @@ java-pkg_doexamples() {
 java-pkg_addres() {
 	debug-print-function ${FUNCNAME} $*
 
-	[[ ${#} -lt 2 ]] && die "at least two arguments needed"
+	[[ ${#} -lt 2 ]] && [[ ! ${JAVA_ADDRES_DIRS} ]] && \
+		die "at least two arguments needed or JAVA_ADDRES_DIRS"
 
 	local jar=$(realpath "$1" || die "realpath $1 failed")
-	local dir="$2"
+	[[ $2 ]] && JAVA_ADDRES_DIRS="$2 ${JAVA_ADDRES_DIRS}"
 	shift 2
 
-	pushd "${dir}" > /dev/null || die "pushd ${dir} failed"
-	find -L -type f ! -path "./target/*" ! -path "./sources.lst" ! -name "MANIFEST.MF" ! -regex ".*\.\(class\|jar\|java\)" "${@}" -print0 | xargs -r0 jar uf "${jar}" || die "jar failed"
-	popd > /dev/null || die "popd failed"
+	local files=""
+	for dir in ${JAVA_ADDRES_DIRS}; do
+		pushd "${dir}" > /dev/null || die "pushd ${dir} failed"
+		find -L -type f ! -path "./target/*" ! -path "./sources.lst" ! -name "MANIFEST.MF" ! -regex ".*\.\(class\|jar\|java\)" "${@}" -print0 | xargs -r0 jar uf "${jar}" || die "jar failed"
+		popd > /dev/null || die "popd failed"
+	done
 }
 
 # @FUNCTION: java-pkg_rm_files
