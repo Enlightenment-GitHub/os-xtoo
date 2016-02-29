@@ -56,11 +56,6 @@ EANT_BUILD_TARGET="jgroups.jar"
 JAVA_ANT_ENCODING="ISO-8859-1"
 JAVA_ANT_REWRITE_CLASSPATH="yes"
 
-src_compile() {
-	EANT_GENTOO_CLASSPATH_EXTRA+=":$(java-pkg_getjars --build-only bnd-3)"
-	java-pkg-2_src_compile
-}
-
 src_install() {
 	java-pkg_newjar dist/jgroups-*.jar ${PN}.jar
 
