@@ -19,16 +19,16 @@ IUSE=""
 
 CP_DEPEND="dev-java/aopalliance:1
 	dev-java/asm:4
-	dev-java/bnd:3
 	dev-java/guava:19
 	dev-java/cglib:3
-	dev-java/jarjar:1
 	dev-java/javax-inject:0"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
 DEPEND="${CP_DEPEND}
+	dev-java/bnd:3
+	dev-java/jarjar:1
 	>=virtual/jdk-1.8"
 
 EANT_ANT_TASKS="bnd-3,jarjar-1"
