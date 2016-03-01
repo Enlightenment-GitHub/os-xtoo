@@ -189,7 +189,7 @@ src_install() {
 		dosym "${D}"/usr/$(get_libdir)/${plugin} \
 			/usr/$(get_libdir)/${PN}/plugins/${plugin}
 	done
-	dodir udr
+	dodir /usr/$(get_libdir)/${PN}/udr
 	dosym "${D}"/etc/${PN}/udr_engine.conf /usr/$(get_libdir)/${PN}/plugins/udr_engine.conf
 
 	exeinto /usr/$(get_libdir)/${PN}/UDF
