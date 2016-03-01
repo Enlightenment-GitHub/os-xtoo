@@ -60,10 +60,15 @@ src_unpack() {
 	fi
 }
 
-src_prepare() {
+PATCHES=(
 	# This patch might be portable, and not need to be duplicated per version
 	# also might no longer be necessary to patch deps or libs, just flags
-	epatch "${FILESDIR}"/${PN}-2.5.3.26780.0-deps-flags.patch
+	"${FILESDIR}"/${PN}-2.5.3.26780.0-deps-flags.patch
+	"${FILESDIR}"/${P}-CVE-2016-1569.patch
+)
+
+src_prepare() {
+	epatch "${PATCHES[@]}"
 
 	use client && epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-client.patch
 	use superserver || epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-superclassic.patch
