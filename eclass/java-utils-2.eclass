@@ -1883,6 +1883,9 @@ java-utils-2_src_prepare() {
 		find "${WORKDIR}" -name "*.class"
 		echo "Search done."
 	fi
+
+	# Remove *.class and *.jar by default
+	java-pkg_clean
 }
 
 # @FUNCTION: java-utils-2_pkg_preinst
