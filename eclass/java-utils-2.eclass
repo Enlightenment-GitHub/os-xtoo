@@ -2881,10 +2881,18 @@ is-java-strict() {
 # @FUNCTION: java-pkg_clean
 # @DESCRIPTION:
 # Java package cleaner function. This will remove all *.class and *.jar
-# files, removing any bundled dependencies.
+# files, removing any bundled dependencies. Set JAVA_PKG_NO_CLEAN to any
+# value to override
+# @CODE
+# Parameters:
+# $@ - arguments passed to find (optional)
+# @CODE
 java-pkg_clean() {
+	debug-print-function ${FUNCNAME} "${@}"
+
 	if [[ -z "${JAVA_PKG_NO_CLEAN}" ]]; then
-		find "${@}" '(' -name '*.class' -o -name '*.jar' ')' -type f -delete -print || die
+		find "${@}" '(' -name '*.class' -o -name '*.jar' ')' \
+			-type f -delete -print || die
 	fi
 }
 
@@ -2896,10 +2904,10 @@ java-pkg_clean() {
 #
 # @CODE
 # Parameters:
-# $1 classpath variable either EANT_GENTOO_CLASSPATH or JAVA_GENTOO_CLASSPATH
+# $1 - classpath variable either EANT_GENTOO_CLASSPATH or JAVA_GENTOO_CLASSPATH
 # @CODE
 java-pkg_gen-cp() {
-	debug-print-function ${FUNCNAME} $*
+	debug-print-function ${FUNCNAME} "${@}"
 
 	if [[ ${CP_DEPEND} ]]; then
 		local cp="${!1}"
