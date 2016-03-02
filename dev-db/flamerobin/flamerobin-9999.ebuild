@@ -6,14 +6,12 @@ EAPI="5"
 if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
 	EGIT_REPO_URI="https://github.com/mariuz/${PN}.git"
-	S="${WORKDIR}/${P}"
-	WX_GTK_VER="3.0"
 else
 	KEYWORDS="~amd64 ~x86"
-	SRC_URI="mirror://sourceforge/${PN}/${P}-src.tar.gz"
-	S="${WORKDIR}/${P}-src"
-	WX_GTK_VER="2.8"
+	SRC_URI="https://github.com/mariuz/${PN}/archive/${PV}.zip -> ${P}.zip"
 fi
+
+WX_GTK_VER="3.0"
 
 inherit eutils wxwidgets ${ECLASS}
 
@@ -30,15 +28,6 @@ RDEPEND="x11-libs/wxGTK:${WX_GTK_VER}[X]
 DEPEND="${RDEPEND}"
 
 [[ ${PV} == 9999 ]] && DEPEND="app-arch/unzip ${DEPEND}"
-
-
-PATCHES=(
-	"${FILESDIR}/${P}-gcc46.patch"
-)
-
-src_prepare() {
-	[[ ${PV} != 9999 ]] && epatch "${PATCHES[@]}"
-}
 
 src_configure() {
 	# temp hack since configure is not executable
