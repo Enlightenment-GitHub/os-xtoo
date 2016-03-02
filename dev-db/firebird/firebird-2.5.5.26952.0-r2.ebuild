@@ -71,7 +71,7 @@ src_prepare() {
 	epatch "${PATCHES[@]}"
 
 	use client && epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-client.patch
-	use superserver || epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-superclassic.patch
+	! use xinetd && epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-superclassic.patch
 
 	# Rename references to isql to fbsql
 	# sed vs patch for portability and addtional location changes
