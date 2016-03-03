@@ -127,7 +127,9 @@ src_unpack() {
 		-e 's|Q$base\\E|Q\\/etc\\/assp\\/\\E|' \
 		-e 's|$fil="$base/$fil"|$fil="/etc/assp/$fil"|' \
 		-e 's|$base/$bf|/etc/assp/$bf|g' \
-		-e 's|$base/ASSP_DEF_VARS.pm|/usr/share/assp/lib/ASSP_DEF_VARS.pm|g' \
+		-e 's|$base/ASSP_DEF_VARS|/usr/share/assp/lib/ASSP_DEF_VARS|g' \
+		-e 's|$main::base . "/lib/AsspSelf|"/usr/share/assp/lib/AsspSelf|g' \
+		-e 's|$main::base/lib/AsspSelf|/usr/share/assp/lib/AsspSelf|g' \
 		-e 's|$base/$file.tmp|$file.tmp|g' \
 		-e 's|$file.tmp","$base/$file"|$file.tmp","$file"|g' \
 		-e 's|$base/version.txt|/etc/assp/version.txt|g' \
