@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 
 CP_DEPEND="dev-java/guava:19"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
@@ -27,11 +27,3 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/auto-${P/_/-}/common/"
 
 JAVA_SRC_DIR="src/main/java/"
-
-java_prepare() {
-	java-pkg_clean
-
-#	if ! use test ; then
-		rm -rf src/test* || die "Failed to remove tests."
-#	fi
-}
