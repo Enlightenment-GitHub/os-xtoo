@@ -23,7 +23,7 @@ CP_DEPEND="dev-java/aqute-services-struct:0
 	dev-java/libg:3
 	java-virtuals/servlet-api:4.0"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
 	>=virtual/jdk-1.7"
 
@@ -33,7 +33,3 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/"
 
 JAVA_SRC_DIR="OSGI-OPT/src/"
-
-java_prepare() {
-	java-pkg_clean
-}
