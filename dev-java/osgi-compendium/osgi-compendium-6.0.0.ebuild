@@ -21,7 +21,7 @@ CP_DEPEND="dev-java/glassfish-persistence:0
 	dev-java/osgi-foundation:0
 	java-virtuals/servlet-api:4.0"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
