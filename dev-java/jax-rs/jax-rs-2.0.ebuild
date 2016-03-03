@@ -25,12 +25,10 @@ DEPEND="app-arch/unzip
 RDEPEND=">=virtual/jre-1.8"
 
 pkg_nofetch() {
-
 	einfo "Please go to"
 	einfo " ${DOWNLOAD_PAGE}"
 	einfo "and download file:"
 	einfo "JSR-000339 ${PN^^} ${PV} rev ${REV} sources"
 	einfo "Place the file ${SRC_URI} in:"
 	einfo " ${DISTDIR}"
-
 }
