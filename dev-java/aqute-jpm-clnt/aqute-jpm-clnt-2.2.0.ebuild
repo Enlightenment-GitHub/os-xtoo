@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 
 CP_DEPEND="dev-java/bndlib:3"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
 	>=virtual/jdk-1.7"
 
@@ -39,9 +39,3 @@ JAVA_SRC_DIR="OSGI-OPT/src"
 PATCHES=(
 	"${FILESDIR}"/${P}-fix-imports.patch
 )
-
-java_prepare() {
-	java-pkg_clean
-
-	epatch "${PATCHES[@]}"
-}
