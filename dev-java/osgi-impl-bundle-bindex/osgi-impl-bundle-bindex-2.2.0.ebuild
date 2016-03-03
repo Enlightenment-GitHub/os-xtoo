@@ -24,7 +24,7 @@ CP_DEPEND="dev-java/ant-core:0
 	dev-java/osgi-obr:0
 	dev-java/xmlpull:0"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
@@ -34,7 +34,3 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/"
 
 JAVA_SRC_DIR="OSGI-OPT/src/"
-
-java_prepare() {
-	java-pkg_clean
-}
