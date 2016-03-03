@@ -49,6 +49,7 @@ RDEPEND="dev-lang/perl[ithreads]
 	dev-perl/Sys-MemInfo
 	dev-perl/Text-Glob
 	dev-perl/Text-Unidecode
+	dev-perl/Thread-State
 	dev-perl/Unicode-LineBreak
 	virtual/perl-Digest-MD5
 	virtual/perl-IO-Compress
