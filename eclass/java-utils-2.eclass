@@ -1886,6 +1886,9 @@ java-utils-2_src_prepare() {
 
 	# Remove *.class and *.jar by default
 	java-pkg_clean
+
+	# Auto apply patches, won't be necessary with EAPI=6
+	[[ ${PATCHES[@]} ]] && epatch "${PATCHES[@]}"
 }
 
 # @FUNCTION: java-utils-2_pkg_preinst
