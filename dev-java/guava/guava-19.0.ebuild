@@ -21,7 +21,7 @@ CP_DEPEND="dev-java/animal-sniffer-annotations:0
 	dev-java/jsr305:0
 	java-virtuals/jdk-with-com-sun:0"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
