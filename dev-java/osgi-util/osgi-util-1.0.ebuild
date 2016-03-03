@@ -19,15 +19,16 @@ KEYWORDS="~amd64 ~x86"
 CP_DEPEND="dev-java/osgi-annotation:0
 	dev-java/osgi-core-api:6"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-JAVA_SRC_DIR="OSGI-OPT/src/org/osgi/util"
+JAVA_SRC_DIR="OSGI-OPT/src/"
 
 java_prepare() {
-	java-pkg_clean
+	# Removing classes vs limiting sources, to get clean bundle/packageinfo
+	rm -fR ${JAVA_SRC_DIR}/org/osgi/{application,namespace,service}
 }
