@@ -20,7 +20,7 @@ KEYWORDS="amd64"
 
 CP_DEPEND="dev-java/osgi-core-api:6"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
