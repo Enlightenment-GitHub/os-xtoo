@@ -22,7 +22,7 @@ IUSE=""
 CP_DEPEND="dev-java/bsh:0
 	dev-java/log4j:0"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	dev-java/bnd:3
 	${CP_DEPEND}
 	>=virtual/jdk-1.7"
@@ -33,8 +33,6 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/${MY_PN}-${MY_P}"
 
 java_prepare() {
-	java-pkg_clean
-
 	# Required for newer BND, not sure how it worked with older
 	sed -i -e 's|classpath="${bndclasspath}|classpath="${compile.dir}|' \
 		"${S}/build.xml" || die "Could not fix bnd in build.xml"
