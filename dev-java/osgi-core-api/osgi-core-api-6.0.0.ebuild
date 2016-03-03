@@ -18,7 +18,7 @@ IUSE=""
 
 CP_DEPEND="dev-java/osgi-annotation:0"
 
-DEPEND="app-arch/unzip
+DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
