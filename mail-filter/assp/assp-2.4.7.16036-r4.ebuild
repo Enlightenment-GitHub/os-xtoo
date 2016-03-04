@@ -196,7 +196,7 @@ src_install() {
 	newinitd "${FILESDIR}/asspd.init" asspd
 
 	dodoc {changelog_2.0.X,changelog_2.1.X,changelog_2.2.X,changelog_2.3.X,changelog,cmdqueue_example}.txt
-	dodoc docs/*.{png,txt}
+	dodoc docs/*.{htm,png,txt}
 	dohtml docs/*.htm
 }
 
