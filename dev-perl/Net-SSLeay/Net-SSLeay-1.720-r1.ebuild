@@ -5,7 +5,7 @@
 EAPI=5
 
 MODULE_AUTHOR=MIKEM
-MODULE_VERSION=1.65
+MODULE_VERSION=${PV:0:4}
 inherit multilib perl-module
 
 DESCRIPTION="Net::SSLeay module for perl"
