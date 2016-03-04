@@ -5,7 +5,7 @@
 EAPI=5
 
 MODULE_AUTHOR=SBURKE
-MODULE_VERSION=1.24
+MODULE_VERSION=${PV:0:4}
 inherit perl-module
 
 DESCRIPTION="Plain ASCII transliterations of Unicode text"
