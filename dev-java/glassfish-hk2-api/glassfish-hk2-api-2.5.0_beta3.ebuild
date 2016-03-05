@@ -23,8 +23,8 @@ IUSE=""
 
 CP_DEPEND="dev-java/aopalliance:1
 	dev-java/javax-inject:0
-	~dev-java/glassfish-hk2-osgi-resource-locator-${PV}:0
-	~dev-java/glassfish-hk2-utils-${PV}:0"
+	~dev-java/glassfish-hk2-osgi-resource-locator-${PV}:${SLOT}
+	~dev-java/glassfish-hk2-utils-${PV}:${SLOT}"
 
 DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
