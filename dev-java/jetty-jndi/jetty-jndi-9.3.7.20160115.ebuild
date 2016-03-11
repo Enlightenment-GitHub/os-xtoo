@@ -20,8 +20,8 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="Apache-2.0"
 IUSE=""
 
-CP_DEPEND="dev-java/jetty-server:${SLOT}
-	dev-java/jetty-util:${SLOT}
+CP_DEPEND="~dev-java/jetty-server-${PV}:${SLOT}
+	~dev-java/jetty-util-${PV}:${SLOT}
 	dev-java/oracle-javamail:0
 	java-virtuals/servlet-api:4.0"
 
