@@ -17,10 +17,10 @@ KEYWORDS="~amd64 ~x86"
 
 OSGI_SLOT="5"
 
-CP_DEPEND="dev-java/aqute-repository:${SLOT}
-	dev-java/bndlib:${SLOT}
+CP_DEPEND="~dev-java/aqute-repository-${PV}:${SLOT}
+	~dev-java/bndlib-${PV}:${SLOT}
 	dev-java/felix-resolver:0
-	dev-java/libg:${SLOT}
+	~dev-java/libg-${PV}:${SLOT}
 	dev-java/osgi-compendium:${OSGI_SLOT}
 	dev-java/osgi-core-api:${OSGI_SLOT}"
 
@@ -33,11 +33,3 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.resolve"
 
 JAVA_SRC_DIR="src/"
-
-java_prepare() {
-	java-pkg_clean
-
-#	if ! use test ; then
-		rm -rf test* || die "Failed to remove tests."
-#	fi
-}
