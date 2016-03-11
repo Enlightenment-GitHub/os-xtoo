@@ -34,5 +34,7 @@ S="${WORKDIR}/${MY_PN}.project-${MY_P}/${PN}/"
 JAVA_SRC_DIR="src/main/java"
 
 java_prepare() {
-	java-pkg_clean
+	sed -i -e "s|9.3.z-SNAPSHOT|${PV}-gentoo|g" \
+		${JAVA_SRC_DIR}/org/eclipse/jetty/util/Jetty.java \
+		die "Could not set version"
 }
