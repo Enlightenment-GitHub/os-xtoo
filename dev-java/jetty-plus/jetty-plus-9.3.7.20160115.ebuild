@@ -20,13 +20,13 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="Apache-2.0"
 IUSE=""
 
-CP_DEPEND="dev-java/jetty-jndi:${SLOT}
-	dev-java/jetty-security:${SLOT}
-	dev-java/jetty-server:${SLOT}
-	dev-java/jetty-servlet:${SLOT}
-	dev-java/jetty-util:${SLOT}
-	dev-java/jetty-webapp:${SLOT}
-	dev-java/jetty-xml:${SLOT}
+CP_DEPEND="~dev-java/jetty-jndi-${PV}:${SLOT}
+	~dev-java/jetty-security-${PV}:${SLOT}
+	~dev-java/jetty-server-${PV}:${SLOT}
+	~dev-java/jetty-servlet-${PV}:${SLOT}
+	~dev-java/jetty-util-${PV}:${SLOT}
+	~dev-java/jetty-webapp-${PV}:${SLOT}
+	~dev-java/jetty-xml-${PV}:${SLOT}
 	dev-java/jta:0
 	java-virtuals/servlet-api:4.0"
 
