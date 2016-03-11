@@ -21,12 +21,12 @@ LICENSE="Apache-2.0"
 IUSE=""
 
 CP_DEPEND="dev-java/asm:4
-	dev-java/jetty-plus:${SLOT}
-	dev-java/jetty-security:${SLOT}
-	dev-java/jetty-server:${SLOT}
-	dev-java/jetty-servlet:${SLOT}
-	dev-java/jetty-util:${SLOT}
-	dev-java/jetty-webapp:${SLOT}
+	~dev-java/jetty-plus-${PV}:${SLOT}
+	~dev-java/jetty-security-${PV}:${SLOT}
+	~dev-java/jetty-server-${PV}:${SLOT}
+	~dev-java/jetty-servlet-${PV}:${SLOT}
+	~dev-java/jetty-util-${PV}:${SLOT}
+	~dev-java/jetty-webapp-${PV}:${SLOT}
 	dev-java/jsr250:0
 	java-virtuals/servlet-api:4.0"
 
