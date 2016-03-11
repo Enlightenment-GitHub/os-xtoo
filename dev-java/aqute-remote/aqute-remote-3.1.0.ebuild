@@ -15,10 +15,10 @@ LICENSE="Apache-2.0"
 SLOT="3"
 KEYWORDS="~amd64 ~x86"
 
-CP_DEPEND="dev-java/bndlib:${SLOT}
+CP_DEPEND="~dev-java/bndlib-${PV}:${SLOT}
 	dev-java/felix-framework:0
 	dev-java/felix-gogo-runtime:0
-	dev-java/libg:${SLOT}
+	~dev-java/libg-${PV}:${SLOT}
 	dev-java/osgi-core-api:6"
 
 DEPEND="${CP_DEPEND}
@@ -30,11 +30,3 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.remote"
 
 JAVA_SRC_DIR="src/"
-
-java_prepare() {
-	java-pkg_clean
-
-#	if ! use test ; then
-		rm -rf test* || die "Failed to remove tests."
-#	fi
-}
