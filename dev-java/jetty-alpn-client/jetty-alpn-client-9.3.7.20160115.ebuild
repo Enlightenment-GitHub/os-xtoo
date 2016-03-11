@@ -21,8 +21,8 @@ LICENSE="Apache-2.0"
 IUSE=""
 
 CP_DEPEND="dev-java/jetty-alpn-api:0
-	dev-java/jetty-io:${SLOT}
-	dev-java/jetty-util:${SLOT}"
+	~dev-java/jetty-io-${PV}:${SLOT}
+	~dev-java/jetty-util-${PV}:${SLOT}"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
@@ -33,7 +33,3 @@ DEPEND="${CP_DEPEND}
 S="${WORKDIR}/${MY_PN}.project-${MY_P}/${PN/-client/}"
 
 JAVA_SRC_DIR="${PN}/src/main/java"
-
-java_prepare() {
-	java-pkg_clean
-}
