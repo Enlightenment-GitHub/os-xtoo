@@ -20,20 +20,20 @@ JETTY_SLOT="9.3"
 CP_DEPEND="dev-java/aqute-jpm-clnt:0
 	dev-java/aqute-services-services:0
 	dev-java/aqute-services-struct:0
-	dev-java/bndlib:${SLOT}
+	~dev-java/bndlib-${PV}:${SLOT}
 	dev-java/jetty-continuation:${JETTY_SLOT}
 	dev-java/jetty-http:${JETTY_SLOT}
 	dev-java/jetty-io:${JETTY_SLOT}
 	dev-java/jetty-security:${JETTY_SLOT}
 	dev-java/jetty-server:${JETTY_SLOT}
 	dev-java/jetty-util:${JETTY_SLOT}
-	dev-java/libg:${SLOT}
+	~dev-java/libg-${PV}:${SLOT}
 	dev-java/osgi-compendium:5
 	dev-java/osgi-core-api:5
 	dev-java/osgi-impl-bundle-bindex:0
 	dev-java/osgi-impl-bundle-repoindex-api:${SLOT}
 	dev-java/osgi-impl-bundle-repoindex-lib:${SLOT}
-	dev-java/xstream
+	dev-java/xstream:0
 	java-virtuals/servlet-api:4.0"
 
 DEPEND="${CP_DEPEND}
@@ -44,10 +44,9 @@ RDEPEND="${CP_DEPEND}
 
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.repository"
 
-JAVA_SRC_DIR="src/aQute"
+JAVA_SRC_DIR="src/"
 
 java_prepare() {
-	java-pkg_clean
 
 #	if ! use test ; then
 		rm -rf src/test* || die "Failed to remove tests."
