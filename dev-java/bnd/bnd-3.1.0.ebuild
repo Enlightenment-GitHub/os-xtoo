@@ -16,11 +16,11 @@ SLOT="3"
 KEYWORDS="~amd64 ~x86"
 
 CP_DEPEND="dev-java/ant-core:0
-	dev-java/aqute-remote:${SLOT}
-	dev-java/aqute-repository:${SLOT}
-	dev-java/aqute-resolve:${SLOT}
-	dev-java/bndlib:${SLOT}
-	dev-java/libg:${SLOT}
+	~dev-java/aqute-remote-${PV}:${SLOT}
+	~dev-java/aqute-repository-${PV}:${SLOT}
+	~dev-java/aqute-resolve-${PV}:${SLOT}
+	~dev-java/bndlib-${PV}:${SLOT}
+	~dev-java/libg-${PV}:${SLOT}
 	dev-java/osgi-compendium:5
 	dev-java/osgi-core-api:6
 	dev-java/snakeyaml:0"
@@ -34,11 +34,3 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.${PN}"
 
 JAVA_SRC_DIR="src/"
-
-java_prepare() {
-	java-pkg_clean
-
-#	if ! use test ; then
-		rm -rf test* || die "Failed to remove tests."
-#	fi
-}
