@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 OSGI_SLOT="5"
 
 # Do not change order, osgi-ds MUST come before others
-CP_DEPEND="dev-java/libg:3
+CP_DEPEND="~dev-java/libg-${PV}:3
 	dev-java/osgi-annotation:0
 	dev-java/osgi-ds:0
 	dev-java/osgi-compendium:${OSGI_SLOT}
@@ -34,11 +34,3 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/bnd-${PV}.REL/biz.aQute.${PN}"
 
 JAVA_SRC_DIR="src/"
-
-java_prepare() {
-	java-pkg_clean
-
-#	if ! use test ; then
-		rm -rf test* || die "Failed to remove tests."
-#	fi
-}
