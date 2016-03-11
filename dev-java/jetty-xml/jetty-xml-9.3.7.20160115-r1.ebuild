@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="Apache-2.0"
 IUSE=""
 
-CP_DEPEND="dev-java/jetty-util:${SLOT}"
+CP_DEPEND="~dev-java/jetty-util-${PV}:${SLOT}"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
@@ -31,3 +31,4 @@ DEPEND="${CP_DEPEND}
 S="${WORKDIR}/${MY_PN}.project-${MY_P}/${PN}/"
 
 JAVA_SRC_DIR="src/main/java"
+JAVA_ADDRES_DIRS="src/main/resources"
