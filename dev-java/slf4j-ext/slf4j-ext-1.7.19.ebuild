@@ -23,7 +23,6 @@ CP_DEPEND="dev-java/cal10n:0
 	~dev-java/slf4j-api-${PV}:0"
 
 DEPEND=">=virtual/jdk-1.8
-	app-arch/unzip
 	${CP_DEPEND}"
 
 RDEPEND=">=virtual/jre-1.8
