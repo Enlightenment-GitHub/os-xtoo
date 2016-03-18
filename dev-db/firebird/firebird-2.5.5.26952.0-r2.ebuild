@@ -20,7 +20,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 IUSE="debug doc client examples superserver xinetd"
-REQUIRED_USE="^^ ( client superserver xinetd )"
 
 CDEPEND="
 	dev-libs/libedit
