@@ -2,38 +2,49 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
+
 inherit eutils versionator autotools flag-o-matic
 
 MY_PV="$(get_version_component_range 1-3)"
 MY_PN="OdbcJdbc"
 MY_P="${MY_PN}-src-${PV}"
+
 DESCRIPTION="ODBC driver for Firebird RDBMS"
 HOMEPAGE="http://firebirdsql.org/index.php?op=files&id=odbc"
 SRC_URI="mirror://sourceforge/project/firebird/firebird-ODBC-driver/${MY_PV}-Release/${MY_P}.tar.gz"
 LICENSE="IDPL"
 SLOT="0"
+
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc hardened"
-RDEPEND="dev-db/firebird
+
+
+DEPEND="dev-db/firebird
 	 dev-db/unixODBC"
+
+RDEPEND="${DEPEND}"
+
 S="${WORKDIR}/${MY_PN}"
 
 src_prepare() {
-	cd "${S}/Builds/Gcc.lin/"
-	mv makefile.linux Makefile
+	cd "${S}/Builds/Gcc.lin/" || die "Could not change to build dir"
+	mv makefile.linux Makefile || die "Could not mv/rename makefile"
 	sed -i -e "s|#FIREBIRD=/usr/lib64/firebird|FIREBIRD=/usr|" \
 		-e "s|-I/usr/include/odbc||" \
 		-e 's|-I$(FBINCDIR)  $(INCLUDEDIR)|-I$(FBINCDIR)|' \
-		-e 's|COMPFLAGS	= -g -w -D_REENTRANT -D_PTHREADS -DEXTERNAL -D$(ODBCMANAGER) $(INCLUDEDIR)|COMPFLAGS	= -w ${CXXFLAGS}|' \
-		-e "s|COMPFLAGS	:= -fPIC -m64|COMPFLAGS	:= -fPIC|" \
+		-e 's|COMPFLAGS  = -w -D_REENTRANT -D_PTHREADS -DEXTERNAL -D$(ODBCMANAGER) $(INCLUDEDIR) -I$(FBINCDIR)|COMPFLAGS	= -w ${CXXFLAGS}|' \
+		-e "s|COMPFLAGS   += -fPIC -m64|COMPFLAGS	+= -fPIC|" \
 		-e "s|LINKFLAGS	= -shared -m64|LINKFLAGS	= -shared|" \
-		-e "s|COMPFLAGS	:= -m32||" \
+		-e "s|COMPFLAGS   += -m32||" \
 		-e "s|LINKFLAGS	= -shared -m32|LINKFLAGS	= -shared|" \
 		Makefile || die "Fixing Makefile via sed failed"
 
 	# code needs to be fixed upstream, temp hack
-	use hardened && sed -i -e "s|CXXFLAGS}|CXXFLAGS} -fpermissive|" \
-			Makefile || die "Fixing Makefile via sed failed"
+	# "use hardened &&" fails for some reason thus if
+	if use hardened; then
+		sed -i -e "s|CXXFLAGS}|CXXFLAGS} -fpermissive|" \
+		Makefile || die "Fixing Makefile via sed failed"
+	fi
 	append-flags -fPIC
 }
 
