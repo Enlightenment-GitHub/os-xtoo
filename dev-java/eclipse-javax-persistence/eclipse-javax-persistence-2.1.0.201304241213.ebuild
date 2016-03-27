@@ -10,10 +10,11 @@ inherit java-pkg-2 java-pkg-simple
 DESCRIPTION="Java Persistence API $(get_version_component_range 1-2) JSR-338 Implementation by Eclipselink"
 
 MY_PN="${PN:8}"
+MY_PN="${MY_PN/-/.}"
 MY_PV="${PV/2013/v2013}"
-MY_P="${MY_PN/-/.}-${MY_PV}"
+MY_P="${MY_PN}-${MY_PV}"
 
-HOMEPAGE="https://github.com/eclipse/javax.persistence"
+HOMEPAGE="https://github.com/eclipse/${MY_PN}"
 SRC_URI="https://github.com/eclipse/${MY_PN}/archive/${MY_PV}.zip -> ${P}.zip"
 SLOT="$(get_major_version)"
 KEYWORDS="~amd64 ~x86"
