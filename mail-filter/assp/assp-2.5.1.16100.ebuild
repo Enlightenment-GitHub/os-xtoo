@@ -1,6 +1,5 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/assp/assp-1.9.8.13030.ebuild,v 1.3 2014/08/10 21:15:28 slyfox Exp $
 
 EAPI="5"
 
@@ -13,7 +12,6 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PN}.zip"
 LICENSE="GPL-2"
 SLOT="0"
 
-# this is a pre-release, so no keywords for now
 KEYWORDS="~amd64 ~x86"
 
 IUSE="ipv6 ldap sasl snmp spf srs ssl syslog"
@@ -51,6 +49,7 @@ RDEPEND="dev-lang/perl[ithreads]
 	dev-perl/Sys-MemInfo
 	dev-perl/Text-Glob
 	dev-perl/Text-Unidecode
+	dev-perl/Thread-State
 	dev-perl/Unicode-LineBreak
 	virtual/perl-Digest-MD5
 	virtual/perl-IO-Compress
@@ -129,15 +128,13 @@ src_unpack() {
 		-e 's|Q$base\\E|Q\\/etc\\/assp\\/\\E|' \
 		-e 's|$fil="$base/$fil"|$fil="/etc/assp/$fil"|' \
 		-e 's|$base/$bf|/etc/assp/$bf|g' \
-		-e 's|$base/ASSP_DEF_VARS.pm|/usr/share/assp/lib/ASSP_DEF_VARS.pm|g' \
+		-e 's|$base/ASSP_DEF_VARS|/usr/share/assp/lib/ASSP_DEF_VARS|g' \
+		-e 's|$main::base . "/lib/AsspSelf|"/usr/share/assp/lib/AsspSelf|g' \
+		-e 's|$main::base/lib/AsspSelf|/usr/share/assp/lib/AsspSelf|g' \
 		-e 's|$base/$file.tmp|$file.tmp|g' \
 		-e 's|$file.tmp","$base/$file"|$file.tmp","$file"|g' \
 		-e 's|$base/version.txt|/etc/assp/version.txt|g' \
 		assp.pl || die
-
-#		-e 's|$Config{base} = $base;|$Config{base} = '/';|g' \
-#		-e 's|&RemovePid;||g' \
-#		-e 's|rebuildrun.txt|/var/lib/assp/rebuildrun.txt|' \
 
 	sed -i -e 's|$base/images|/usr/share/assp/images|g' \
 		-e 's|$base\E\/certs|/etc/assp/\E\/certs|g' \
@@ -149,7 +146,7 @@ src_unpack() {
 	use ipv6 && sed -i -e 's|forceDNSv4:shared = 1|forceDNSv4:shared = 0|g' \
 		assp.pl || die
 	use ipv6 && sed -i '/sub set {/ a\
-		$main::forceDNSv4 = 0;' lib/CorrectASSPcfg.pm || die	
+		$main::forceDNSv4 = 0;' lib/CorrectASSPcfg.pm || die
 
 }
 
@@ -159,13 +156,13 @@ src_install() {
 
 	# Installs config files
 	insinto /etc/assp
-	doins {version,files/*}.txt || die
+	doins {version,files/*}.txt
 
 	insinto /etc/assp/dkim
-	doins dkim/*.txt || die
+	doins dkim/*.txt
 
 	insinto /etc/assp/reports
-	doins reports/*.txt || die
+	doins reports/*.txt
 
 	fowners assp:assp /etc/assp -R
 	fperms 770 /etc/assp /etc/assp/notes
@@ -182,8 +179,8 @@ src_install() {
 	exeinto /usr/share/assp
 	doexe *.pl || die
 	insinto /usr/share/assp
-	doins -r {images,lib}/ || die
-	
+	doins -r {images,lib}/
+
 	# ASSP downloads these files on start, creating for correct permissions
 	touch lib/{ASSP_DEF_VARS.pm,rebuildspamdb.pm}
 
@@ -198,10 +195,9 @@ src_install() {
 	# Install the init.d script to listen
 	newinitd "${FILESDIR}/asspd.init" asspd
 
-	dodoc {changelog_2.0.X,changelog_2.1.X,changelog_2.2.X,changelog_2.3.X,changelog,cmdqueue_example}.txt \
-		|| die "Failed to install txt docs"
-	dodoc docs/*.{png,txt} || die "Failed to install txt docs"
-	dohtml docs/*.htm || die "Failed to install html docs"
+	dodoc {changelog_2.0.X,changelog_2.1.X,changelog_2.2.X,changelog_2.3.X,changelog,cmdqueue_example}.txt
+	dodoc docs/*.{htm,png,txt}
+	dohtml docs/*.htm
 }
 
 pkg_postinst() {
