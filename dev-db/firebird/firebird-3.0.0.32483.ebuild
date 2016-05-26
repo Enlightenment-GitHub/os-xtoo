@@ -6,17 +6,20 @@ EAPI=5
 inherit autotools eutils flag-o-matic multilib readme.gentoo user versionator
 
 MY_PN=${PN/f/F}
-MY_P=${MY_PN}-$(replace_version_separator 4 -)
+MY_P=${MY_PN}-$(replace_version_separator 4 -)-0
 MY_P=${MY_P/rc/ReleaseCandidate}
 MY_MM="$(get_version_component_range 1-2)"
+
+DOC_URI=" http://www.${PN}sql.org/file/documentation/"
 
 DESCRIPTION="A relational database offering many ANSI SQL:2003 and some SQL:2008 features"
 HOMEPAGE="http://www.firebirdsql.org/"
 SRC_URI="
-	mirror://sourceforge/${PN}/${PN}/${MY_MM}-RC2/${MY_P}.tar.bz2
+	mirror://sourceforge/${PN}/${PN}/${MY_MM}-Release/${MY_P}.tar.bz2
 	doc? (
 		ftp://ftpc.inprise.com/pub/interbase/techpubs/ib_b60_doc.zip
-		http://web.${PN}sql.org/download/prerelease/rlsnotes/${MY_PN}-${MY_MM}.0_RC2-ReleaseNotes.pdf
+		${DOC_URI}release_notes/${MY_PN}-$(get_version_component_range 1-3)-ReleaseNotes.pdf
+		${DOC_URI}reference_manuals/user_manuals/${MY_PN}-$(get_major_version)-QuickStart.pdf
 )"
 
 LICENSE="IDPL Interbase-1.0"
