@@ -23,8 +23,8 @@ RESTRICT="test" # can we run them on a production system?
 
 ECJ_SLOT="4.5"
 
-COMMON_DEP="dev-java/tomcat-server:${SLOT}
-	dev-java/tomcat-servlet-api:4.0"
+COMMON_DEP="~dev-java/tomcat-server-${PV}:${SLOT}
+	~dev-java/tomcat-servlet-api-${PV}:4.0"
 
 DEPEND="${COMMON_DEP}
 	app-admin/pwgen
