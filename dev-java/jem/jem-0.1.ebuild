@@ -11,7 +11,7 @@ SRC_URI="http://www.o-sinc.com/software/${PN}/${MY_P}.tar.bz2"
 LICENSE="GPL3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug doc java-config source test"
+IUSE="debug doc +java-config source test"
 
 DEPEND="debug? ( dev-util/valgrind
 		sys-libs/glibc[debug] )
