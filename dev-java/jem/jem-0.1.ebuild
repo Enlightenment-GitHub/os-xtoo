@@ -16,11 +16,10 @@ IUSE="debug doc java-config source test"
 DEPEND="debug? ( dev-util/valgrind
 		sys-libs/glibc[debug] )
 	doc? ( app-doc/doxygen )"
-RDEPEND=">=app-eselect/eselect-java-0.2.0
+RDEPEND=">=app-eselect/eselect-java-0.2.10
 	java-config? ( <dev-java/java-config-2.2.1 )
 	!java-config? (
 		>=dev-java/java-config-2.2.1
-		!dev-java/java-config-wrapper
 	)"
 S="${WORKDIR}/${MY_P}/"
 
