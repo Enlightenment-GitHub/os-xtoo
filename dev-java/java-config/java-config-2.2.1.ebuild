@@ -20,8 +20,7 @@ IUSE=""
 # baselayout-java is added as a dep till it can be added to eclass.
 #	>=dev-java/java-config-wrapper-0.15
 #	sys-apps/baselayout-java
-RDEPEND=">=dev-java/java-config-wrapper-0.15
-	sys-apps/portage"
+RDEPEND="sys-apps/portage"
 
 #python_test() {
 #	esetup.py test || die
