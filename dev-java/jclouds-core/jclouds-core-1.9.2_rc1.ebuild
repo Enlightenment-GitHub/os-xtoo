@@ -15,7 +15,7 @@ DESCRIPTION="JClouds Core"
 SLOT="$(get_version_component_range 1-2)"
 SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/rel/${MY_P}.zip"
 HOMEPAGE="https://jclouds.apache.org/"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
 IUSE=""
 
