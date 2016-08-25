@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-java/java-config/java-config-2.2.0.ebuild,v 1.14 2015/05/04 07:00:08 ago Exp $
 
@@ -14,7 +14,7 @@ HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Java"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 # baselayout-java is added as a dep till it can be added to eclass.
