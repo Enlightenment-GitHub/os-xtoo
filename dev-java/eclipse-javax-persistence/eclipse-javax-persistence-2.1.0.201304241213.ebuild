@@ -18,7 +18,7 @@ HOMEPAGE="https://github.com/eclipse/${MY_PN}"
 SRC_URI="https://github.com/eclipse/${MY_PN}/archive/${MY_PV}.zip -> ${P}.zip"
 SLOT="$(get_major_version)"
 KEYWORDS="~amd64 ~x86"
-LICENSE="EDL-1.0 EPL-1.0"
+LICENSE="&& ( EDL-1.0 EPL-1.0 )"
 IUSE=""
 
 CP_DEPEND="dev-java/osgi-core-api:6"
