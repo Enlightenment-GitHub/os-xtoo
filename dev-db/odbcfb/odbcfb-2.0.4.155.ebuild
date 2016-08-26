@@ -1,9 +1,9 @@
-# Copyright 2015 Obsidian-Studios, Inc.
+# Copyright 2015-2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
 
-inherit eutils versionator autotools flag-o-matic
+inherit eutils versionator flag-o-matic
 
 MY_PV="$(get_version_component_range 1-3)"
 MY_PN="OdbcJdbc"
@@ -17,7 +17,6 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~x86"
 IUSE="debug doc hardened"
-
 
 DEPEND="dev-db/firebird
 	 dev-db/unixODBC"
@@ -54,7 +53,6 @@ src_compile() {
 }
 
 src_install() {
-	cd "${S}"
 	dolib.so Builds/Gcc.lin/Release_${ARCH}/libOdbcFb.so
 
 	local odbcinst="${ROOT}/etc/unixODBC/odbcinst.ini"
@@ -63,11 +61,11 @@ src_install() {
 	if [ -e "${odbcinst}"} ]; then
 		if [ -n $(grep libOdbcFb.so "${odbcinst}") ]; then
 			cp "${odbcinst}" ./
-			cat ${FILESDIR}/${PN}.ini >> odbcinst.ini
+			cat "${FILESDIR}"/${PN}.ini >> odbcinst.ini
 			doins odbcinst.ini
 		fi
 	else
-		newins ${FILESDIR}/${PN}.ini odbcinst.ini
+		newins "${FILESDIR}"/${PN}.ini odbcinst.ini
 	fi
 
 	if use doc; then
