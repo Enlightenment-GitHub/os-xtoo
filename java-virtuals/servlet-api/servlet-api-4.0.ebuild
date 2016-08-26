@@ -12,7 +12,7 @@ SRC_URI=""
 
 LICENSE="public-domain"
 SLOT="${PV}"
-KEYWORDS="~amd64 ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-java/tomcat-servlet-api:${SLOT}"
