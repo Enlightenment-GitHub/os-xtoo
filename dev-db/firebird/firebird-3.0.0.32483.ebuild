@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -67,7 +67,6 @@ src_unpack() {
 		unpack ib_b60_doc.zip
 	fi
 }
-
 
 src_prepare() {
 	# This patch might be portable, and not need to be duplicated per version
@@ -142,7 +141,7 @@ src_configure() {
 }
 
 src_install() {
-	cd ${S}/gen/Release/${PN} || die
+	cd "${S}"/gen/Release/${PN} || die
 
 	if use doc; then
 		dodoc "${S}"/doc/*.pdf
@@ -234,7 +233,7 @@ src_install() {
 		docinto examples
 		insinto /usr/share/${PN}/examples
 		insopts -m0660 -o firebird -g firebird
-		doins -r ${S}/examples/* ${S}/gen/examples/employee.fdb
+		doins -r "${S}"/examples/* "${S}"/gen/examples/employee.fdb
 	fi
 }
 
