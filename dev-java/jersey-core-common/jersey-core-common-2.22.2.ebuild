@@ -1,7 +1,7 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 JAVA_PKG_IUSE="doc source"
 
@@ -17,7 +17,7 @@ SRC_URI="http://central.maven.org/maven2/org/glassfish/${PN:0:6}/core/${MY_PN}/$
 #SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/2.22.2.zip -> ${MY_P}.zip"
 
 LICENSE="CDDL GPL-2-with-linking-exception"
-SLOT="2"
+SLOT="$(get_major_version)"
 KEYWORDS="~amd64 ~x86"
 
 CP_DEPEND="dev-java/glassfish-hk2-api:0
@@ -25,7 +25,7 @@ CP_DEPEND="dev-java/glassfish-hk2-api:0
 	dev-java/glassfish-hk2-utils:0
 	dev-java/javax-inject:0
 	dev-java/jax-rs:2
-	dev-java/jersey-guava:2
+	~dev-java/jersey-guava-${PV}:${SLOT}
 	dev-java/jsr250:0
 	dev-java/osgi-core-api:6"
 
