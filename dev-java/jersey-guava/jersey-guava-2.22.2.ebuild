@@ -29,5 +29,5 @@ RDEPEND="${CP_DEPEND}
 
 PATCHES=(
 	#https://github.com/google/guava/commit/f4aa25e74a9466c2f93a2147a7cf9b01850dd41f
-	"${FILESDIR}/${P}-java-1.8.patch"
+	"${FILESDIR}/${PN}-${SLOT}-java-1.8.patch"
 )
