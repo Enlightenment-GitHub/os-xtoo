@@ -2918,7 +2918,7 @@ java-pkg_gen-cp() {
 		local cp="${!1}"
 		for p in ${CP_DEPEND}; do
 			p="${p/-[0-9]*:/-}"
-			cp="${cp} ${p#*/}"
+			cp+=" ${p#*/}"
 		done
 		cp="${cp//:/-}"
 		[[ ${cp} ]] && export ${1}="${cp//-0/}"
