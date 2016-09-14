@@ -1,7 +1,7 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 JAVA_PKG_IUSE="doc source"
 
@@ -17,7 +17,7 @@ SRC_URI="http://central.maven.org/maven2/org/glassfish/${MY_PN}/containers/${PN}
 #SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/${PV}.zip -> ${MY_P}.zip"
 
 LICENSE="CDDL GPL-2-with-linking-exception"
-SLOT="2"
+SLOT="$(get_major_version)"
 KEYWORDS="~amd64 ~x86"
 
 CP_DEPEND="dev-java/eclipse-javax-persistence:2
