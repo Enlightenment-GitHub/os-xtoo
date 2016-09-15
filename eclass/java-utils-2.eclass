@@ -1868,7 +1868,8 @@ ejunit4() {
 # src_prepare Searches for bundled jars
 # Don't call directly, but via java-pkg-2_src_prepare!
 java-utils-2_src_prepare() {
-	[[ ${EAPI:-0} -ge 6 ]] && eapply_user
+	[[ ${PATCHES[@]} ]] && epatch "${PATCHES[@]}"
+	(( ${EAPI:-0} >= 6 )) && eapply_user
 
 	java-pkg_func-exists java_prepare && java_prepare
 
