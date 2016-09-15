@@ -1,6 +1,6 @@
-diff -Naur jersey_orig/repackaged/com/google/common/reflect/Types.java jersey/repackaged/com/google/common/reflect/Types.java
---- jersey_orig/repackaged/com/google/common/reflect/Types.java	2016-03-03 23:25:48.690440993 -0500
-+++ jersey/repackaged/com/google/common/reflect/Types.java	2016-03-03 23:32:24.747486069 -0500
+diff -Naur a/jersey/repackaged/com/google/common/reflect/Types.java b/jersey/repackaged/com/google/common/reflect/Types.java
+--- a/jersey/repackaged/com/google/common/reflect/Types.java	2016-03-03 23:25:48.690440993 -0500
++++ b/jersey/repackaged/com/google/common/reflect/Types.java	2016-03-03 23:32:24.747486069 -0500
 @@ -26,6 +26,7 @@
  import jersey.repackaged.com.google.common.base.Objects;
  import jersey.repackaged.com.google.common.base.Predicates;
