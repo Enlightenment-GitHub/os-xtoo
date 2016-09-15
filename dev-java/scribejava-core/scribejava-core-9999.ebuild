@@ -39,8 +39,4 @@ DEPEND="app-arch/unzip:0
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-java_prepare() {
-	echo "S=${S}"
-}
-
 JAVA_SRC_DIR="src/main/java/"
