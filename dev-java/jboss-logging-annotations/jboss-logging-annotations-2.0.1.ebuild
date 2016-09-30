@@ -15,7 +15,7 @@ MY_P="${PN}-${MY_PV}"
 
 SLOT="$(get_major_version)"
 HOMEPAGE="https://github.com/${PN:0:13}"
-SRC_URI="${HOMEPAGE=}/${MY_PN}/archive/${MY_PV}.zip -> ${P}.zip"
+SRC_URI="${HOMEPAGE}/${MY_PN}/archive/${MY_PV}.zip -> ${P}.zip"
 KEYWORDS="~amd64 ~x86"
 LICENSE="Apache-2.0"
 IUSE=""
@@ -25,7 +25,8 @@ CP_DEPEND="dev-java/jboss-logging:0"
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-DEPEND="${CP_DEPEND}
+DEPEND="app-arch/unzip
+	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
 S="${WORKDIR}/${MY_PN}-${MY_PV}/${PN:14}"
