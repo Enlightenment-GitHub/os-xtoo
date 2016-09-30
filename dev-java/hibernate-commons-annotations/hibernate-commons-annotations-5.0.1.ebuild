@@ -26,7 +26,8 @@ CP_DEPEND="dev-java/jboss-logging:0
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-DEPEND="${CP_DEPEND}
+DEPEND="app-arch/unzip
+	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
 S="${WORKDIR}/${MY_P}/"
