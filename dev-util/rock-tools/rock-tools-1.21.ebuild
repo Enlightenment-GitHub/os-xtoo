@@ -24,6 +24,10 @@ RDEPEND=""
 S=${WORKDIR}/${MY_P}
 
 src_install() {
-	dobin upgrade_tool
+	newbin upgrade_tool rk_upgrade_tool
 	dodoc *pdf
+}
+
+pkg_postinst() {
+	elog "Renamed upgrade_tool -> rk_upgrade_tool"
 }
