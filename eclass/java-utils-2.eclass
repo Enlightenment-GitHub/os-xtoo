@@ -1869,10 +1869,13 @@ ejunit4() {
 # Don't call directly, but via java-pkg-2_src_prepare!
 java-utils-2_src_prepare() {
 	if (( "${EAPI:-0}" >= "6" )); then
-		if declare -p PATCHES | grep -q "^declare -a "; then
-			[[ -n ${PATCHES[@]} ]] && eapply "${PATCHES[@]}"
-		else
-			[[ -n ${PATCHES} ]] && eapply ${PATCHES}
+		if [[ ${PATCHES} ]]; then
+			if declare -p PATCHES | grep -q "^declare -a "; then
+				[[ -n ${PATCHES[@]} ]] && \
+					eapply "${PATCHES[@]}"
+			else
+				[[ -n ${PATCHES} ]] && eapply ${PATCHES}
+			fi
 		fi
 		eapply_user
 	fi
