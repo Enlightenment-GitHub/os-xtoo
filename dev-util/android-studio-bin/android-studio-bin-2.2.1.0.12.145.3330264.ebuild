@@ -66,7 +66,7 @@ java_prepare() {
 	# This is really a bundled jdk not a jre
 	echo "S=${S}"
 	echo "rm -R ${S}/jre"
-	if use external; then
+	if use system-jvm; then
 		 rm -R "${S}/jre" || die \
 			"Could not remove bundled jdk posing as jre"
 	fi
@@ -88,7 +88,7 @@ src_install() {
 	insinto "${dir}"
 	# Replaced bundled jre with system vm/jdk
 	# This is really a bundled jdk not a jre
-	use external &&
+	use system-jvm &&
 		dosym "/etc/java-config-2/current-system-vm" "${dir}/jre"
 	doins -r *
 	fperms 755 "${dir}/bin/studio.sh" "${dir}/bin/fsnotifier" \
