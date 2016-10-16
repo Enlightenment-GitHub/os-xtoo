@@ -24,6 +24,6 @@ RDEPEND=">=virtual/jre-1.8"
 
 DEPEND=">=virtual/jdk-1.8"
 
-S="${WORKDIR}/jetty.alpn-${MY_P}/"
+S="${WORKDIR}/${PN//-/.}-${MY_PN}-${MY_PV}/"
 
 JAVA_SRC_DIR="src/main/java"
