@@ -37,7 +37,7 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/${MY_P}"
 
 PATCHES=(
-	"${FILESDIR}/${P}-build.xml.patch"
+	"${FILESDIR}/${PN}-${SLOT}-build.xml.patch"
 )
 
 java_prepare() {
