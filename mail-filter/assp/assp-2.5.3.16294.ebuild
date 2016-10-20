@@ -1,12 +1,12 @@
 # Copyright 2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 inherit eutils user versionator
 
 DESCRIPTION="Anti-Spam SMTP Proxy written in Perl"
-HOMEPAGE="http://assp.sourceforge.net/"
+HOMEPAGE="http://${PN}.sourceforge.net/"
 MY_PN=ASSP_$(replace_version_separator 3 '_')_install
 SRC_URI="mirror://sourceforge/${PN}/${MY_PN}.zip"
 LICENSE="GPL-2"
@@ -73,10 +73,8 @@ pkg_setup() {
 	enewuser assp -1 -1 /dev/null assp
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
+	default
 	local FILES="
 		assp.pl
 		assp_pop3.pl
