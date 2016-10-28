@@ -2936,7 +2936,6 @@ java-pkg_gen-cp() {
 			[[ ${BASH_REMATCH[6]} != 0 ]] && atom+=-${BASH_REMATCH[6]}
 			local regex="(^|\s|,)${atom}($|\s|,)"
 			[[ ${!1} =~ ${regex} ]] || declare -g ${1}+=${!1:+,}${atom}
-			echo "${1}=${!1}"
 		else
 			die "Invalid CP_DEPEND atom ${atom}, ensure a SLOT is included"
 		fi
