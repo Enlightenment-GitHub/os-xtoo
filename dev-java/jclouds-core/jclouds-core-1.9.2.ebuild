@@ -1,7 +1,7 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 JAVA_PKG_IUSE="doc source"
 
@@ -40,7 +40,3 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/${MY_PN}-rel-${MY_P}/core"
 
 JAVA_SRC_DIR="src/main/java"
-
-java_prepare() {
-	java-pkg_clean
-}
