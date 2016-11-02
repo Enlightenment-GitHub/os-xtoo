@@ -12,16 +12,16 @@ MY_PV="${PV/_/-}"
 MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="JClouds Core"
-SLOT="$(get_version_component_range 1-2)"
-SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/rel/${MY_P}.zip"
+SLOT="0"
+SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/rel/${MY_P}.tar.gz"
 HOMEPAGE="https://jclouds.apache.org/"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
-IUSE=""
 
 GUICE_SLOT="4"
 
-CP_DEPEND="dev-java/auto-service:0
+CP_DEPEND="
+	dev-java/auto-service:0
 	dev-java/guava:19
 	dev-java/gson:2.2.2
 	dev-java/guice:${GUICE_SLOT}
@@ -29,7 +29,8 @@ CP_DEPEND="dev-java/auto-service:0
 	dev-java/javax-inject:0
 	dev-java/jax-rs:2
 	dev-java/osgi-core-api:6
-	dev-java/rocoto:6"
+	dev-java/rocoto:6
+"
 
 DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.7"
