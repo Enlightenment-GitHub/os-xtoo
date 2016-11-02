@@ -1,9 +1,9 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
-JAVA_PKG_IUSE="source"
+JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-ant-2
 
@@ -15,19 +15,19 @@ LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
 KEYWORDS="~amd64 ~x86"
 
-IUSE=""
-
-CP_DEPEND="dev-java/aopalliance:1
+CP_DEPEND="
 	dev-java/asm:4
+	dev-java/aopalliance:1
 	dev-java/guava:19
-	dev-java/cglib:3
-	dev-java/javax-inject:0"
+	dev-java/javax-inject:0
+"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
 DEPEND="${CP_DEPEND}
 	dev-java/bnd:3
+	dev-java/cglib:3
 	dev-java/jarjar:1
 	>=virtual/jdk-1.8"
 
@@ -42,7 +42,7 @@ java_prepare() {
 		-e 's|classes.bar|${ant.project.name}-with-deps.jar|' \
 		"${S}"/common.xml || die "Could not fix/sed"
 
-	java-pkg_jar-from --into lib/build cglib-3 cglib.jar cglib-3.1.jar
+	java-pkg_jar-from --into lib/build cglib-3 cglib.jar cglib-3.2.jar
 	java-pkg_jar-from --into lib/build asm-4 asm.jar asm-5.0.3.jar
 }
 
