@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 CP_DEPEND="
 	dev-java/animal-sniffer-annotations:0
 	dev-java/error-prone-annotations:0
-	dev-java/j2objc-annotations:0
+	>=dev-java/j2objc-annotations-1.2:0
 	dev-java/javax-inject:0
 	dev-java/jsr305:0
 	java-virtuals/jdk-with-com-sun:0
