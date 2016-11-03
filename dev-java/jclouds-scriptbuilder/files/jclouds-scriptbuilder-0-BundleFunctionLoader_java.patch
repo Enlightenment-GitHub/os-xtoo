@@ -1,0 +1,28 @@
+diff -Naur a/src/main/java/org/jclouds/scriptbuilder/functionloader/osgi/BundleFunctionLoader.java b/src/main/java/org/jclouds/scriptbuilder/functionloader/osgi/BundleFunctionLoader.java
+--- a/src/main/java/org/jclouds/scriptbuilder/functionloader/osgi/BundleFunctionLoader.java	2016-11-02 21:41:02.587117963 -0400
++++ b/src/main/java/org/jclouds/scriptbuilder/functionloader/osgi/BundleFunctionLoader.java	2016-11-02 22:25:27.999376560 -0400
+@@ -18,8 +18,9 @@
+ 
+ import java.io.IOException;
+ import java.net.URL;
++import java.util.Dictionary;
+ import java.util.Enumeration;
+-import java.util.Properties;
++import java.util.Hashtable;
+ 
+ import org.jclouds.scriptbuilder.domain.OsFamily;
+ import org.jclouds.scriptbuilder.domain.ShellToken;
+@@ -98,9 +99,10 @@
+    }
+ 
+    private void registerFunction(String functions) {
+-      Properties properties = new Properties();
+-      properties.put("function", functions);
+-      registration = bundleContext.registerService(FunctionLoader.class.getName(), this, properties);
++      String[] className = { FunctionLoader.class.getName() };
++      Dictionary dictionary = new Hashtable<String, Object>();
++      dictionary.put("function", functions);
++      registration = bundleContext.registerService(className, this, dictionary);
+    }
+ 
+ }
