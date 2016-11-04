@@ -1,15 +1,16 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI="6"
 
-MODULE_AUTHOR="JMEHNLE"
-MODULE_SECTION="mail-spf"
-MODULE_VERSION="v${PV}"
+DIST_AUTHOR="JMEHNLE"
+DIST_SECTION="mail-spf"
+DIST_VERSION="v${PV}"
+DIST_TEST="do"
 
 inherit perl-module
 
-DESCRIPTION=" An object-oriented implementation of Sender Policy Framework"
+DESCRIPTION="An object-oriented implementation of Sender Policy Framework"
 
 SLOT="0"
 KEYWORDS="~amd64"
@@ -20,8 +21,3 @@ DEPEND="${RDEPEND}
 	dev-perl/Module-Build
 	virtual/perl-ExtUtils-MakeMaker
 	test? ( dev-perl/Test-Deep )"
-
-SRC_TEST="do"
-
-
-# SRC_URI="mirror://cpan/authors/id/${MODULE_AUTHOR:0:1}/${MODULE_AUTHOR:0:2}/${MODULE_AUTHOR}/${MODULE_SECTION:+${MODULE_SECTION}/}${MODULE_A}"
