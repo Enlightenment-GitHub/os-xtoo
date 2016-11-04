@@ -1,7 +1,7 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 JAVA_PKG_IUSE="doc source"
 
@@ -30,10 +30,5 @@ S="${WORKDIR}/bnd-${PV}.REL/org.${PN//-/.}"
 JAVA_SRC_DIR="src/"
 
 java_prepare() {
-	java-pkg_clean
-
-#	if ! use test ; then
-		rm -rf test* || die "Failed to remove tests."
-#	fi
+	rm -rf test* || die "Failed to remove tests."
 }
-
