@@ -1,13 +1,14 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI="6"
 
-inherit autotools eutils flag-o-matic multilib readme.gentoo user versionator
+inherit autotools eutils flag-o-matic multilib readme.gentoo-r1 user versionator
 
 MY_P=${PN/f/F}-$(replace_version_separator 4 -)
 #MY_P=${PN/f/F}-${PV/_rc/-ReleaseCandidate}
+MY_MM="$(get_version_component_range 1-2)"
 
 DESCRIPTION="A relational database offering many ANSI SQL:2003 and some SQL:2008 features"
 HOMEPAGE="http://www.firebirdsql.org/"
@@ -62,15 +63,15 @@ src_unpack() {
 PATCHES=(
 	# This patch might be portable, and not need to be duplicated per version
 	# also might no longer be necessary to patch deps or libs, just flags
-	"${FILESDIR}"/${PN}-2.5.3.26780.0-deps-flags.patch
-	"${FILESDIR}"/${P}-CVE-2016-1569.patch
+	"${FILESDIR}"/${PN}-${MY_MM}-deps-flags.patch
+	"${FILESDIR}"/${PN}-${MY_MM}-CVE-2016-1569.patch
 )
 
 src_prepare() {
-	epatch "${PATCHES[@]}"
+	default
 
-	use client && epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-client.patch
-	! use xinetd && epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-superclassic.patch
+	use client && eapply "${FILESDIR}"/${PN}-2.5.1.26351.0-client.patch
+	! use xinetd && eapply "${FILESDIR}"/${PN}-2.5.1.26351.0-superclassic.patch
 
 	# Rename references to isql to fbsql
 	# sed vs patch for portability and addtional location changes
