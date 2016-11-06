@@ -1,7 +1,7 @@
 # Copyright 2015-2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI="6"
 
 inherit eutils versionator flag-o-matic
 
@@ -26,6 +26,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${MY_PN}"
 
 src_prepare() {
+	default
 	cd "${S}/Builds/Gcc.lin/" || die "Could not change to build dir"
 	mv makefile.linux Makefile || die "Could not mv/rename makefile"
 	sed -i -e "s|#FIREBIRD=/usr/lib64/firebird|FIREBIRD=/usr|" \
