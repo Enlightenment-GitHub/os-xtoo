@@ -1,7 +1,7 @@
-# Copyright 2015 Obsidian-Studios, Inc.
+# Copyright 2015-2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 DESCRIPTION="Nagios plugin to check the status of a Linode using the Linode API."
 HOMEPAGE="https://github.com/Obsidian-StudiosInc/${PN}"
