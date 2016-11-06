@@ -1,1 +1,1 @@
-rack-1.0.0_beta1.ebuild
+rack-1.2.ebuild
