@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="5"
+EAPI="6"
 JAVA_PKG_IUSE="doc source examples test"
 
 inherit eutils java-pkg-2 java-ant-2
