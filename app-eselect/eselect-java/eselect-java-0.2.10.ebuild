@@ -1,8 +1,8 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-eselect/eselect-java/eselect-java-0.1.0.ebuild,v 1.3 2015/05/10 20:55:27 chewi Exp $
 
-EAPI=5
+EAPI="6"
 
 DESCRIPTION="A set of eselect modules for Java (meta package installs nothing)"
 HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Java"
