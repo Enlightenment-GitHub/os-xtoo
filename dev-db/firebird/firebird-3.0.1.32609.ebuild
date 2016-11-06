@@ -1,9 +1,9 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI="6"
 
-inherit autotools eutils flag-o-matic multilib readme.gentoo user versionator
+inherit autotools eutils flag-o-matic multilib readme.gentoo-r1 user versionator
 
 MY_PN=${PN/f/F}
 MY_P=${MY_PN}-$(replace_version_separator 4 -)-0
@@ -47,6 +47,12 @@ RESTRICT="userpriv"
 
 S="${WORKDIR}/${MY_P}"
 
+# This patch might be portable, and not need to be duplicated per version
+# also might no longer be necessary to patch deps or libs, just flags
+PATCHES=(
+	"${FILESDIR}"/${PN}-${MY_MM}-deps-flags.patch
+)
+
 pkg_setup() {
 	enewgroup firebird 450
 	enewuser firebird 450 /bin/sh /usr/$(get_libdir)/firebird firebird
@@ -69,12 +75,7 @@ src_unpack() {
 }
 
 src_prepare() {
-	# This patch might be portable, and not need to be duplicated per version
-	# also might no longer be necessary to patch deps or libs, just flags
-	epatch "${FILESDIR}"/${P}-deps-flags.patch
-
-#	use client && epatch "${FILESDIR}"/${PN}-2.5.1.26351.0-client.patch
-
+	default
 	# Rename references to isql to fbsql
 	# sed vs patch for portability and addtional location changes
 	check_sed "$(sed -i -e 's:"isql :"fbsql :w /dev/stdout' \
