@@ -1,7 +1,7 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI="6"
 
 HOMEPAGE="https://github.com/anestisb/${PN}"
 
