@@ -1,7 +1,7 @@
-diff --git a/apache-tomcat-9.0.0.M8-src/build.xml b/apache-tomcat-9.0.0.M8-src/build.xml
+diff --git a/build.xml b/build.xml
 index dfec1f7..4dfc5d8 100644
---- a/apache-tomcat-9.0.0.M8-src/build.xml
-+++ b/apache-tomcat-9.0.0.M8-src/build.xml
+--- a/build.xml
++++ b/build.xml
 @@ -695,24 +695,30 @@
        manifest="${tomcat.manifests}/annotations-api.jar.manifest" />
  
