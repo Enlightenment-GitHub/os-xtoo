@@ -37,7 +37,7 @@ EANT_TEST_GENTOO_CLASSPATH="${EANT_GENTOO_CLASSPATH},junit-4"
 EANT_TEST_ANT_TASKS="ant-junit"
 
 java_prepare() {
-	cp -v "${FILESDIR}"/${P}-build.xml build.xml || die
+	cp -v "${FILESDIR}"/${PN}-${SLOT}-build.xml build.xml || die
 }
 
 src_install() {
