@@ -1,5 +1,5 @@
---- src/main/java/org/apache/felix/gogo/runtime/activator/EventAdminListener.java	2013-05-13 13:40:57.071766332 +0200
-+++ src/main/java/org/apache/felix/gogo/runtime/activator/EventAdminListener.java.2	2013-05-13 13:41:30.725096685 +0200
+--- a/src/main/java/org/apache/felix/gogo/runtime/activator/EventAdminListener.java	2013-05-13 13:40:57.071766332 +0200
++++ b/src/main/java/org/apache/felix/gogo/runtime/activator/EventAdminListener.java.2	2013-05-13 13:41:30.725096685 +0200
 @@ -18,7 +18,7 @@
   */
  package org.apache.felix.gogo.runtime.activator;
