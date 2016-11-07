@@ -17,7 +17,6 @@ IUSE="test"
 
 RDEPEND=">=virtual/jre-1.8"
 DEPEND=">=virtual/jdk-1.8
-	app-arch/unzip
 	test? (
 		dev-java/junit:4
 		dev-java/ant-junit:0
@@ -31,7 +30,7 @@ EANT_TEST_ANT_TASKS="ant-junit"
 EANT_EXTRA_ARGS="-Dmaven.build.finalName=${PN}"
 
 java_prepare() {
-	cp "${FILESDIR}"/${P}-build.xml build.xml || die
+	cp "${FILESDIR}"/${PN}-${SLOT}-build.xml build.xml || die
 }
 
 src_test() {
