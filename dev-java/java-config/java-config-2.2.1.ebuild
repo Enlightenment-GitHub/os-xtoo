@@ -1,8 +1,7 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/java-config/java-config-2.2.0.ebuild,v 1.14 2015/05/04 07:00:08 ago Exp $
 
-EAPI="5"
+EAPI="6"
 
 # jython depends on java-config, so don't add it or things will break
 #PYTHON_COMPAT=( python{2_7,3_3,3_4} )
