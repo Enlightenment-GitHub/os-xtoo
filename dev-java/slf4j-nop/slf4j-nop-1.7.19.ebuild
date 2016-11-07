@@ -36,7 +36,7 @@ EANT_TEST_GENTOO_CLASSPATH="slf4j-api,junit-4"
 EANT_TEST_ANT_TASKS="ant-junit"
 
 java_prepare() {
-	cp "${FILESDIR}"/${P}-build.xml build.xml || die
+	cp "${FILESDIR}"/${PN}-${SLOT}-build.xml build.xml || die
 }
 
 src_install() {
