@@ -1,7 +1,7 @@
 # Copyright 2016 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI="6"
 
 if [[ ${PV} == 9999 ]]; then
 	ECLASS="bzr"
@@ -16,10 +16,8 @@ inherit eutils qmake-utils ${ECLASS}
 
 DESCRIPTION="Application menu module for Qt5"
 HOMEPAGE="https://launchpad.net/appmenu-qt5"
-
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-IUSE=""
 
 DEPEND="dev-qt/qtcore:5
 	dev-qt/qtdbus:5
@@ -32,6 +30,10 @@ DOCS=( COPYING README )
 src_configure() {
 	# adds /etc/profile.d/appmenu-qt5.sh
 	eqmake5 "CONFIG+=enable-by-default"
+}
+
+src_prepare() {
+	default
 }
 
 src_install() {
