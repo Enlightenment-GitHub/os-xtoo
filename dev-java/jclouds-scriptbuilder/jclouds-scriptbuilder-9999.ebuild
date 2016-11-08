@@ -43,6 +43,9 @@ if [[ ${PV} == 9999 ]]; then
 	S="${WORKDIR}/${P}/${PN:8}"
 else
 	S="${WORKDIR}/${MY_PN}-rel-${MY_P}/${PN:8}"
+fi
+
+if [[ ${PV} == 1.9.2 ]]; then
 	PATCHES=(
 		"${FILESDIR}/${PN}-${SLOT}-BundleFunctionLoader_java.patch"
 	)
