@@ -42,10 +42,10 @@ CP_DEPEND="
 "
 
 DEPEND="${CP_DEPEND}
-	>=virtual/jdk-1.7"
+	>=virtual/jdk-1.8"
 
 RDEPEND="${CP_DEPEND}
-	>=virtual/jre-1.7"
+	>=virtual/jre-1.8"
 
 if [[ ${PV} == 9999 ]]; then
 	S="${WORKDIR}/${P}/core"
@@ -54,3 +54,7 @@ else
 fi
 
 JAVA_SRC_DIR="src/main/java"
+
+PATCHES=(
+	"${FILESDIR}/${PN}-${SLOT}-guice_java_1.8.patch"
+)
