@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 CP_DEPEND="dev-java/auto-common:0
-	dev-java/guava:19"
+	dev-java/guava:20"
 
 DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
