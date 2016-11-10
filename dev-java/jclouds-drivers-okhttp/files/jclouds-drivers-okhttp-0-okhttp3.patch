@@ -1,0 +1,90 @@
+diff --git a/src/main/java/org/jclouds/http/okhttp/OkHttpClientSupplier.java b/src/main/java/org/jclouds/http/okhttp/OkHttpClientSupplier.java
+index 9254ec5..aa9ef3b 100644
+--- a/src/main/java/org/jclouds/http/okhttp/OkHttpClientSupplier.java
++++ b/src/main/java/org/jclouds/http/okhttp/OkHttpClientSupplier.java
+@@ -21,7 +21,7 @@ import org.jclouds.http.okhttp.OkHttpClientSupplier.NewOkHttpClient;
+ import com.google.common.annotations.Beta;
+ import com.google.common.base.Supplier;
+ import com.google.inject.ImplementedBy;
+-import com.squareup.okhttp.OkHttpClient;
++import okhttp3.OkHttpClient;
+ 
+ /**
+  * Provides the OkHttp client used for all requests. This could be used to
+diff --git a/src/main/java/org/jclouds/http/okhttp/OkHttpCommandExecutorService.java b/src/main/java/org/jclouds/http/okhttp/OkHttpCommandExecutorService.java
+index f3e4ed0..728f253 100644
+--- a/src/main/java/org/jclouds/http/okhttp/OkHttpCommandExecutorService.java
++++ b/src/main/java/org/jclouds/http/okhttp/OkHttpCommandExecutorService.java
+@@ -51,12 +51,12 @@ import com.google.common.base.Function;
+ import com.google.common.collect.ImmutableMultimap;
+ import com.google.common.collect.ImmutableMultimap.Builder;
+ import com.google.inject.Inject;
+-import com.squareup.okhttp.Headers;
+-import com.squareup.okhttp.MediaType;
+-import com.squareup.okhttp.OkHttpClient;
+-import com.squareup.okhttp.Request;
+-import com.squareup.okhttp.RequestBody;
+-import com.squareup.okhttp.Response;
++import okhttp3.Headers;
++import okhttp3.MediaType;
++import okhttp3.OkHttpClient;
++import okhttp3.Request;
++import okhttp3.RequestBody;
++import okhttp3.Response;
+ 
+ public final class OkHttpCommandExecutorService extends BaseHttpCommandExecutorService<Request> {
+ 
+@@ -148,8 +148,9 @@ public final class OkHttpCommandExecutorService extends BaseHttpCommandExecutorS
+ 
+    @Override
+    protected HttpResponse invoke(Request nativeRequest) throws IOException, InterruptedException {
+-      OkHttpClient requestScopedClient = globalClient.clone();
+-      requestScopedClient.setProxy(proxyForURI.apply(nativeRequest.uri()));
++      OkHttpClient requestScopedClient = (OkHttpClient) globalClient.getClass()
++              .getMethod("clone").invoke(globalClient);
++      requestScopedClient.setProxy(proxyForURI.apply(nativeRequest.url().uri()));
+ 
+       Response response = requestScopedClient.newCall(nativeRequest).execute();
+ 
+diff --git a/src/main/java/org/jclouds/http/okhttp/config/OkHttpCommandExecutorServiceModule.java b/src/main/java/org/jclouds/http/okhttp/config/OkHttpCommandExecutorServiceModule.java
+index 9c47d81..13de0da 100644
+--- a/src/main/java/org/jclouds/http/okhttp/config/OkHttpCommandExecutorServiceModule.java
++++ b/src/main/java/org/jclouds/http/okhttp/config/OkHttpCommandExecutorServiceModule.java
+@@ -34,7 +34,7 @@ import com.google.inject.AbstractModule;
+ import com.google.inject.Inject;
+ import com.google.inject.Provider;
+ import com.google.inject.Scopes;
+-import com.squareup.okhttp.OkHttpClient;
++import okhttp3.OkHttpClient;
+ 
+ /**
+  * Configures the {@link OkHttpCommandExecutorService}.
+@@ -68,21 +68,21 @@ public class OkHttpCommandExecutorServiceModule extends AbstractModule {
+ 
+       @Override
+       public OkHttpClient get() {
+-         OkHttpClient client = clientSupplier.get();
+-         client.setConnectTimeout(utils.getConnectionTimeout(), TimeUnit.MILLISECONDS);
+-         client.setReadTimeout(utils.getSocketOpenTimeout(), TimeUnit.MILLISECONDS);
++         OkHttpClient.Builder builder = new OkHttpClient.Builder()
++                 .readTimeout(utils.getSocketOpenTimeout(), TimeUnit.MILLISECONDS)
++                 .connectTimeout(utils.getConnectionTimeout(), TimeUnit.MILLISECONDS)
+          // do not follow redirects since https redirects don't work properly
+          // ex. Caused by: java.io.IOException: HTTPS hostname wrong: should be
+          // <adriancole.s3int0.s3-external-3.amazonaws.com>
+-         client.setFollowRedirects(false);
++                 .followRedirects(false);
+ 
+          if (utils.relaxHostname()) {
+-            client.setHostnameVerifier(verifier);
++            builder.hostnameVerifier(verifier);
+          }
+          if (utils.trustAllCerts()) {
+-            client.setSslSocketFactory(untrustedSSLContextProvider.get().getSocketFactory());
++            builder.sslSocketFactory(untrustedSSLContextProvider.get().getSocketFactory());
+          }
+-
++         OkHttpClient client = builder.build();
+          return client;
+       }
+    }
