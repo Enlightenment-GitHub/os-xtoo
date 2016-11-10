@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="Apache-2.0"
 IUSE=""
 
-CP_DEPEND="dev-java/guava:19
+CP_DEPEND="dev-java/guava:20
 	dev-java/guice:4
 	dev-java/javax-inject:0"
 
