@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 
-CP_DEPEND="dev-java/guava:19
+CP_DEPEND="dev-java/guava:20
 	dev-java/guice:${SLOT}
 	dev-java/javax-inject:0"
 
