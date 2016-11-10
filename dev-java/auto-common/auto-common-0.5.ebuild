@@ -15,7 +15,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-CP_DEPEND="dev-java/guava:19"
+CP_DEPEND="dev-java/guava:20"
 
 DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
