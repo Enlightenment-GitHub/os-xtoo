@@ -15,7 +15,7 @@ SRC_URI="https://github.com/bndtools/repo/blob/master/bundles/${MY_PN}/${MY_PN}-
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/ant-core:0
 	dev-java/bndlib:3
