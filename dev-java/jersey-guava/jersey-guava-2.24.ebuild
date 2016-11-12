@@ -16,7 +16,7 @@ SRC_URI="http://central.maven.org/maven2/org/glassfish/${PN:0:6}/bundles/repacka
 
 LICENSE="CDDL GPL-2-with-linking-exception"
 SLOT="$(get_major_version)"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/jsr305:0"
 
