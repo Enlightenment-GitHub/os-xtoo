@@ -15,7 +15,7 @@ MY_PN="org.apache.felix.framework"
 MY_P="${MY_PN}-${PV}"
 SRC_URI="mirror://apache/felix/${MY_P}-source-release.tar.gz"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/felix-resolver:0
 	dev-java/osgi-annotation:0
