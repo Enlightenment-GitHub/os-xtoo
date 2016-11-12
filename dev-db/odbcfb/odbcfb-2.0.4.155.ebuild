@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/project/firebird/firebird-ODBC-driver/${MY_PV}-Rel
 LICENSE="IDPL"
 SLOT="0"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="debug doc hardened"
 
 DEPEND="dev-db/firebird
