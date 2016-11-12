@@ -16,7 +16,7 @@ SRC_URI="http://central.maven.org/maven2/org/osgi/org.${PN/-/.}/${PV}/org.${PN/-
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="app-arch/unzip:0
