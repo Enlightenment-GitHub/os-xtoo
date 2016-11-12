@@ -13,7 +13,7 @@ SRC_URI="https://github.com/google/auto/archive/${P/_/-}.zip"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/auto-common:0
 	dev-java/guava:20"
