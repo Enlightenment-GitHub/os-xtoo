@@ -16,7 +16,7 @@ SRC_URI="https://github.com/belaban/${MY_PN}/archive/${MY_P}.zip"
 HOMEPAGE="http://www.jgroups.org/"
 LICENSE="LGPL-2.1"
 SLOT="3"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 CP_DEPEND="dev-java/bsh:0
