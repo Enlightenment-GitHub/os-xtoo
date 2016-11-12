@@ -16,7 +16,7 @@ MY_P="${PN}-${MY_PV}"
 SLOT="$(get_major_version)"
 HOMEPAGE="https://github.com/${MY_PN}/${PN}"
 SRC_URI="${HOMEPAGE}/archive/${MY_PV}.zip -> ${P}.zip"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
 IUSE=""
 
