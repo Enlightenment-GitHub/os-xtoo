@@ -17,7 +17,7 @@ SRC_URI="http://central.maven.org/maven2/${PN:0:5}/${PN:6:8}/${PN:15:4}/${MY_PN}
 
 LICENSE="CDDL GPL-2-with-linking-exception"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="java-virtuals/servlet-api:4.0"
 
