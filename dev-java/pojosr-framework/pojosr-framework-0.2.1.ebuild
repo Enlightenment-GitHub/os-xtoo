@@ -13,7 +13,7 @@ SRC_URI="https://github.com/lefou/pojosr/archive/${MY_P}.zip"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CDEPEND="dev-java/osgi-compendium:4
 	dev-java/osgi-core-api:4"
