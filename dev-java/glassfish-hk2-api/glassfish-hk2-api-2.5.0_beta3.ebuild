@@ -17,7 +17,7 @@ SRC_URI="https://github.com/${MY_PN}-project/${MY_PN}/archive/${MY_P}.zip"
 
 LICENSE="CDDL GPL-2-with-linking-exception"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 IUSE=""
 
