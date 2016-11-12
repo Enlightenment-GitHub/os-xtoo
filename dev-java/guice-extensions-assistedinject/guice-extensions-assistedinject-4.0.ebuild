@@ -15,7 +15,7 @@ SRC_URI="https://github.com/google/${MY_PN}/archive/${PV}.zip -> ${MY_PN}-${PV}.
 
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 IUSE=""
 
