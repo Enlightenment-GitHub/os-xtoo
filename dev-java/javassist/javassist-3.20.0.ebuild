@@ -16,7 +16,7 @@ SRC_URI="https://github.com/jboss-${PN}/${PN}/archive/${MY_P}.zip -> ${P}.zip"
 
 LICENSE="MPL-1.1"
 SLOT="3"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="app-arch/unzip
