@@ -15,7 +15,7 @@ MY_PN="org.apache.felix.resolver"
 MY_P="${MY_PN}-${PV}"
 SRC_URI="mirror://apache/felix/${MY_P}-source-release.tar.gz"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/osgi-core-api:6"
 
