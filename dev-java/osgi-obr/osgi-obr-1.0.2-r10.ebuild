@@ -16,7 +16,7 @@ SRC_URI="mirror://apache/dist/felix/${MY_P}-project.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/osgi-core-api:6"
 
