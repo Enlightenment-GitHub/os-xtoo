@@ -16,7 +16,7 @@ SRC_URI="javax.ws.rs-api-${PV}.rev.${REV}-sources.jar"
 RESTRICT="fetch"
 LICENSE="oracle-jsr339"
 SLOT="2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="app-arch/unzip:0
