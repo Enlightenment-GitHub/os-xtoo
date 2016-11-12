@@ -16,7 +16,7 @@ SRC_URI="https://github.com/pkriens/aQute.repo/blob/master/repo/${MY_PN}/${MY_PN
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/aqute-services-struct:0
 	dev-java/bndlib:3
