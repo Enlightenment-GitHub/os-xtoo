@@ -18,7 +18,7 @@ SRC_URI="http://central.maven.org/maven2/org/glassfish/${MY_PN}/${PN:7:5}/${PN}/
 
 LICENSE="CDDL GPL-2-with-linking-exception"
 SLOT="$(get_major_version)"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/glassfish-hk2-api:0
 	dev-java/javax-inject:0
