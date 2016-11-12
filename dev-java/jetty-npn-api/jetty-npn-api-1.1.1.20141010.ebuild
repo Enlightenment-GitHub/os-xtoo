@@ -16,7 +16,7 @@ MY_P="${MY_PN}-${MY_PV}"
 SLOT="0"
 SRC_URI="http://central.maven.org/maven2/org/eclipse/${PN:0:5}/npn/${MY_PN}/${MY_PV}/${MY_P}-sources.jar"
 HOMEPAGE="https://wiki.eclipse.org/Jetty/Feature/NPN"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
 IUSE=""
 
