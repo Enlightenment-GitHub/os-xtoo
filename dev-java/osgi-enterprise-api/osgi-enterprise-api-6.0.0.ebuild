@@ -13,7 +13,7 @@ SRC_URI="http://www.osgi.org/download/r$(get_major_version)/osgi.enterprise-${PV
 
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 CP_DEPEND="dev-java/glassfish-persistence:0
