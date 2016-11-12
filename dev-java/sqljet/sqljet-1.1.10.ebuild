@@ -11,7 +11,7 @@ DESCRIPTION="SQLJet pure Java implementation of SQLite."
 SLOT="0"
 SRC_URI="http://${PN}.com/files/${P}-src.zip"
 HOMEPAGE="http://${PN}.com/"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 LICENSE="GPL-2"
 IUSE=""
 
