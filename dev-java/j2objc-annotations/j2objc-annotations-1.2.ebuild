@@ -16,7 +16,7 @@ SRC_URI="https://github.com/google/${MY_PN}/archive/${PV}.tar.gz -> ${MY_P}.tar.
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 DEPEND=">=virtual/jdk-1.8"
 
