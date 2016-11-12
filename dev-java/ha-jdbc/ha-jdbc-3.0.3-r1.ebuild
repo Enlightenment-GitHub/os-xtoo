@@ -16,7 +16,7 @@ SLOT="$(get_version_component_range 1)"
 SRC_URI="https://github.com/${PN}/${PN}/archive/${PV}.zip -> ${PN}-${PV}.zip
 	http://repository.jboss.org/nexus/content/groups/public/net/sf/${PN}/${PN}/${PV}/${P}.jar"
 HOMEPAGE="http://${PN}.github.io/"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
 IUSE=""
 
