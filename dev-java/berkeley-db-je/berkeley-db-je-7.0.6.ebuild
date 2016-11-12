@@ -17,7 +17,7 @@ RESTRICT="fetch"
 
 LICENSE="AGPL-3"
 SLOT="$(get_major_version)"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 JVM="1.8"
 
