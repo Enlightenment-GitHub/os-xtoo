@@ -13,7 +13,7 @@ SRC_URI="http://search.maven.org/remotecontent?filepath=com/google/${PN}/${PN}/$
 
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
-KEYWORDS="~amd64 ~amd64-linux ~x86-linux ~x64-macos ~x86-macos"
+KEYWORDS="~amd64 ~amd64-linux ~x64-macos"
 
 CP_DEPEND="dev-java/animal-sniffer-annotations:0
 	dev-java/j2objc-annotations:0
