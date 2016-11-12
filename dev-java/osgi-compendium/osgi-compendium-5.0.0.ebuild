@@ -13,7 +13,7 @@ SRC_URI="https://osgi.org/download/r$(get_major_version)/osgi.cmpn-${PV}.jar"
 
 LICENSE="Apache-2.0 OSGi-Specification-2.0"
 SLOT="5"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/glassfish-persistence:0
 	dev-java/osgi-annotation:0
