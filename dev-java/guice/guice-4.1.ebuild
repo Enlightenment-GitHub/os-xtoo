@@ -36,7 +36,6 @@ JAVA_PKG_BSFIX_NAME="build.xml common.xml"
 JAVA_ANT_REWRITE_CLASSPATH="yes"
 
 java_prepare() {
-	java-pkg_clean
 
 	sed -i -e 's|bndwrap jars="${build.dir}/classes|bndwrap jars="${build.dir}/${ant.project.name}-with-deps.jar|' \
 		-e 's|classes.bar|${ant.project.name}-with-deps.jar|' \
