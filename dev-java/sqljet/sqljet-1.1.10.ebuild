@@ -26,7 +26,3 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/${P}"
 
 JAVA_SRC_DIR="${PN}/src/main/java"
-
-java_prepare() {
-	java-pkg_clean
-}
