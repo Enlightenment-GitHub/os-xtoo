@@ -31,7 +31,6 @@ S="${WORKDIR}/${MY_P}"
 EANT_EXTRA_ARGS="-Dbuild.sysclasspath=last"
 
 java_prepare() {
-	java-pkg_clean
 
 	# Re-writer does not catch this odd target
 	sed -i -e "s|1.7|${JVM}|" build-common.xml \
