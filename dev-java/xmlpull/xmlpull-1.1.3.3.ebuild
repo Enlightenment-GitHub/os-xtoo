@@ -24,7 +24,3 @@ RDEPEND=">=virtual/jre-1.8"
 S="${WORKDIR}/${PN}-${MY_P}"
 
 JAVA_SRC_DIR="${PN}/src/main/java/"
-
-java_prepare() {
-	java-pkg_clean
-}
