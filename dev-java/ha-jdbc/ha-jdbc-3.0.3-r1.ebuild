@@ -48,7 +48,6 @@ JAVA_SRC_DIR="src/main/java"
 JAVA_ADDRES_DIRS="src/main/resources"
 
 java_prepare() {
-	java-pkg_clean
 
 	sed -i -e "s|\${project.version}|${PV}|" \
 		${JAVA_SRC_DIR}/net/sf/hajdbc/Version.properties \
