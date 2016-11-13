@@ -34,7 +34,6 @@ PATCHES=(
 )
 
 java_prepare() {
-	java-pkg_clean
 
 	cp "${FILESDIR}"/${PN}-build.xml build.xml || die
 
