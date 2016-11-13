@@ -31,7 +31,3 @@ JAVA_GENTOO_CLASSPATH="
 	osgi-core-api-4
 "
 JAVA_SRC_DIR="src/main/java"
-
-java_prepare() {
-	java-pkg_clean
-}
