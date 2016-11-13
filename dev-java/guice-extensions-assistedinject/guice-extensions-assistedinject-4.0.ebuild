@@ -32,7 +32,3 @@ DEPEND=">=virtual/jdk-1.8
 S="${WORKDIR}/${MY_PN}-${PV}/extensions/assistedinject"
 
 JAVA_SRC_DIR="src/"
-
-java_prepare() {
-	java-pkg_clean
-}
