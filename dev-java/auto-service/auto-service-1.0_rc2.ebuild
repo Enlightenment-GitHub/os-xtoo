@@ -9,7 +9,7 @@ inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="A configuration/metadata generator for java.util.ServiceLoader-style service providers"
 HOMEPAGE="https://github.com/google/auto/tree/master/service"
-SRC_URI="https://github.com/google/auto/archive/${P/_/-}.zip"
+SRC_URI="https://github.com/google/auto/archive/${P/_/-}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
