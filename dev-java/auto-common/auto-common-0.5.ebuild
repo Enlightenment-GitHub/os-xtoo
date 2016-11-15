@@ -9,7 +9,7 @@ inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="Auto Common Utilities"
 HOMEPAGE="https://github.com/google/auto/tree/master/common"
-SRC_URI="https://github.com/google/auto/archive/${P/_/-}.zip"
+SRC_URI="https://github.com/google/auto/archive/${P/_/-}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
