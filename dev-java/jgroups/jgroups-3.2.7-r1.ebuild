@@ -12,7 +12,7 @@ MY_PV="${PV//./_}"
 MY_P="${MY_PN}_${MY_PV}_Final"
 
 DESCRIPTION="JGroups is a toolkit for reliable multicast communication"
-SRC_URI="https://github.com/belaban/${MY_PN}/archive/${MY_P}.zip"
+SRC_URI="https://github.com/belaban/${MY_PN}/archive/${MY_P}.tar.gz"
 HOMEPAGE="http://www.jgroups.org/"
 LICENSE="LGPL-2.1"
 SLOT="3"
