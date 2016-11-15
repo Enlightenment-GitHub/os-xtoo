@@ -14,7 +14,7 @@ DESCRIPTION="Jersey RESTful Web Services in Java Core Servlet"
 HOMEPAGE="https://${MY_PN}.java.net/"
 SRC_URI="http://central.maven.org/maven2/org/glassfish/${MY_PN}/containers/${PN}/${PV}/${P}-sources.jar"
 # Missing org.glassfish.jersey.servlet.internal.LocalizationMessages
-#SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/${PV}.zip -> ${MY_P}.zip"
+#SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
 
 LICENSE="CDDL GPL-2-with-linking-exception"
 SLOT="$(get_major_version)"
