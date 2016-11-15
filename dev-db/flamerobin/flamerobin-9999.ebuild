@@ -8,7 +8,7 @@ if [[ ${PV} == 9999 ]]; then
 	EGIT_REPO_URI="https://github.com/mariuz/${PN}.git"
 else
 	KEYWORDS="~amd64 ~x86"
-	SRC_URI="https://github.com/mariuz/${PN}/archive/${PV}.zip -> ${P}.zip"
+	SRC_URI="https://github.com/mariuz/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 fi
 
 WX_GTK_VER="3.0"
