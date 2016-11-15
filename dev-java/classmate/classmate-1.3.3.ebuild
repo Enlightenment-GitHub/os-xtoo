@@ -12,7 +12,7 @@ DESCRIPTION="Zero-dependency library for introspecting type information"
 MY_PN="java-${PN}"
 
 SLOT="0"
-SRC_URI="https://github.com/FasterXML/${MY_PN}/archive/${P}.zip"
+SRC_URI="https://github.com/FasterXML/${MY_PN}/archive/${P}.tar.gz"
 HOMEPAGE="http://fasterxml.com"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
