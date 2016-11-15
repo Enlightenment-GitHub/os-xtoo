@@ -9,7 +9,7 @@ MY_P="de.kalpatec.${PN/-/.}-${PV}"
 
 DESCRIPTION="A service registry that enables OSGi style service registry programs"
 HOMEPAGE="https://github.com/lefou/pojosr"
-SRC_URI="https://github.com/lefou/pojosr/archive/${MY_P}.zip"
+SRC_URI="https://github.com/lefou/pojosr/archive/${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
