@@ -9,7 +9,7 @@ inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="Rocoto is a small collection of reusable Modules for Google Guice"
 SLOT="$(get_version_component_range 1)"
-SRC_URI="https://github.com/99soft/${PN}/archive/${P}.zip"
+SRC_URI="https://github.com/99soft/${PN}/archive/${P}.tar.gz"
 HOMEPAGE="http://99soft.github.io/rocoto/"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
