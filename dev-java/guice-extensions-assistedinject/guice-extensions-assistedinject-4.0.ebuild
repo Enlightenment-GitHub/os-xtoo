@@ -11,7 +11,7 @@ MY_PN="guice"
 
 DESCRIPTION="Guice extensions assisted inject"
 HOMEPAGE="https://github.com/google/${MY_PN}/"
-SRC_URI="https://github.com/google/${MY_PN}/archive/${PV}.zip -> ${MY_PN}-${PV}.zip"
+SRC_URI="https://github.com/google/${MY_PN}/archive/${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
