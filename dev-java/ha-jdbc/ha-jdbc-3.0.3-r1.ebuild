@@ -13,7 +13,7 @@ DESCRIPTION="High-Availability JDBC"
 MY_MM="$(get_version_component_range 1-2)"
 
 SLOT="$(get_version_component_range 1)"
-SRC_URI="https://github.com/${PN}/${PN}/archive/${PV}.zip -> ${PN}-${PV}.zip
+SRC_URI="https://github.com/${PN}/${PN}/archive/${PV}.tar.gz -> ${PN}-${PV}.tar.gz
 	http://repository.jboss.org/nexus/content/groups/public/net/sf/${PN}/${PN}/${PV}/${P}.jar"
 HOMEPAGE="http://${PN}.github.io/"
 KEYWORDS="~amd64"
