@@ -14,7 +14,7 @@ DESCRIPTION="Jersey RESTful Web Services in Java Security OAuth1 Signature"
 HOMEPAGE="https://${PN:0:6}.java.net/"
 SRC_URI="http://central.maven.org/maven2/org/glassfish/${PN:0:6}/${PN:7:8}/${MY_PN}/${PV}/${MY_P}-sources.jar"
 # Missing .internal.LocalizationMessages
-#SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/${PV}.zip -> ${MY_P}.zip"
+#SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
 
 LICENSE="CDDL GPL-2-with-linking-exception"
 SLOT="$(get_major_version)"
