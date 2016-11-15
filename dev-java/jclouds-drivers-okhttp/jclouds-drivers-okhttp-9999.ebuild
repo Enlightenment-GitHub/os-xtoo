@@ -28,7 +28,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 CP_DEPEND="
-	dev-java/auto-service:0
 	dev-java/javax-inject:0
 	~dev-java/jclouds-core-${PV}:${SLOT}
 	dev-java/guava:20
