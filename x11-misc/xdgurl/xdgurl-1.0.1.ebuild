@@ -7,7 +7,7 @@ EAPI="6"
 
 DESCRIPTION="An install helper program for desktop stuff"
 HOMEPAGE="https://github.com/${PN}/${PN}/wiki"
-SRC_URI="https://github.com/${PN}/${PN}/archive/release-${PV}.zip -> ${P}.zip"
+SRC_URI="https://github.com/${PN}/${PN}/archive/release-${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
