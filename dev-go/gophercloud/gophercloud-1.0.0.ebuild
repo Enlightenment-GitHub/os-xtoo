@@ -20,7 +20,6 @@ DESCRIPTION="The Go SDK for Openstack"
 HOMEPAGE="https://${EGO_SRC}"
 LICENSE="Apache-2.0"
 SLOT="0"
-IUSE=""
 CDEPEND="dev-go/mapstructure
 	=dev-go/perigee-9999"
 DEPEND="${CDEPEND}"
