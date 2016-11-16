@@ -18,7 +18,6 @@ SRC_URI="https://github.com/${PN:0:9}/${PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.
 HOMEPAGE="http://${MY_PN}.org/"
 KEYWORDS="~amd64"
 LICENSE="LGPL-2.1"
-IUSE=""
 
 CP_DEPEND="dev-java/jboss-logging:0
 	dev-java/jboss-logging-annotations:2"
