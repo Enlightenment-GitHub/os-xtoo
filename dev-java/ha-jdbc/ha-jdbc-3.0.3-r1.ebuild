@@ -18,7 +18,6 @@ SRC_URI="https://github.com/${PN}/${PN}/archive/${PV}.tar.gz -> ${PN}-${PV}.tar.
 HOMEPAGE="http://${PN}.github.io/"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
-IUSE=""
 
 CP_DEPEND="dev-java/berkeley-db-je:0
 	dev-java/commons-codec:0
