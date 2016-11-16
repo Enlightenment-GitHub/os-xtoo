@@ -13,7 +13,6 @@ SRC_URI="http://${PN}.com/files/${P}-src.zip"
 HOMEPAGE="http://${PN}.com/"
 KEYWORDS="~amd64"
 LICENSE="GPL-2"
-IUSE=""
 
 CP_DEPEND="dev-java/antlr:3.5"
 
