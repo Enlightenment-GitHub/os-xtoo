@@ -18,7 +18,6 @@ SRC_URI="https://github.com/eclipse/jetty.alpn/archive/${MY_P}.tar.gz"
 HOMEPAGE="http://www.eclipse.org/${MY_PN}/documentation/current/alpn-chapter.html"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
-IUSE=""
 
 RDEPEND=">=virtual/jre-1.8"
 
