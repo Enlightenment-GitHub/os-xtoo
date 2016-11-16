@@ -15,7 +15,6 @@ SRC_URI="http://www.slf4j.org/dist/${P/-nop/}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64"
-IUSE=""
 
 CP_DEPEND="~dev-java/slf4j-api-${PV}:0"
 
