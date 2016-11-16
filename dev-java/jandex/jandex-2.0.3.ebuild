@@ -18,7 +18,6 @@ HOMEPAGE="https://github.com/${MY_PN}/${PN}"
 SRC_URI="${HOMEPAGE}/archive/${MY_PV}.zip -> ${P}.zip"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
-IUSE=""
 
 CP_DEPEND="dev-java/ant-core:0"
 
