@@ -19,7 +19,6 @@ SRC_URI="https://github.com/eclipse/${MY_PN}/archive/${MY_PV}.tar.gz -> ${P}.tar
 SLOT="$(get_major_version)"
 KEYWORDS="~amd64"
 LICENSE="EDL-1.0 EPL-1.0"
-IUSE=""
 
 CP_DEPEND="dev-java/osgi-core-api:6"
 
