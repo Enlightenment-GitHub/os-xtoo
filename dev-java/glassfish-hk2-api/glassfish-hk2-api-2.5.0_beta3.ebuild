@@ -19,7 +19,6 @@ LICENSE="CDDL GPL-2-with-linking-exception"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE=""
 
 CP_DEPEND="dev-java/aopalliance:1
 	dev-java/javax-inject:0
