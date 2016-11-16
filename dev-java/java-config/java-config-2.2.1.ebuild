@@ -14,7 +14,6 @@ HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Java"
 LICENSE="GPL-2"
 SLOT="2"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 # baselayout-java is added as a dep till it can be added to eclass.
 #	>=dev-java/java-config-wrapper-0.15
