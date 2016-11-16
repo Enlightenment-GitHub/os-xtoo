@@ -17,7 +17,6 @@ RESTRICT="fetch"
 LICENSE="oracle-jsr339"
 SLOT="2"
 KEYWORDS="~amd64"
-IUSE=""
 
 DEPEND="app-arch/unzip:0
 	>=virtual/jdk-1.8"
