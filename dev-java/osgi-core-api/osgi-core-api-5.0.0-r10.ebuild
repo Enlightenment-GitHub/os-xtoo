@@ -14,7 +14,6 @@ SRC_URI="http://www.osgi.org/download/r$(get_major_version)/osgi.core-${PV}.jar"
 LICENSE="Apache-2.0"
 SLOT="5"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
 DEPEND="app-arch/unzip:0
 	>=virtual/jdk-1.8"
