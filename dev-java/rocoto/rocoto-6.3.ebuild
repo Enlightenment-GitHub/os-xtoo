@@ -13,7 +13,6 @@ SRC_URI="https://github.com/99soft/${PN}/archive/${P}.tar.gz"
 HOMEPAGE="http://99soft.github.io/rocoto/"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
-IUSE=""
 
 CP_DEPEND="dev-java/guava:20
 	dev-java/guice:4
