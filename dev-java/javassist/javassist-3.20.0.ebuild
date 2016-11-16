@@ -17,7 +17,6 @@ SRC_URI="https://github.com/jboss-${PN}/${PN}/archive/${MY_P}.tar.gz -> ${P}.tar
 LICENSE="MPL-1.1"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE=""
 
 DEPEND="app-arch/unzip
 	>=virtual/jdk-1.8"
