@@ -10,7 +10,6 @@ HOMEPAGE="https://wiki.gentoo.org/wiki/Project:Java"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd"
-IUSE=""
 
 RDEPEND="
 	!app-eselect/eselect-ecj
