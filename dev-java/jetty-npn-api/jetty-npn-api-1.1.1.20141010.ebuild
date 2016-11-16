@@ -18,7 +18,6 @@ SRC_URI="http://central.maven.org/maven2/org/eclipse/${PN:0:5}/npn/${MY_PN}/${MY
 HOMEPAGE="https://wiki.eclipse.org/Jetty/Feature/NPN"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
-IUSE=""
 
 RDEPEND=">=virtual/jre-1.8"
 
