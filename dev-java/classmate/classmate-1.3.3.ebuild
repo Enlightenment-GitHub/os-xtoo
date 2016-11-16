@@ -16,7 +16,6 @@ SRC_URI="https://github.com/FasterXML/${MY_PN}/archive/${P}.tar.gz"
 HOMEPAGE="http://fasterxml.com"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
-IUSE=""
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
