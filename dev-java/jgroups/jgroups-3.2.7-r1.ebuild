@@ -17,7 +17,6 @@ HOMEPAGE="http://www.jgroups.org/"
 LICENSE="LGPL-2.1"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE=""
 
 CP_DEPEND="dev-java/bsh:0
 	dev-java/log4j:0"
