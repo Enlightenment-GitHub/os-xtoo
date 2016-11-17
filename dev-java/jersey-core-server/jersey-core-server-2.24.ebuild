@@ -33,7 +33,7 @@ CP_DEPEND="dev-java/asm:4
 	dev-java/osgi-core-api:6
 	dev-java/validation-api:1.0"
 
-DEPEND="app-arch/unzip:0
+DEPEND="
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
