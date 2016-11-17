@@ -20,7 +20,7 @@ LICENSE="Apache-2.0"
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-DEPEND="app-arch/unzip
+DEPEND="
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
