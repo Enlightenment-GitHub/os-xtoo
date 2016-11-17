@@ -25,7 +25,7 @@ CP_DEPEND="dev-java/aopalliance:1
 	~dev-java/glassfish-hk2-osgi-resource-locator-${PV}:${SLOT}
 	~dev-java/glassfish-hk2-utils-${PV}:${SLOT}"
 
-DEPEND="app-arch/unzip:0
+DEPEND="
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
