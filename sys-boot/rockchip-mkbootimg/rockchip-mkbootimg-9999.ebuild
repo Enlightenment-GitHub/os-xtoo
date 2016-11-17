@@ -10,7 +10,7 @@ if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
 	EGIT_REPO_URI="${HOMEPAGE}.git"
 else
-	SRC_URI="${HOMEPAGE}/archive/${PN}-master.zip -> ${P}.zip"
+	SRC_URI="${HOMEPAGE}/archive/${PN}-master.tar.gz -> ${P}.tar.gz"
 fi
 
 inherit ${ECLASS} toolchain-funcs
