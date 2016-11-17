@@ -23,7 +23,7 @@ IUSE=""
 
 CP_DEPEND="dev-java/javax-inject:0"
 
-DEPEND="app-arch/unzip:0
+DEPEND="
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
