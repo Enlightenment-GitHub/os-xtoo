@@ -18,7 +18,7 @@ LICENSE="MPL-1.1"
 SLOT="3"
 KEYWORDS="~amd64"
 
-DEPEND="app-arch/unzip
+DEPEND="
 	>=virtual/jdk-1.8"
 
 RDEPEND=">=virtual/jre-1.8"
