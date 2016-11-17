@@ -26,7 +26,7 @@ CP_DEPEND="dev-java/glassfish-hk2-api:0
 	dev-java/jax-rs:2
 	~dev-java/jersey-core-common-${PV}:${SLOT}"
 
-DEPEND="app-arch/unzip:0
+DEPEND="
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
