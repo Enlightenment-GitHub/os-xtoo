@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 CP_DEPEND="dev-java/bsh:0
 	dev-java/log4j:0"
 
-DEPEND="app-arch/unzip:0
+DEPEND="
 	dev-java/bnd:3
 	${CP_DEPEND}
 	>=virtual/jdk-1.7"
