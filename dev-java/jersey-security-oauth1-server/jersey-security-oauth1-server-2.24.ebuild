@@ -27,7 +27,7 @@ CP_DEPEND="dev-java/javax-inject:0
 	~dev-java/jersey-security-oauth1-signature-${PV}:${SLOT}
 	dev-java/jsr250:0"
 
-DEPEND="app-arch/unzip:0
+DEPEND="
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
