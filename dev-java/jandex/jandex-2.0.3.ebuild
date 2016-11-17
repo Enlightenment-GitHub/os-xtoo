@@ -15,7 +15,7 @@ MY_P="${PN}-${MY_PV}"
 
 SLOT="$(get_major_version)"
 HOMEPAGE="https://github.com/${MY_PN}/${PN}"
-SRC_URI="${HOMEPAGE}/archive/${MY_PV}.zip -> ${P}.zip"
+SRC_URI="${HOMEPAGE}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
 
@@ -24,7 +24,7 @@ CP_DEPEND="dev-java/ant-core:0"
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-DEPEND="app-arch/unzip
+DEPEND="
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
