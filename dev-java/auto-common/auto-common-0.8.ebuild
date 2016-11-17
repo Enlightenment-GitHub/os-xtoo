@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/guava:20"
 
-DEPEND="app-arch/unzip:0
+DEPEND="
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
