@@ -30,7 +30,7 @@ CP_DEPEND="dev-java/eclipse-javax-persistence:2
 	~dev-java/jersey-guava-${PV}:${SLOT}
 	java-virtuals/servlet-api:4.0"
 
-DEPEND="app-arch/unzip
+DEPEND="
 	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
