@@ -13,31 +13,28 @@ HOMEPAGE="https://github.com/${MY_PN}/${MY_PN}"
 if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
 	EGIT_REPO_URI="${HOMEPAGE}.git"
+	MY_S="${P}/${PN}"
+else
+	SRC_URI="${HOMEPAGE}/archive/${MY_P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
+	MY_S="${MY_PN}-${MY_PN}-${PV}/${PN}"
 fi
 
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Simple OAuth library for Java"
-
-if [[ ${PV} == 9999 ]]; then
-	S="${WORKDIR}/${P}/${PN}"
-else
-	SRC_URI="${HOMEPAGE}/archive/${MY_P}.zip"
-	KEYWORDS="~amd64 ~x86"
-	S="${WORKDIR}/${MY_PN}-${MY_PN}-${PV}/${PN}"
-fi
-
 LICENSE="MIT"
 SLOT="0"
 
 CP_DEPEND="dev-java/commons-codec:0
 	~dev-java/${MY_PN}-core-${PV}:${SLOT}"
 
-DEPEND="app-arch/unzip:0
-	${CP_DEPEND}
+DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
+
+S="${WORKDIR}/${MY_S}"
 
 JAVA_SRC_DIR="src/main/java/"
