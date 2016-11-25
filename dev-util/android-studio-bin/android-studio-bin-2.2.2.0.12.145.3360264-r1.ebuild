@@ -27,8 +27,8 @@ SRC_URI="https://dl.google.com/dl/android/studio/ide-zips/${STUDIO_V}/${MY_PN}-i
 
 LICENSE="Apache-2.0"
 SLOT="0"
-IUSE="selinux system-jvm"
-KEYWORDS="~amd64 ~x86"
+IUSE="kvm selinux system-jvm"
+KEYWORDS="~amd64"
 
 DEPEND="app-arch/unzip"
 
@@ -44,6 +44,7 @@ RDEPEND=">=virtual/jdk-1.8
 	>=media-libs/freetype-2.5.5
 	>=media-libs/libpng-1.2.51
 	>=media-libs/mesa-10.2.8
+	kvm? ( sys-fs/kvm )
 	|| ( >=sys-libs/ncurses-5.9-r3:5/5 >=sys-libs/ncurses-5.9-r3:0/5 )
 	>=sys-libs/zlib-1.2.8-r1
 	>=x11-libs/libX11-1.6.2

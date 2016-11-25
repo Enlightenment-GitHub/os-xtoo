@@ -5,6 +5,7 @@
     <email>wlt@o-sinc.com</email>
   </maintainer>
   <use>
+    <flag name="kvm">Prepare system for kvm use</flag>
     <flag name="system-jvm">Use the system java vm</flag>
   </use>
 </pkgmetadata>
