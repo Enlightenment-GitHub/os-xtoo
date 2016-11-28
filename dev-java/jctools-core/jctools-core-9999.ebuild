@@ -25,7 +25,12 @@ inherit java-pkg-2 java-pkg-simple ${ECLASS}
 DESCRIPTION="Java Concurrency Tools"
 HOMEPAGE="http://jctools.github.io/${MY_PN}/"
 LICENSE="Apache-2.0"
-SLOT="0"
+
+if [[ "$(get_major_version)" == "1" ]]; then
+	SLOT="0"
+else
+	SLOT="2"
+fi
 
 RDEPEND=">=virtual/jre-1.8"
 
