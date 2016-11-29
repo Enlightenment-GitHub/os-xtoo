@@ -17,8 +17,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
+BND_SLOT="3"
+
 CP_DEPEND="dev-java/ant-core:0
-	dev-java/bndlib:3
+	dev-java/bnd-annotation:${BND_SLOT}
+	dev-java/bndlib:${BND_SLOT}
 	dev-java/kxml:2
 	dev-java/osgi-core-api:5
 	dev-java/osgi-obr:0
