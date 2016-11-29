@@ -18,17 +18,20 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
+BND_SLOT="3"
+
 CP_DEPEND="dev-java/aqute-services-struct:0
-	dev-java/bndlib:3
-	dev-java/libg:3
+	dev-java/bnd-annotation:${BND_SLOT}
+	dev-java/bndlib:${BND_SLOT}
+	dev-java/libg:${BND_SLOT}
 	java-virtuals/servlet-api:4.0"
 
 DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
-	>=virtual/jdk-1.7"
+	>=virtual/jdk-1.8"
 
 RDEPEND="${CP_DEPEND}
-	>=virtual/jre-1.7"
+	>=virtual/jre-1.8"
 
 S="${WORKDIR}/"
 
