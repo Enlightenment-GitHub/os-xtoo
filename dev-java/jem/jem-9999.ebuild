@@ -9,7 +9,7 @@ if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
 	EGIT_REPO_URI="${BASE_URI}.git"
 else
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64"
 	SRC_URI="${BASE_URI}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 fi
 
@@ -28,12 +28,21 @@ DEPEND="debug? ( dev-util/valgrind
 	doc? ( app-doc/doxygen )
 "
 RDEPEND="
-	>=app-eselect/eselect-java-0.2.10
+	>=app-eselect/eselect-java-1
 	java-config? ( <dev-java/java-config-2.2.1 )
 	!java-config? (
 		>=dev-java/java-config-2.2.1
 	)
 "
+
+src_prepare() {
+	default
+
+	cp "${FILESDIR}"/java-vm.eselect "${S}" \
+		|| die "Failed to copy eselect module"
+	sed -i -e "s|VERSION=\".*\"|VERSION=\"${PV}\"|" "${S}/java-vm.eselect" \
+		|| die "Failed to sed eselect module version"
+}
 
 src_configure() {
 	local mytype="Release"
@@ -59,7 +68,7 @@ src_install() {
 	dodir /etc/jem/{build,virtuals.d,vms.d}
 
 	insinto /usr/share/eselect/modules/
-	doins "${FILESDIR}"/java-vm.eselect
+	doins "${S}"/java-vm.eselect
 
 	# copy preference files from java-config-2 if exist if not use default
 	local jc_files="build/compilers.conf build/jdk.conf virtuals"
