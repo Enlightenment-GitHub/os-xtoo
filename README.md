@@ -1,5 +1,5 @@
 # xtoo-overlay
-[![License](http://img.shields.io/badge/license-GPLv2-blue.svg?style=plastic)](https://github.com/Obsidian-StudiosInc/solitaire/blob/master/LICENSE)
+[![License](http://img.shields.io/badge/license-GPLv2-blue.svg?style=plastic)](https://github.com/Obsidian-StudiosInc/os-xtoo/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/Obsidian-StudiosInc/os-xtoo.svg?branch=master)](https://travis-ci.org/Obsidian-StudiosInc/os-xtoo)
 
 Obsidian-Studios, Inc. funtoo/gentoo overlay (a.k.a wltjr's overlay)
