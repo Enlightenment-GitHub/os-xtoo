@@ -25,6 +25,7 @@ RDEPEND="dev-lang/perl[ithreads]
 	dev-perl/Archive-Zip
 	dev-perl/BerkeleyDB
 	dev-perl/Digest-SHA1
+	dev-perl/Convert-Scalar
 	dev-perl/Convert-TNEF
 	dev-perl/Error
 	dev-perl/Email-MIME
