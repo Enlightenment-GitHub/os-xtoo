@@ -30,7 +30,9 @@ DEPEND="${JAVA_PKG_E_DEPEND}"
 RDEPEND="${DEPEND}"
 
 # Commons packages follow the same rules so do it here
-if [[ ${CATEGORY} = dev-java && ${PN} = commons-* ]]; then
+# Set JAVA_NO_COMMONS to any value to bypass
+if [[ -z ${JAVA_NO_COMMONS} ]] && \
+	[[ ${CATEGORY} = dev-java ]] && [[ ${PN} = commons-* ]]; then
 	HOMEPAGE="http://commons.apache.org/${PN#commons-}/"
 	SRC_URI="mirror://apache/${PN/-///}/source/${P}-src.tar.gz"
 fi
