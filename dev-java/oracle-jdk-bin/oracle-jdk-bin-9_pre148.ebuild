@@ -225,7 +225,7 @@ src_install() {
 	# Prune all fontconfig files so libfontconfig will be used and only install
 	# a Gentoo specific one if fontconfig is disabled.
 	# http://docs.oracle.com/javase/8/docs/technotes/guides/intl/fontconfig.html
-	rm "${ddest}"/jdk/lib/fontconfig.*
+	rm "${ddest}"/lib/fontconfig.*
 	if ! use fontconfig ; then
 		cp "${FILESDIR}"/fontconfig.Gentoo.properties "${T}"/fontconfig.properties || die
 		eprefixify "${T}"/fontconfig.properties
