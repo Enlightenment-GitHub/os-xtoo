@@ -5,24 +5,23 @@ EAPI="6"
 
 JAVA_PKG_IUSE="doc source"
 
-BASE_URI="https://github.com/JoanZapata/${PN}"
+HOMEPAGE="https://github.com/JoanZapata/${PN}"
 
 if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
-	EGIT_REPO_URI="${BASE_URI}.git"
+	EGIT_REPO_URI="${HOMEPAGE}.git"
 	MY_S="${P}"
 else
-	SRC_URI="${BASE_URI}/archive/${P}.tar.gz"
+	SRC_URI="${HOMEPAGE}/archive/${P}.tar.gz"
 	KEYWORDS="~amd64"
 	MY_S="${PN}-${P}"
 fi
 
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
-DESCRIPTION="JClouds Core"
-SLOT="0"
-HOMEPAGE="https://jclouds.apache.org/"
+DESCRIPTION="Alternative for String.format() for cases with a lot of arguments"
 LICENSE="Apache-2.0"
+SLOT="0"
 
 DEPEND=">=virtual/jdk-1.8"
 
