@@ -28,8 +28,12 @@ SLOT="$(get_major_version)"
 HOMEPAGE="https://mongodb.github.io/${MY_PN}/"
 LICENSE="Apache-2.0"
 
+NETTY_SLOT="4.1"
+
 CP_DEPEND="
 	~dev-java/bson-${PV}:${SLOT}
+	dev-java/netty-common:${NETTY_SLOT}
+	dev-java/netty-transport:${NETTY_SLOT}
 	~dev-java/mongodb-driver-core-${PV}:${SLOT}
 "
 
