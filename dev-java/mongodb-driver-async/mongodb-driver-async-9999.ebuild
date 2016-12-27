@@ -5,9 +5,10 @@ EAPI="6"
 
 JAVA_PKG_IUSE="doc source"
 
-BASE_URI="https://github.com/${PN:0:7}/${MY_PN}"
 MY_PN="mongo-java-driver"
 MY_P="${MY_PN}-r${PV}"
+
+BASE_URI="https://github.com/${PN:0:7}/${MY_PN}"
 
 if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
