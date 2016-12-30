@@ -38,9 +38,11 @@ CP_DEPEND="
 	dev-java/objenesis:2
 "
 
-DEPEND=">=virtual/jdk-1.8"
+DEPEND="${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
-RDEPEND=">=virtual/jre-1.8"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
 S="${WORKDIR}/${MY_S}"
 
