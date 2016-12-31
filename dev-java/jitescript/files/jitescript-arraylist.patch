@@ -1,0 +1,44 @@
+diff --git a/src/main/java/me/qmx/jitescript/FieldDefinition.java b/src/main/java/me/qmx/jitescript/FieldDefinition.java
+index d9fee39..2b51a9f 100644
+--- a/src/main/java/me/qmx/jitescript/FieldDefinition.java
++++ b/src/main/java/me/qmx/jitescript/FieldDefinition.java
+@@ -2,6 +2,8 @@ package me.qmx.jitescript;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
++
++import org.objectweb.asm.tree.AnnotationNode;
+ import org.objectweb.asm.tree.FieldNode;
+ 
+ public class FieldDefinition {
+@@ -22,7 +24,7 @@ public class FieldDefinition {
+ 
+     public FieldNode getFieldNode() {
+         FieldNode node = new FieldNode(modifiers, fieldName, signature, null, value);
+-        node.visibleAnnotations = new ArrayList<VisibleAnnotation>();
++        node.visibleAnnotations = new ArrayList<AnnotationNode>();
+         for (VisibleAnnotation annotation : annotations) {
+             node.visibleAnnotations.add(annotation.getNode());
+         }
+diff --git a/src/main/java/me/qmx/jitescript/MethodDefinition.java b/src/main/java/me/qmx/jitescript/MethodDefinition.java
+index e88fb61..5dd4d50 100644
+--- a/src/main/java/me/qmx/jitescript/MethodDefinition.java
++++ b/src/main/java/me/qmx/jitescript/MethodDefinition.java
+@@ -16,6 +16,8 @@
+ package me.qmx.jitescript;
+ 
+ import java.util.ArrayList;
++
++import org.objectweb.asm.tree.AnnotationNode;
+ import org.objectweb.asm.tree.LocalVariableNode;
+ import org.objectweb.asm.tree.MethodNode;
+ import org.objectweb.asm.tree.TryCatchBlockNode;
+@@ -55,7 +57,7 @@ public class MethodDefinition {
+ 
+     public MethodNode getMethodNode() {
+         MethodNode method = new MethodNode(getModifiers(), getMethodName(), getSignature(), null, null);
+-        method.visibleAnnotations = new ArrayList<VisibleAnnotation>();
++        method.visibleAnnotations = new ArrayList<AnnotationNode>();
+         method.instructions.add(getMethodBody().getInstructionList());
+         for (TryCatchBlockNode tryCatchBlockNode : getMethodBody().getTryCatchBlockList()) {
+             method.tryCatchBlocks.add(tryCatchBlockNode);
