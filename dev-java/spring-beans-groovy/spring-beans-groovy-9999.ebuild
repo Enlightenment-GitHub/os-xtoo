@@ -51,7 +51,7 @@ src_compile() {
 	# compile dep/boostrap class :(
 	local my_class
 	my_class="${S}/${JAVA_SRC_DIR}/org/springframework/beans/factory/groovy/GroovyBeanDefinitionWrapper"
-	javac -cp $(java-pkg_getjars groovy,spring-beans-${SLOT},spring-core-${SLOT}) \
+	ejavac -cp $(java-pkg_getjars groovy,spring-beans-${SLOT},spring-core-${SLOT}) \
 		"${my_class}.java" || die "javac ${my_class}.java failed"
 
 	# compile groovy
