@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -10,7 +10,7 @@ MY_P="tomcat-connectors-${PV#-*}-src"
 
 KEYWORDS="~amd64 ~x86"
 
-DESCRIPTION="JK module for connecting Tomcat and Apache using the ajp13 protocol."
+DESCRIPTION="Module for connecting Tomcat and Apache using the ajp13 protocol"
 HOMEPAGE="http://tomcat.apache.org/connectors-doc/"
 SRC_URI="mirror://apache/tomcat/tomcat-connectors/jk/${MY_P}.tar.gz"
 LICENSE="Apache-2.0"
@@ -25,7 +25,7 @@ APACHE2_MOD_DEFINE="JK"
 
 CONF_DIR="${WORKDIR}/${MY_P}/conf"
 
-DEPEND="java? ( >=virtual/jdk-1.4 )"
+DEPEND="java? ( >=virtual/jdk-1.8 )"
 RDEPEND=""
 
 need_apache
@@ -54,8 +54,6 @@ src_compile() {
 src_install() {
 	# install the workers.properties file
 	insinto "${APACHE_CONFDIR}"
-	newins "${CONF_DIR}/workers.properties.minimal" \
-		jk-workers-minimal.properties
 	newins "${CONF_DIR}/workers.properties" \
 		jk-workers.properties
 	doins "${CONF_DIR}/uriworkermap.properties"
