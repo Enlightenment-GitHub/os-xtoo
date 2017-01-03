@@ -44,7 +44,7 @@ Ebuilds in this overlay are a constant work in progress. They are added
 via the following process.
 
 1. Ensure it builds and merges
-⋅⋅1a. Ensure dependencies can build and merge against package
+  1. Ensure dependencies can build and merge against package
 2. Ensure it runs and is usable, add missing files, set version, etc
 3. Dial in package to meet upstream package
 
