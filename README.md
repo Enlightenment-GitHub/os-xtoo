@@ -37,3 +37,18 @@ source, such as
 # Ebuild written by "William L. Thomson Jr." <wlt@o-sinc.com>
 # <link to ebuild in this repo>
 ```
+
+## Process
+
+Ebuilds in this overlay are a constant work in progress. They are added 
+via the following process.
+
+1. Ensure it builds and merges
+⋅⋅1a. Ensure dependencies can build and merge against package
+2. Ensure it runs and is usable, add missing files, set version, etc
+3. Dial in package to meet upstream package
+
+All ebuilds in this overlay meet at least step 1, and 1a. Step 2 is 
+done when the package is used directly as a libary in a project and/or 
+via an existing application that uses it directly. Step 3 is a 
+finalization step.
