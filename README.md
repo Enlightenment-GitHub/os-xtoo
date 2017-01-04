@@ -12,7 +12,7 @@ Go GENTOO! :-1:
 ## About
 This overlay mostly contains Java related ebuilds. Most of the 
 ebuilds are not in tree, but some are corrections, newer versions 
-and/or slot chantes. Initial support for Java 9, JDK only at this time. 
+and/or slot changes. Initial support for Java 9, JDK only at this time. 
 
 Effort will be made to keep packages in this overlay up to date. All 
 ebuilds in this overlay should be production quality and many are used 
