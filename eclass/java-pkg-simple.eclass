@@ -94,6 +94,7 @@ java-pkg-simple_src_compile() {
 
 	# gather sources
 	find ${JAVA_SRC_DIR:-*} -name \*.java > ${sources}
+	[[ ! -s ${sources} ]] && die "*.java files not found in ${JAVA_SRC_DIR}"
 	mkdir -p ${classes} || die "Could not create target directory"
 
 	# compile
