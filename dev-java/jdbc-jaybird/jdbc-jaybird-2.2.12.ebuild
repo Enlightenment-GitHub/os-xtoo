@@ -26,7 +26,6 @@ RDEPEND="${CDEPEND}
 
 DEPEND="${CDEPEND}
 	>=virtual/jdk-1.8
-	
 	jni? ( dev-java/cpptasks )
 	test? ( dev-java/ant-junit:0 )"
 
