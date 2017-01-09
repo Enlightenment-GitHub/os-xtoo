@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 inherit java-pkg-2 java-pkg-simple
 
 MY_PN="${PN:10:3}"
-MY_PV="${PV/_beta/-b0}"
+MY_PV="${PV%*_beta*}-b$( printf "%02d" ${PV#*_beta*})"
 MY_P="${MY_PN}-parent-${MY_PV}"
 
 DESCRIPTION="Glassfish HK2 Implementation Utilities"
