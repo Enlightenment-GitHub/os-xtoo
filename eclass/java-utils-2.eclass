@@ -2388,7 +2388,6 @@ java-pkg_do_write_() {
 	# Create package.env
 	(
 		echo "DESCRIPTION=\"${DESCRIPTION}\""
-		echo "GENERATION=\"2\""
 		echo "SLOT=\"${SLOT}\""
 		echo "CATEGORY=\"${CATEGORY}\""
 		echo "PVR=\"${PVR}\""
