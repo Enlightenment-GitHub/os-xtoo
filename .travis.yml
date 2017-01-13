@@ -13,7 +13,7 @@ before_script:
     - shopt -s extglob
     - export PORTAGE_VER="2.3.3"
     - mv !(travis-overlay) travis-overlay/
-    - mv .git travis-overlay/
+    - mv .git .travis_repoman-copyright.patch travis-overlay/
     - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/.travis.yml" -O .travis.yml.upstream
     - wget "https://raw.githubusercontent.com/mrueg/repoman-travis/master/spinner.sh"
     - wget "https://github.com/gentoo/portage/archive/portage-${PORTAGE_VER}.tar.gz" -O portage-${PORTAGE_VER}.tar.gz
@@ -32,6 +32,8 @@ before_script:
     - SIZE=$(stat -c %s .travis.yml.upstream)
     - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
     - mv spinner.sh portage-${PORTAGE_VER} travis-overlay /tmp
+    - cd /tmp/portage-${PORTAGE_VER}/repoman
+    - patch -p1 < /tmp/travis-overlay/.travis_repoman-copyright.patch
     - cd /tmp/travis-overlay
 script:
 #    - ./../spinner.sh "python ../portage-${PORTAGE_VER}/repoman/bin/repoman full -d"
