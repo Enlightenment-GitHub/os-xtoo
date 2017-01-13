@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -10,7 +10,6 @@ MY_P="${MY_PN}-${PV}"
 BASE_PN="linux-firmware"
 BASE_URI="git.kernel.org"
 MY_PATH="linux/kernel/git/firmware/${BASE_PN}.git"
-
 
 if [[ ${PV} == 9999* ]]; then
 	ECLASS="git-r3"
@@ -27,7 +26,6 @@ inherit savedconfig ${ECLASS}
 
 DESCRIPTION="Linux firmware files"
 HOMEPAGE="https://${BASE_URI}/?p=${MY_PATH}"
-
 LICENSE="GPL-1 GPL-2 GPL-3 BSD freedist"
 SLOT="0"
 IUSE="savedconfig"
