@@ -19,7 +19,6 @@ LICENSE="CDDL GPL-2-with-linking-exception"
 SLOT="0"
 KEYWORDS="~amd64"
 
-
 CP_DEPEND="dev-java/osgi-core-api:6"
 
 DEPEND="
