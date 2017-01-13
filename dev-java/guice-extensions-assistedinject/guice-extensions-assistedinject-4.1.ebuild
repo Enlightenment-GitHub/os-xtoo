@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -17,10 +17,11 @@ LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
 KEYWORDS="~amd64"
 
-
-CP_DEPEND="dev-java/guava:20
+CP_DEPEND="
+	dev-java/guava:20
 	dev-java/guice:${SLOT}
-	dev-java/javax-inject:0"
+	dev-java/javax-inject:0
+"
 
 RDEPEND=">=virtual/jre-1.8
 	${CP_DEPEND}"
