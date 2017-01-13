@@ -19,7 +19,6 @@ LICENSE="CDDL GPL-2-with-linking-exception"
 SLOT="0"
 KEYWORDS="~amd64"
 
-
 CP_DEPEND="dev-java/aopalliance:1
 	~dev-java/glassfish-hk2-api-${PV}:${SLOT}
 	~dev-java/glassfish-hk2-utils-${PV}:${SLOT}
