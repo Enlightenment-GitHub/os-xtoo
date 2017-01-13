@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -34,7 +34,6 @@ CP_DEPEND="dev-java/berkeley-db-je:0
 # java one for a reason
 #	sys-libs/db:6.0[java]
 
-
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
@@ -52,7 +51,7 @@ java_prepare() {
 		${JAVA_SRC_DIR}/net/sf/hajdbc/Version.properties \
 		|| die "Could not set version"
 
-	cp ${WORKDIR}/${PN}.xsd ${JAVA_ADDRES_DIRS}/ \
+	cp "${WORKDIR}/${PN}.xsd" ${JAVA_ADDRES_DIRS}/ \
 		|| die "Could not copy ${PN}-${MY_MM}.xsd to resources"
 
 	# Change from Java Edition to Regular
