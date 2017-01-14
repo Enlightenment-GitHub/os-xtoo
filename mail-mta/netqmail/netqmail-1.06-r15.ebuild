@@ -1,6 +1,6 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/netqmail/netqmail-1.06-r2.ebuild,v 1.13 2013/06/09 16:01:23 ago Exp $
+# $Id$
 
 EAPI=5
 
@@ -16,6 +16,8 @@ QMAIL_BIGTODO_F=big-todo.${QMAIL_BIGTODO_PV}.patch
 
 QMAIL_LARGE_DNS='qmail-103.patch'
 
+QMAIL_SMTPUTF8='qmail-smtputf8.patch'
+
 inherit eutils qmail
 
 DESCRIPTION="qmail -- a secure, reliable, efficient, simple message transfer agent"
@@ -25,9 +27,10 @@ HOMEPAGE="
 	http://qmail.org
 "
 SRC_URI="mirror://qmail/${P}.tar.gz
-	http://dev.gentoo.org/~hollow/distfiles/${GENQMAIL_F}
+	https://dev.gentoo.org/~hollow/distfiles/${GENQMAIL_F}
 	http://www.ckdhr.com/ckd/${QMAIL_LARGE_DNS}
 	http://inoa.net/qmail-tls/${QMAIL_TLS_CVE}
+	http://arnt.gulbrandsen.priv.no/qmail/qmail-smtputf8.patch
 	!vanilla? (
 		highvolume? ( mirror://qmail/${QMAIL_BIGTODO_F} )
 		qmail-spp? ( mirror://sourceforge/qmail-spp/${QMAIL_SPP_F} )
@@ -38,15 +41,20 @@ SRC_URI="mirror://qmail/${P}.tar.gz
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="authcram gencertdaily highvolume ipv6 qmail-spp ssl vanilla"
+IUSE="authcram gencertdaily highvolume ipv6 libressl qmail-spp ssl vanilla"
 REQUIRED_USE='vanilla? ( !ssl !qmail-spp !highvolume )'
 RESTRICT="test"
 
 DEPEND="
 	!mail-mta/qmail
 	net-mail/queue-repair
-	ssl? ( dev-libs/openssl:0 )
+	ssl? (
+		!libressl? ( dev-libs/openssl:0 )
+		libressl? ( dev-libs/libressl )
+	)
+	sys-apps/gentoo-functions
 	sys-apps/groff
+	net-dns/libidn2
 "
 RDEPEND="
 	!mail-mta/courier
@@ -90,7 +98,6 @@ src_unpack() {
 }
 
 src_prepare() {
-
 	epatch "${FILESDIR}"/${PV}-exit.patch
 	epatch "${FILESDIR}"/${PV}-readwrite.patch
 	epatch "${DISTDIR}"/${QMAIL_LARGE_DNS}
@@ -102,7 +109,7 @@ src_prepare() {
 		# This patch contains relative paths and needs to be cleaned up.
 		sed 's~^--- ../../~--- ~g' \
 			<"${DISTDIR}"/${QMAIL_TLS_F} \
-			>"${T}"/${QMAIL_TLS_F}
+			>"${T}"/${QMAIL_TLS_F} || die
 		use ssl        && epatch "${T}"/${QMAIL_TLS_F}
 		use ssl        && epatch "${DISTDIR}"/${QMAIL_TLS_CVE}
 		use highvolume && epatch "${DISTDIR}"/${QMAIL_BIGTODO_F}
@@ -113,22 +120,28 @@ src_prepare() {
 			else
 				epatch "${QMAIL_SPP_S}"/netqmail-spp.diff
 			fi
-			cd "${WORKDIR}"
+			cd "${WORKDIR}" || die
 			epatch "${FILESDIR}"/genqmail-20080406-ldflags.patch
-			cd -
+			cd - || die
 		fi
-
 		if use ipv6; then
 			epatch "${FILESDIR}"/${PV}-ipv6.patch
 		fi
+
 	fi
+
+	cd "${WORKDIR}" || die
+	epatch "${FILESDIR}"/use-new-path-for-functions.sh.patch
+# Conflicts with ipv6 patch
+#	epatch "${FILESDIR}"/qmail-smtputf8.patch
+	cd - || die
 
 	qmail_src_postunpack
 
 	# Fix bug #33818 but for netqmail (Bug 137015)
 	if ! use authcram; then
 		einfo "Disabled CRAM_MD5 support"
-		sed -e 's,^#define CRAM_MD5$,/*&*/,' -i "${S}"/qmail-smtpd.c
+		sed -e 's,^#define CRAM_MD5$,/*&*/,' -i "${S}"/qmail-smtpd.c || die
 	else
 		einfo "Enabled CRAM_MD5 support"
 	fi
@@ -152,7 +165,7 @@ pkg_postinst() {
 	qmail_supervise_config_notice
 	elog
 	elog "If you are looking for documentation, check those links:"
-	elog "http://www.gentoo.org/doc/en/qmail-howto.xml"
+	elog "https://www.gentoo.org/doc/en/qmail-howto.xml"
 	elog "  -- qmail/vpopmail Virtual Mail Hosting System Guide"
 	elog "http://www.lifewithqmail.com/"
 	elog "  -- Life with qmail"
