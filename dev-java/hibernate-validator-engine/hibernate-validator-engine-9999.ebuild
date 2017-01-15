@@ -39,7 +39,7 @@ CP_DEPEND="
 "
 
 DEPEND="${CP_DEPEND}
-	>=virtual/jdk-1.8"
+	>=dev-java/oracle-jdk-bin-1.8[javafx]"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
