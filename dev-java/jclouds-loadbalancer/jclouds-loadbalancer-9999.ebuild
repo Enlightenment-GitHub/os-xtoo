@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -29,7 +29,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 CP_DEPEND="
-	dev-java/guava:20
+	dev-java/guava:21
 	dev-java/guice:4
 	~dev-java/jclouds-core-${PV}:${SLOT}
 	~dev-java/jclouds-compute-${PV}:${SLOT}
