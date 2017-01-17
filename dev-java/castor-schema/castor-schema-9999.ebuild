@@ -15,7 +15,8 @@ if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
 	EGIT_REPO_URI="${BASE_URI}.git"
 else
-	SRC_URI="${BASE_URI}/archive/v${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
+#	SRC_URI="${BASE_URI}/archive/v${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
+	SRC_URI="http://repo1.maven.org/maven2/org/codehaus/${MY_PN}/${PN/-/-xml-}/${PV}/${P/r-s/r-xml-s}-sources.jar"
 	KEYWORDS="~amd64"
 fi
 
@@ -39,22 +40,22 @@ DEPEND="${CP_DEPEND}
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-S="${WORKDIR}/${MY_P}/${PN:7}"
+#S="${WORKDIR}/${MY_P}/${PN:7}"
 
-JAVA_SRC_DIR="src/main/java"
-JAVA_ADDRES_DIRS="src/main/resources"
+#JAVA_SRC_DIR="src/main/java"
+#JAVA_ADDRES_DIRS="src/main/resources"
 
-java_prepare() {
-	local my_path
-	my_path="${S}/${JAVA_ADDRES_DIRS}/org/exolab/castor/xml/schema/annotations"
-	xjc -enableIntrospection -extension \
-		-d "${S}/${JAVA_SRC_DIR}" \
-		-p org.exolab.castor.xml.schema.annotations.jdo \
-		"${my_path}/jdo/jdo-extensions.xsd" \
-		|| die "Failed to generate java files via xjc"
-	xjc -enableIntrospection -extension \
-		-d "${S}/${JAVA_SRC_DIR}" \
-		-p org.exolab.castor.xml.schema.annotations.solrj \
-		"${my_path}/solrj-extensions.xsd" \
-		|| die "Failed to generate java files via xjc"
-}
+#java_prepare() {
+#	local my_path
+#	my_path="${S}/${JAVA_ADDRES_DIRS}/org/exolab/castor/xml/schema/annotations"
+#	xjc -enableIntrospection -extension \
+#		-d "${S}/${JAVA_SRC_DIR}" \
+#		-p org.exolab.castor.xml.schema.annotations.jdo \
+#		"${my_path}/jdo/jdo-extensions.xsd" \
+#		|| die "Failed to generate java files via xjc"
+#	xjc -enableIntrospection -extension \
+#		-d "${S}/${JAVA_SRC_DIR}" \
+#		-p org.exolab.castor.xml.schema.annotations.solrj \
+#		"${my_path}/solrj-extensions.xsd" \
+#		|| die "Failed to generate java files via xjc"
+#}
