@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 CP_DEPEND="dev-java/auto-common:0
-	dev-java/guava:20"
+	dev-java/guava:21"
 
 DEPEND="
 	${CP_DEPEND}
