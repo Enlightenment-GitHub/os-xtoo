@@ -18,7 +18,7 @@ SLOT="$(get_major_version)"
 KEYWORDS="~amd64"
 
 CP_DEPEND="
-	dev-java/guava:20
+	dev-java/guava:21
 	dev-java/guice:${SLOT}
 	dev-java/javax-inject:0
 "
