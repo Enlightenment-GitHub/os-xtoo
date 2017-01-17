@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 CP_DEPEND="
 	dev-java/asm:4
 	dev-java/aopalliance:1
-	dev-java/guava:20
+	dev-java/guava:21
 	dev-java/javax-inject:0
 "
 
