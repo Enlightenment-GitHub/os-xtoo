@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source examples test"
 
 MY_PN="${PN/jdbc-/}"
 MY_PV="${PV/_/-}"
-MY_PV="${MY_PV/beta1/beta-1}"
+MY_PV="${MY_PV/beta/beta-}"
 
 BASE_URI="https://github.com/FirebirdSQL/${MY_PN}"
 
