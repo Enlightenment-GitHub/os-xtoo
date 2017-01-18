@@ -28,9 +28,11 @@ HOMEPAGE="https://${MY_PN}.io/"
 LICENSE="Apache-2.0"
 SLOT="$(get_version_component_range 1-2)"
 
+BCV="1.56"
+
 CP_DEPEND="
-	dev-java/bcpkix:1.52
-	dev-java/bcprov:1.52
+	dev-java/bcpkix:${BCV}
+	dev-java/bcprov:${BCV}
 	dev-java/jetty-alpn-api:0
 	dev-java/jetty-npn-api:0
 	~dev-java/netty-buffer-${PV}:${SLOT}
