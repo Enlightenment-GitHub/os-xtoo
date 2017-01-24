@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -10,7 +10,7 @@ inherit java-pkg-2 java-pkg-simple
 DESCRIPTION="Jetty's JASPI"
 
 MY_PN="jetty"
-MY_PV="${PV/2016/v2016}"
+MY_PV="$(replace_version_separator 3 '.v')"
 MY_PV="${MY_PV/_rc/.RC}"
 MY_P="${MY_PN}-${MY_PV}"
 
