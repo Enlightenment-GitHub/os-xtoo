@@ -2,8 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="project">
-		<email>java@gentoo.org</email>
-		<name>Java</name>
+		<email>wlt@o-sinc.com</email>
 	</maintainer>
 	<longdescription>
 	The Apache Tomcat implementation of the Servlet API specification.
