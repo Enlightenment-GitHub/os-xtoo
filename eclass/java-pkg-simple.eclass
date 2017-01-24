@@ -93,6 +93,9 @@ java-pkg-simple_src_compile() {
 	java-pkg_gen-cp JAVA_GENTOO_CLASSPATH
 
 	# gather sources
+	if [[ -z ${JAVA_SRC_DIR} ]] && [[ -d "${S}/src/main/java" ]]; then
+		JAVA_SRC_DIR="src/main/java"
+	fi
 	find ${JAVA_SRC_DIR:-*} -name \*.java > ${sources}
 	[[ ! -s ${sources} ]] && die "*.java files not found in ${JAVA_SRC_DIR}"
 	mkdir -p ${classes} || die "Could not create target directory"
