@@ -1,4 +1,4 @@
-# Copyright 2016 Gentoo Foundation
+# Copyright 2016-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -133,6 +133,7 @@ src_prepare() {
 		-e 's|$base/$file.tmp|$file.tmp|g' \
 		-e 's|$file.tmp","$base/$file"|$file.tmp","$file"|g' \
 		-e 's|$base/version.txt|/etc/assp/version.txt|g' \
+		-e 's|nointchk = '\''int'\''|nointchk = 1|g' \
 		assp.pl || die
 
 	sed -i -e 's|$base/images|/usr/share/assp/images|g' \
