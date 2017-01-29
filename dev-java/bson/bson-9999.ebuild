@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 MY_PN="mongo-java-driver"
 MY_P="${MY_PN}-r${PV}"
 
-BASE_URI="https://github.com/${PN:0:7}/${MY_PN}"
+BASE_URI="https://github.com/mongodb/${MY_PN}"
 
 if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
