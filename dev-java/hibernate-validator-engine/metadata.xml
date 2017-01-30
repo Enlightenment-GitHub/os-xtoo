@@ -4,4 +4,7 @@
   <maintainer type="person">
     <email>wlt@o-sinc.com</email>
   </maintainer>
+  <use>
+    <flag name="javafx">Include JavaFXPropertyValueUnwrapper class</flag>
+  </use>
 </pkgmetadata>

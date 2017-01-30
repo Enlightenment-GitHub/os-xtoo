@@ -25,6 +25,7 @@ DESCRIPTION="Hibernate Validator ${PN:20}"
 HOMEPAGE="http://hibernate.org/validator"
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
+IUSE="javafx"
 
 CP_DEPEND="
 	dev-java/beanvalidation-api:1.1
@@ -39,22 +40,27 @@ CP_DEPEND="
 "
 
 DEPEND="${CP_DEPEND}
-	>=dev-java/oracle-jdk-bin-1.8[javafx]"
+	javafx? ( >=dev-java/oracle-jdk-bin-1.8[javafx] )
+	!javafx? ( >=virtual/jdk-1.8 )"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
 S="${WORKDIR}/${MY_P}/${PN:20}"
 
-JAVA_SRC_DIR="src/main/java"
 JAVA_ADDRES_DIRS="src/main/resources"
 
 java_prepare() {
 	xjc -enableIntrospection \
 		-p org.hibernate.validator.internal.xml \
-		-extension -target 2.1 -d "${S}/${JAVA_SRC_DIR}" \
+		-extension -target 2.1 -d "${S}/src/main/java" \
 		"${S}/src/main/xsd/validation-configuration-1.1.xsd" \
 		"${S}/src/main/xsd/validation-mapping-1.1.xsd" \
 		-b "${S}/src/main/xjb/binding-customization.xjb" \
 		|| die "Failed to generate java files via xjc"
+
+	if ! use javafx; then
+		rm -v "${S}/src/main/java/org/hibernate/validator/internal/engine/valuehandling/JavaFXPropertyValueUnwrapper.java" \
+			|| die "Could not remove JavaFXPropertyValueUnwrapper.java"
+	fi
 }
