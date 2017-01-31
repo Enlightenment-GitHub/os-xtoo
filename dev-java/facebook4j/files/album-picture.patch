@@ -1,0 +1,68 @@
+diff --git a/src/main/java/facebook4j/Album.java b/src/main/java/facebook4j/Album.java
+index 509a5ab..15c23fd 100644
+--- a/src/main/java/facebook4j/Album.java
++++ b/src/main/java/facebook4j/Album.java
+@@ -37,6 +37,7 @@ public interface Album extends FacebookResponse {
+     Date getUpdatedTime();
+     Boolean canUpload();
+     Place getPlace();
++    Picture getPicture();
+     
+     PagableList<Like> getLikes();
+     PagableList<Comment> getComments();
+diff --git a/src/main/java/facebook4j/internal/json/AlbumJSONImpl.java b/src/main/java/facebook4j/internal/json/AlbumJSONImpl.java
+index 62ddbea..7186f5c 100644
+--- a/src/main/java/facebook4j/internal/json/AlbumJSONImpl.java
++++ b/src/main/java/facebook4j/internal/json/AlbumJSONImpl.java
+@@ -48,6 +48,7 @@ import static facebook4j.internal.util.z_F4JInternalParseUtil.*;
+     private Date updatedTime;
+     private Boolean canUpload;
+     private Place place;
++    private Picture picture;
+     
+     private PagableList<Like> likes;
+     private PagableList<Comment> comments;
+@@ -90,7 +91,14 @@ import static facebook4j.internal.util.z_F4JInternalParseUtil.*;
+                 JSONObject placeJSONObject = json.getJSONObject("place");
+                 place = new PlaceJSONImpl(placeJSONObject);
+             }
+-            
++
++            if (!json.isNull("picture")) {
++                JSONObject pictureJSONObject = json.getJSONObject("picture");
++                if (!pictureJSONObject.isNull("data")) {
++                    picture = new PictureJSONImpl(pictureJSONObject);
++                }
++            }
++
+             if (!json.isNull("likes")) {
+                 JSONObject likesJSONObject = json.getJSONObject("likes");
+                 if (!likesJSONObject.isNull("data")) {
+@@ -124,7 +132,7 @@ import static facebook4j.internal.util.z_F4JInternalParseUtil.*;
+             } else {
+                 comments = new PagableListImpl<Comment>(0);
+             }
+-            
++
+             if (!json.isNull("reactions")) {
+                 JSONObject reactionsJSONObject = json.getJSONObject("reactions");
+                 if (!reactionsJSONObject.isNull("data")) {
+@@ -203,6 +211,10 @@ import static facebook4j.internal.util.z_F4JInternalParseUtil.*;
+         return place;
+     }
+ 
++    public Picture getPicture() {
++        return picture;
++    }
++
+     public PagableList<Like> getLikes() {
+         return likes;
+     }
+@@ -284,6 +296,7 @@ import static facebook4j.internal.util.z_F4JInternalParseUtil.*;
+                  ", updatedTime=" + updatedTime +
+                  ", canUpload=" + canUpload +
+                  ", place=" + place +
++                 ", picture=" + picture +
+                  ", likes=" + likes +
+                  ", comments=" + comments +
+                  '}';

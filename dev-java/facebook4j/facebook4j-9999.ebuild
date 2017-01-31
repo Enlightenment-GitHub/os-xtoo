@@ -35,3 +35,7 @@ RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
 S="${WORKDIR}/${P}/${PN}-core"
+
+PATCHES=(
+	"${FILESDIR}/album-picture.patch"
+)
