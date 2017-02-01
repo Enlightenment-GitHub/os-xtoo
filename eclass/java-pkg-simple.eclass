@@ -131,6 +131,10 @@ java-pkg-simple_src_compile() {
 	jar ${jar_args} -C ${classes} . || die "jar failed"
 
 	# Add resources in the sources to the jar
+	if [[ -z ${JAVA_ADDRES_DIRS} ]] && \
+		[[ -d "${S}/src/main/resources" ]]; then
+		JAVA_SRC_DIR="src/main/resources"
+	fi
 	java-pkg_addres ${JAVA_JAR_FILENAME} ${JAVA_SRC_DIR:-.} ${JAVA_ADDRES_ARGS}
 }
 
