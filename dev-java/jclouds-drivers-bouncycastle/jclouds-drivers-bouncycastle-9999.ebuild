@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -15,9 +15,11 @@ DRIVER="${PN:16}"
 if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
 	EGIT_REPO_URI="${BASE_URI}.git"
+	MY_S="${P}"
 else
 	SRC_URI="${BASE_URI}/archive/rel/${MY_P}.tar.gz"
 	KEYWORDS="~amd64"
+	MY_S="${MY_PN}-rel-${MY_P}"
 fi
 
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
@@ -27,9 +29,8 @@ HOMEPAGE="https://jclouds.apache.org/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
-#	dev-java/auto-service:0
 CP_DEPEND="
-	dev-java/bcprov:1.54
+	dev-java/bcprov:1.56
 	dev-java/javax-inject:0
 	~dev-java/jclouds-core-${PV}:${SLOT}
 	dev-java/guice:4
@@ -41,10 +42,4 @@ DEPEND="${CP_DEPEND}
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
-if [[ ${PV} == 9999 ]]; then
-	S="${WORKDIR}/${P}/${PN:8:7}/${DRIVER}"
-else
-	S="${WORKDIR}/${MY_PN}-rel-${MY_P}/${PN:8:7}/${DRIVER}"
-fi
-
-JAVA_SRC_DIR="src/main/java"
+S="${WORKDIR}/${MY_S}/${PN:8:7}/${DRIVER}"
