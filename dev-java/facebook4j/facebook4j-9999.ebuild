@@ -38,4 +38,5 @@ S="${WORKDIR}/${P}/${PN}-core"
 
 PATCHES=(
 	"${FILESDIR}/album-picture.patch"
+	"${FILESDIR}/page-mission.patch"
 )
