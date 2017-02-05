@@ -36,7 +36,9 @@ RDEPEND="${CP_DEPEND}
 
 S="${WORKDIR}/${P}/${PN}-core"
 
+# hours comes after mission or will fail
 PATCHES=(
 	"${FILESDIR}/album-picture.patch"
 	"${FILESDIR}/page-mission.patch"
+	"${FILESDIR}/page-hours.patch"
 )
