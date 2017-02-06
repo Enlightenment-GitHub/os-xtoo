@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -60,5 +60,8 @@ DEPEND="${CP_DEPEND}
 
 S="${WORKDIR}/${MY_S}/"
 
-JAVA_SRC_DIR="src/main/java"
 JAVA_ADDRES_DIR="src/main/resources"
+
+PATCHES=(
+	"${FILESDIR}/ambiguous.patch"
+)
