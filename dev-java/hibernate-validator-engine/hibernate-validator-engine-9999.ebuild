@@ -35,6 +35,7 @@ CP_DEPEND="
 	dev-java/jboss-logging-annotations:2
 	dev-java/joda-time:0
 	dev-java/jsoup:0
+	dev-java/jsr354-api:0
 	dev-java/paranamer:0
 	java-virtuals/servlet-api:4.0
 "
@@ -52,7 +53,7 @@ JAVA_ADDRES_DIRS="src/main/resources"
 
 java_prepare() {
 	xjc -enableIntrospection \
-		-p org.hibernate.validator.internal.xml \
+		-p org.hibernate.validator.internal.xml.binding \
 		-extension -target 2.1 -d "${S}/src/main/java" \
 		"${S}/src/main/xsd/validation-configuration-1.1.xsd" \
 		"${S}/src/main/xsd/validation-mapping-1.1.xsd" \
