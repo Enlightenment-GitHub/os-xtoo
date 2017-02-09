@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -53,9 +53,11 @@ CP_DEPEND="
 	java-virtuals/ejb-api:0
 "
 
-DEPEND=">=virtual/jdk-1.8"
+DEPEND="${CP_DEPEND}
+	>=virtual/jdk-1.8"
 
-RDEPEND=">=virtual/jre-1.8"
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-1.8"
 
 S="${WORKDIR}/${MY_S}"
 
