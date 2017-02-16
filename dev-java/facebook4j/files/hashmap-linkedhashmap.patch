@@ -1,0 +1,72 @@
+diff --git a/src/main/java/facebook4j/internal/org/json/JSONObject.java b/src/main/java/facebook4j/internal/org/json/JSONObject.java
+index d8ecb39..a12b25d 100644
+--- a/src/main/java/facebook4j/internal/org/json/JSONObject.java
++++ b/src/main/java/facebook4j/internal/org/json/JSONObject.java
+@@ -31,7 +31,7 @@ import java.lang.reflect.Method;
+ import java.lang.reflect.Modifier;
+ import java.util.Collection;
+ import java.util.Enumeration;
+-import java.util.HashMap;
++import java.util.LinkedHashMap;
+ import java.util.Iterator;
+ import java.util.Locale;
+ import java.util.Map;
+@@ -153,7 +153,7 @@ public class JSONObject {
+      * Construct an empty JSONObject.
+      */
+     public JSONObject() {
+-        this.map = new HashMap();
++        this.map = new LinkedHashMap();
+     }
+ 
+ 
+@@ -244,7 +244,7 @@ public class JSONObject {
+      * @throws JSONException
+      */
+     public JSONObject(Map map) {
+-        this.map = new HashMap();
++        this.map = new LinkedHashMap();
+         if (map != null) {
+             Iterator i = map.entrySet().iterator();
+             while (i.hasNext()) {
+diff --git a/src/main/java/facebook4j/internal/util/z_F4JInternalParseUtil.java b/src/main/java/facebook4j/internal/util/z_F4JInternalParseUtil.java
+index 71fc46c..53d0f65 100644
+--- a/src/main/java/facebook4j/internal/util/z_F4JInternalParseUtil.java
++++ b/src/main/java/facebook4j/internal/util/z_F4JInternalParseUtil.java
+@@ -30,8 +30,8 @@ import java.text.SimpleDateFormat;
+ import java.util.ArrayList;
+ import java.util.Collections;
+ import java.util.Date;
+-import java.util.HashMap;
+ import java.util.Iterator;
++import java.util.LinkedHashMap;
+ import java.util.List;
+ import java.util.Map;
+ import java.util.TimeZone;
+@@ -271,7 +271,7 @@ public final class z_F4JInternalParseUtil {
+         }
+         try {
+             JSONObject jsonObject = json.getJSONObject(name);
+-            HashMap<String, String> result = new HashMap<String, String>();
++            LinkedHashMap<String, String> result = new LinkedHashMap<String, String>();
+             @SuppressWarnings("unchecked")
+             Iterator<String> keys = jsonObject.keys();
+             while (keys.hasNext()) {
+@@ -290,7 +290,7 @@ public final class z_F4JInternalParseUtil {
+         }
+         try {
+             JSONObject jsonObject = json.getJSONObject(name);
+-            HashMap<String, Long> result = new HashMap<String, Long>();
++            LinkedHashMap<String, Long> result = new LinkedHashMap<String, Long>();
+             @SuppressWarnings("unchecked")
+             Iterator<String> keys = jsonObject.keys();
+             while (keys.hasNext()) {
+@@ -309,7 +309,7 @@ public final class z_F4JInternalParseUtil {
+         }
+         try {
+             JSONObject jsonObject = json.getJSONObject(name);
+-            HashMap<String, Boolean> result = new HashMap<String, Boolean>();
++            LinkedHashMap<String, Boolean> result = new LinkedHashMap<String, Boolean>();
+             @SuppressWarnings("unchecked")
+             Iterator<String> keys = jsonObject.keys();
+             while (keys.hasNext()) {
