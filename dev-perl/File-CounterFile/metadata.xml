@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>wlt@o-sinc.com</email>
+  </maintainer>
+  <upstream>
+    <remote-id type="cpan">File-CounterFile</remote-id>
+    <remote-id type="cpan-module">File::CounterFile</remote-id>
+  </upstream>
+</pkgmetadata>
