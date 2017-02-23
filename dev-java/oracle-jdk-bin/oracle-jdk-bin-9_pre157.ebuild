@@ -51,7 +51,7 @@ QA_PREBUILT="*"
 #   under MacOS. It doesn't appear to use many, if any, of the
 #   dependencies below.
 #
-RDEPEND="!x64-macos? (
+RDEPEND="
 		!headless-awt? (
 			x11-libs/libX11
 			x11-libs/libXext
@@ -72,7 +72,6 @@ RDEPEND="!x64-macos? (
 			x11-libs/pango
 			virtual/opengl
 		)
-	)
 	alsa? ( media-libs/alsa-lib )
 	cups? ( net-print/cups )
 	fontconfig? ( media-libs/fontconfig:1.0 )
