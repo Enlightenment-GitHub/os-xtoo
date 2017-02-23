@@ -24,3 +24,9 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}
 	dev-perl/Module-Build"
+
+src_prepare() {
+	default
+	sed -i -e "s|ssl.pgs.wcom|ssl1.tsysacquiring|" "${S}/${PN:23}.pm" \
+		|| die "Could not update url"
+}
