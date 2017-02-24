@@ -33,7 +33,7 @@ unset d
 
 LICENSE="Oracle-EADLA" # will probably change to Oracle-BCLA-JavaSE when released
 SLOT="9"
-KEYWORDS="~amd64"
+#KEYWORDS="~amd64"
 IUSE="alsa cups derby doc +fontconfig headless-awt javafx nsplugin pax_kernel selinux source"
 REQUIRED_USE="javafx? ( alsa fontconfig )"
 
