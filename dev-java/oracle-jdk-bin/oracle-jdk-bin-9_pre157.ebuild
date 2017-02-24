@@ -25,15 +25,16 @@ AT_amd64="jdk-${MY_PV}_linux-x64_bin.tar.gz"
 
 DESCRIPTION="Oracle's Java SE Development Kit"
 HOMEPAGE="http://www.oracle.com/technetwork/java/javase/"
-for d in "${AT_AVAILABLE[@]}"; do
-	SRC_URI+=" ${d}? ( $(eval "echo \${$(echo AT_${d/-/_})}")"
-	SRC_URI+=" )"
-done
-unset d
+SRC_URI="${AT_amd64}"
+#for d in "${AT_AVAILABLE[@]}"; do
+#	SRC_URI+=" ${d}? ( $(eval "echo \${$(echo AT_${d/-/_})}")"
+#	SRC_URI+=" )"
+#done
+#unset d
 
 LICENSE="Oracle-EADLA" # will probably change to Oracle-BCLA-JavaSE when released
 SLOT="9"
-#KEYWORDS="~amd64"
+KEYWORDS="~amd64"
 IUSE="alsa cups derby doc +fontconfig headless-awt javafx nsplugin pax_kernel selinux source"
 REQUIRED_USE="javafx? ( alsa fontconfig )"
 
