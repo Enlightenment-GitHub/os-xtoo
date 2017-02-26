@@ -28,7 +28,7 @@ before_script:
     - tar xzf portage-${PORTAGE_VER}.tar.gz && mv portage-portage-${PORTAGE_VER} portage-${PORTAGE_VER}
     - tar xzf portage-tree.tar.gz -C /usr/portage --strip-components=1
     - cp portage-${PORTAGE_VER}/cnf/repos.conf /etc/portage/
-    - ln -s /usr/portage/profiles/base/ /etc/portage/make.profile
+    - ln -s /usr/portage/profiles/default/linux/amd64/13.0 /etc/portage/make.profile
     - SIZE=$(stat -c %s .travis.yml.upstream)
     - if ! cmp -n $SIZE -s .travis.yml .travis.yml.upstream; then echo -e "\e[31m !!! .travis.yml outdated! Update available https://github.com/mrueg/repoman-travis \e[0m" > /tmp/update ; fi
     - mv spinner.sh portage-${PORTAGE_VER} travis-overlay /tmp
