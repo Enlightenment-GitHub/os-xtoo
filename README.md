@@ -4,6 +4,7 @@
 [![Build Status](https://img.shields.io/shippable/5840e5d8e2ab4d0f0058b4b7/master.svg?colorA=9977bb&style=plastic)](https://app.shippable.com/projects/5840e5d8e2ab4d0f0058b4b7/)
 
 Obsidian-Studios, Inc. funtoo/gentoo overlay (a.k.a wltjr's overlay)
+Making Gentoo Java Great Again!
 
 Things that could and should be in Gentoo but are not.
 
