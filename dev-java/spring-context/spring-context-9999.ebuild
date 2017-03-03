@@ -63,6 +63,10 @@ S="${WORKDIR}/${MY_S}"
 
 JAVA_SRC_DIR="src/main/java"
 
+PATCHES=(
+	"${FILESDIR}/jrubyexception.patch"
+)
+
 java_prepare() {
 	local files
 	files=(
