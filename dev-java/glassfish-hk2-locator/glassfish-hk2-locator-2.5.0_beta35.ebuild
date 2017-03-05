@@ -35,8 +35,4 @@ RDEPEND="${CP_DEPEND}
 S="${WORKDIR}/${MY_PN}-${MY_P}"
 
 JAVA_SRC_DIR="${PN:10}/src/main/java/"
-
-java_prepare() {
-	mv -v ${PN:10}"/src/main/resources/META-INF/" ${JAVA_SRC_DIR} \
-		|| die "Could not move resources to sources"
-}
+JAVA_ADDRES_DIRS="${PN:10}/src/main/resources"
