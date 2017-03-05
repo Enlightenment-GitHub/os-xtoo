@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="6"
 
@@ -68,7 +67,7 @@ java_prepare() {
 
 	java-pkg_jar-from --build-only jna-4 jna.jar jna-4.2.2.jar
 	java-pkg_jar-from --build-only antlr-4 antlr-runtime.jar \
-		antlr-runtime-4.5.3.jar
+		antlr-runtime-4.6.jar
 
 	# the build.xml unpacks this and uses stuff
 	touch empty
