@@ -42,7 +42,7 @@ CP_DEPEND="
 	dev-java/httpcomponents-core:${HTTPCORE_SLOT}
 	dev-java/httpcomponents-core-nio:${HTTPCORE_SLOT}
 	dev-java/httpcomponents-httpasyncclient:0
-	dev-java/jackson:${JACKSON_SLOT}
+	dev-java/jackson-core:${JACKSON_SLOT}
 	dev-java/jackson-annotations:${JACKSON_SLOT}
 	dev-java/jackson-databind:${JACKSON_SLOT}
 	dev-java/jackson-dataformat-xml:${JACKSON_SLOT}
