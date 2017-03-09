@@ -24,7 +24,7 @@ SLOT="0"
 JACKSON_SLOT="2"
 
 CP_DEPEND="
-	dev-java/jackson:${JACKSON_SLOT}
+	dev-java/jackson-core:${JACKSON_SLOT}
 	dev-java/jackson-dataformat-smile:${JACKSON_SLOT}
 	dev-java/protobuf-java:0
 "
