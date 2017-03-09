@@ -27,7 +27,7 @@ SLOT="0"
 
 CP_DEPEND="
 	~dev-java/google-http-client-${PV}:${SLOT}
-	dev-java/jackson:2
+	dev-java/jackson-core:2
 "
 
 DEPEND="${CP_DEPEND}
