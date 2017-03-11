@@ -31,7 +31,7 @@ SLOT="$(get_version_component_range 1-2)"
 CP_DEPEND="
 	dev-java/commons-logging:0
 	dev-java/javassist:3
-	dev-java/jctools-core:0
+	dev-java/jctools-core:2
 	dev-java/log4j:0
 	dev-java/log4j-api:0
 	dev-java/slf4j-api:0
