@@ -6,7 +6,7 @@ EAPI="6"
 JAVA_PKG_IUSE="doc source"
 
 MY_P="${PN}-parent-${PV/33./33.Fork}"
-BASE_URI="https://github.com/${PN}/"
+BASE_URI="https://github.com/${PN:0:5}/${PN}/"
 
 if [[ ${PV} == 9999 ]]; then
 	ECLASS="git-r3"
