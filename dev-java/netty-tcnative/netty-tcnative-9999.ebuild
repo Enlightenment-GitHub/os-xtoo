@@ -5,7 +5,12 @@ EAPI="6"
 
 JAVA_PKG_IUSE="doc source"
 
-MY_P="${PN}-parent-${PV/33./33.Fork}"
+if [[ ${PV:0:1} == "1" ]]; then
+	MY_PV="${PV/33./33.Fork}"
+else
+	MY_PV="${PV}.Final"
+fi
+MY_P="${PN}-parent-${MY_PV}"
 BASE_URI="https://github.com/${PN:0:5}/${PN}/"
 
 if [[ ${PV} == 9999 ]]; then
@@ -23,7 +28,12 @@ inherit autotools versionator java-pkg-2 java-pkg-simple ${ECLASS}
 DESCRIPTION="Fork of Tomcat Native that incorporates various patches"
 HOMEPAGE="http://netty.io/wiki/forked-${PN}.html"
 LICENSE="Apache-2.0"
-SLOT="0"
+
+if [[ "$(get_major_version)" == "1" ]]; then
+	SLOT="0"
+else
+	SLOT="2"
+fi
 
 CDEPEND="
 	dev-libs/apr:1=
