@@ -30,6 +30,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 CP_DEPEND="
+	dev-java/ant-ivy:2
 	>=dev-java/antlr-2.7.7-r7:0
 	dev-java/asm:4
 	dev-java/commons-cli:1
@@ -99,6 +100,18 @@ src_compile() {
 	generate_antlr_grammar "${ANTLR_GRAMMAR_FILES[@]}"
 	generate_exceptionutils
 	java-pkg-simple_src_compile
+
+	# Temp needs to be moved to groovy eclass
+	local sources classes
+	sources=groovy_sources.lst
+	classes=target/groovy_classes
+	find "${S}/src/main" -name \*.groovy > ${sources}
+	groovyc -d ${classes} \
+		-cp "${PN}.jar:$(java-pkg_getjars ant-ivy-2)" @${sources} \
+		|| die "Failed to compile groovy files"
+	# ugly should be included with existing
+	jar uf ${PN}.jar -C ${classes} . || die "update jar failed"
+
 }
 
 src_install() {
