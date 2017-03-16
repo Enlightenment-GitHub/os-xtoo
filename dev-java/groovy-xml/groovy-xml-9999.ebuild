@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -17,7 +17,7 @@ if [[ ${PV} == 9999 ]]; then
 	EGIT_REPO_URI="${HOMEPAGE}.git"
 	MY_S="${P}"
 else
-	SRC_URI="${HOMEPAGE}/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="${HOMEPAGE}/archive/${MY_P}.tar.gz"
 	KEYWORDS="~amd64"
 	MY_S="${MY_PNL}-${MY_P}"
 fi
@@ -28,10 +28,7 @@ DESCRIPTION="Groovy ${PN:8}"
 LICENSE="Apache-2.0"
 SLOT="0"
 
-#	~dev-java/groovy-${PV}:0
-CP_DEPEND="
-	dev-java/groovy:0
-"
+CP_DEPEND="~dev-java/groovy-${PV}:0"
 
 DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
