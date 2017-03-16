@@ -1,4 +1,4 @@
-# Copyright 2016 Obsidian-Studios, Inc.
+# Copyright 2016-2017 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -22,9 +22,10 @@ inherit java-pkg-2 java-pkg-simple ${ECLASS}
 DESCRIPTION="A swiss army knife for OSGi"
 HOMEPAGE="http://www.aqute.biz/Bnd/Bnd"
 LICENSE="Apache-2.0"
-SLOT="3"
+SLOT="$(get_major_version)"
 
-CP_DEPEND="dev-java/ant-core:0
+CP_DEPEND="
+	dev-java/ant-core:0
 	~dev-java/aqute-remote-${PV}:${SLOT}
 	~dev-java/aqute-repository-${PV}:${SLOT}
 	~dev-java/aqute-resolve-${PV}:${SLOT}
@@ -33,7 +34,9 @@ CP_DEPEND="dev-java/ant-core:0
 	~dev-java/libg-${PV}:${SLOT}
 	dev-java/osgi-compendium:5
 	dev-java/osgi-core-api:6
-	dev-java/snakeyaml:0"
+	dev-java/slf4j-simple:0
+	dev-java/snakeyaml:0
+"
 
 DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
@@ -48,4 +51,9 @@ JAVA_SRC_DIR="src/"
 java_prepare() {
 	sed -i -e "s|table<Object|table<String|" \
 		src/aQute/bnd/ant/BndTask.java || die
+}
+
+src_install() {
+	java-pkg_dolauncher "bnd" --main aQute.bnd.main.bnd
+	java-pkg-simple_src_install
 }
