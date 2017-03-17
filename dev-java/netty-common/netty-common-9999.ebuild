@@ -37,7 +37,18 @@ CP_DEPEND="
 	dev-java/slf4j-api:0
 "
 
-DEPEND="${CP_DEPEND}
+if [[ "${SLOT}" != "4.0" ]] ; then
+	GROOVY_DEPS="
+		dev-java/ant-core:0
+		dev-java/antlr:0
+		dev-java/commons-cli:1
+		dev-java/groovy:0
+		dev-java/groovy-ant:0
+	"
+fi
+
+DEPEND="${GROOVY_DEPS}
+	${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
 RDEPEND="${CP_DEPEND}
@@ -45,4 +56,18 @@ RDEPEND="${CP_DEPEND}
 
 S="${WORKDIR}/${MY_S}/${MY_MOD}"
 
-JAVA_SRC_DIR="src/main/java"
+if [[ "${SLOT}" != "4.0" ]] ; then
+
+	PATCHES=(
+		"${FILESDIR}/codegen_groovy.patch"
+	)
+
+	java_prepare() {
+		# Unable to use groovy due to classpath issues
+		# the following does not work, but should
+		# groovy -cp "$(java-pkg_getjars --build-only groovy-ant)"
+		java -cp "$(java-pkg_getjars --build-only ant-core,antlr,asm-4,commons-cli-1,groovy,groovy-ant)" \
+			groovy.ui.GroovyMain src/main/script/codegen.groovy \
+			|| die "groovy codegen failed"
+	}
+fi
