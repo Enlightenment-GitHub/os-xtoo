@@ -10,7 +10,7 @@ MY_P="Linux_Upgrade_Tool_v${PV}"
 
 DESCRIPTION="Rockchip Flash tool for Linux (upgrade_tool)"
 HOMEPAGE="http://wiki.radxa.com/"
-SRC_URI="http://dl.radxa.com/rock/tools/linux/Linux_Upgrade_Tool_v${PV}.zip"
+SRC_URI="https://dl.radxa.com/rock/tools/linux/Linux_Upgrade_Tool_v${PV}.zip"
 
 LICENSE="Apache-2.0"
 SLOT="0"
