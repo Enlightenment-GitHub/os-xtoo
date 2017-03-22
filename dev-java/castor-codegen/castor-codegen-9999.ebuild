@@ -16,7 +16,7 @@ if [[ ${PV} == 9999 ]]; then
 	EGIT_REPO_URI="${BASE_URI}.git"
 else
 #	SRC_URI="${BASE_URI}/archive/v${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
-	SRC_URI="http://repo1.maven.org/maven2/org/codehaus/${MY_PN}/${PN}/${PV}/${P}-sources.jar"
+	SRC_URI="https://repo1.maven.org/maven2/org/codehaus/${MY_PN}/${PN}/${PV}/${P}-sources.jar"
 	KEYWORDS="~amd64"
 fi
 
