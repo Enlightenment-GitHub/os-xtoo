@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -7,7 +7,7 @@ inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="JSR 250 Common Annotations"
 HOMEPAGE="https://jcp.org/en/jsr/detail?id=250"
-SRC_URI="http://central.maven.org/maven2/javax/annotation/javax.annotation-api/${PV}/javax.annotation-api-${PV}-sources.jar"
+SRC_URI="https://central.maven.org/maven2/javax/annotation/javax.annotation-api/${PV}/javax.annotation-api-${PV}-sources.jar"
 
 LICENSE="CDDL"
 SLOT="0"
