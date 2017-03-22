@@ -14,7 +14,7 @@ MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="Java Transaction API"
 HOMEPAGE="https://java.net/projects/jta-spec/"
-SRC_URI="http://central.maven.org/maven2/${PN:0:5}/${PN:6:11}/${MY_PN}/${MY_PV}/${MY_P}-sources.jar"
+SRC_URI="https://central.maven.org/maven2/${PN:0:5}/${PN:6:11}/${MY_PN}/${MY_PV}/${MY_P}-sources.jar"
 
 LICENSE="CDDL GPL-2-with-classpath-exception"
 KEYWORDS="~amd64"
