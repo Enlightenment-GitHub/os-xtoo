@@ -8,7 +8,7 @@ inherit java-pkg-2 java-ant-2
 
 DESCRIPTION="Simple Logging Facade for Java (SLF4J) log4j bindings"
 HOMEPAGE="http://www.slf4j.org/"
-SRC_URI="http://www.slf4j.org/dist/${P/-log4j12/}.tar.gz"
+SRC_URI="https://www.slf4j.org/dist/${P/-log4j12/}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
