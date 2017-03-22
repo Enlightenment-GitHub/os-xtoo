@@ -10,9 +10,9 @@ inherit java-pkg-2 java-pkg-simple
 DESCRIPTION="OSGi Core Annotation Code"
 HOMEPAGE="http://www.osgi.org/Specifications/HomePage"
 # Broken URL :(
-#SRC_URI="http://www.osgi.org/download/r$(get_major_version)/${PN/-/.}-${PV}.jar"
+#SRC_URI="https://www.osgi.org/download/r$(get_major_version)/${PN/-/.}-${PV}.jar"
 # Backup also :(
-SRC_URI="http://central.maven.org/maven2/org/osgi/org.${PN/-/.}/${PV}/org.${PN/-/.}-${PV}.jar -> ${PN/-/.}-${PV}.jar"
+SRC_URI="https://central.maven.org/maven2/org/osgi/org.${PN/-/.}/${PV}/org.${PN/-/.}-${PV}.jar -> ${PN/-/.}-${PV}.jar"
 
 LICENSE="Apache-2.0"
 SLOT="0"
