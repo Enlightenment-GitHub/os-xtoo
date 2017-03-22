@@ -12,7 +12,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Oracle Berkeley DB Java Edition"
 HOMEPAGE="http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/"
-SRC_URI="http://download.oracle.com/otn/${PN/db-/db/}-${PV}.tar.gz"
+SRC_URI="https://download.oracle.com/otn/${PN/db-/db/}-${PV}.tar.gz"
 RESTRICT="fetch"
 
 LICENSE="AGPL-3"
