@@ -16,7 +16,7 @@ MY_P="${MY_PN}-${MY_PV}"
 
 SLOT="$(get_version_component_range 1-2)"
 SRC_URI="https://github.com/eclipse/${MY_PN}.project/archive/${MY_P}.tar.gz"
-HOMEPAGE="http://www.eclipse.org/${MY_PN}/documentation/current/alpn-chapter.html"
+HOMEPAGE="https://www.eclipse.org/${MY_PN}/documentation/current/alpn-chapter.html"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
 
