@@ -16,7 +16,7 @@ fi
 inherit autotools ${ECLASS}
 
 DESCRIPTION="Anti-Spam Server Proxy Report"
-HOMEPAGE="http://www.o-sinc.com/#!/software/${PN}"
+HOMEPAGE="https://www.o-sinc.com/#!/software/${PN}"
 
 LICENSE="GPL-2"
 SLOT="0"
