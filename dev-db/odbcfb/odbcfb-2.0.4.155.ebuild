@@ -10,7 +10,7 @@ MY_PN="OdbcJdbc"
 MY_P="${MY_PN}-src-${PV}"
 
 DESCRIPTION="ODBC driver for Firebird RDBMS"
-HOMEPAGE="http://firebirdsql.org/index.php?op=files&id=odbc"
+HOMEPAGE="https://firebirdsql.org/index.php?op=files&id=odbc"
 SRC_URI="mirror://sourceforge/project/firebird/firebird-ODBC-driver/${MY_PV}-Release/${MY_P}.tar.gz"
 LICENSE="IDPL"
 SLOT="0"
