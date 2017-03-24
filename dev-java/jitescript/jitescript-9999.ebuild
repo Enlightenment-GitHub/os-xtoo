@@ -18,7 +18,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Java API for Bytecode"
-HOMEPAGE="http://blog.qmx.me"
+HOMEPAGE="https://blog.qmx.me"
 LICENSE="Apache-2.0"
 SLOT="0"
 
