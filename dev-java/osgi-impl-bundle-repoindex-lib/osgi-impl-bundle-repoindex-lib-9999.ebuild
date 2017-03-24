@@ -20,7 +20,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="OSGi Bundle Repository Indexer lib"
-HOMEPAGE="http://www.aqute.biz/Bnd/Bnd"
+HOMEPAGE="https://www.aqute.biz/Bnd/Bnd"
 LICENSE="Apache-2.0"
 SLOT="3"
 
