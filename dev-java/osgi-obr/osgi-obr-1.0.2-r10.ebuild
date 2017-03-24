@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -11,7 +11,7 @@ MY_PN="org.osgi.service.obr"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="OSGi Service OBR by Apache"
-HOMEPAGE="http://felix.apache.org"
+HOMEPAGE="https://felix.apache.org"
 SRC_URI="mirror://apache/dist/felix/${MY_P}-project.tar.gz"
 
 LICENSE="Apache-2.0"
