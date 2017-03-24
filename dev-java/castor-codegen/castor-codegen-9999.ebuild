@@ -23,7 +23,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Castor ${PN:7}"
-HOMEPAGE="http://${MY_PN}-data-binding.github.io/${MY_PN}/"
+HOMEPAGE="https://${MY_PN}-data-binding.github.io/${MY_PN}/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
