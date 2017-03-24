@@ -11,7 +11,7 @@ MY_PN="${PN}-jdk15on"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Java cryptography APIs"
-HOMEPAGE="http://www.bouncycastle.org/java.html"
+HOMEPAGE="https://www.bouncycastle.org/java.html"
 SRC_URI="https://central.maven.org/maven2/org/bouncycastle/${MY_PN}/${PV}/${MY_P}-sources.jar"
 KEYWORDS="~amd64"
 LICENSE="BSD"
