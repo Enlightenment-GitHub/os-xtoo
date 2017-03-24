@@ -24,7 +24,7 @@ fi
 inherit eutils java-pkg-2 java-ant-2 ${ECLASS}
 
 DESCRIPTION="JDBC Type 2 and 4 drivers for Firebird SQL server"
-HOMEPAGE="http://jaybirdwiki.firebirdsql.org/"
+HOMEPAGE="https://jaybirdwiki.firebirdsql.org/"
 LICENSE="LGPL-2"
 SLOT="0"
 IUSE="jni"
