@@ -15,7 +15,7 @@ MY_P="${PN}-${MY_PV}"
 
 SLOT="$(get_major_version)"
 SRC_URI="https://github.com/${PN:0:9}/${PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
-HOMEPAGE="http://${MY_PN}.org/"
+HOMEPAGE="https://${MY_PN}.org/"
 KEYWORDS="~amd64"
 LICENSE="LGPL-2.1"
 
