@@ -18,7 +18,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Easily usable Facebook Graph API binding library"
-HOMEPAGE="http://${PN}.github.io"
+HOMEPAGE="https://${PN}.github.io"
 LICENSE="Apache-2.0"
 SLOT="0"
 
