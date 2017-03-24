@@ -18,7 +18,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="HTTP client that's efficient by default"
-HOMEPAGE="http://square.github.io/okhttp/"
+HOMEPAGE="https://square.github.io/okhttp/"
 LICENSE="Apache-2.0"
 SLOT="3"
 
