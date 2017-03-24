@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -8,9 +8,9 @@ inherit eutils java-pkg-2 java-ant-2
 
 
 DESCRIPTION="Netbeans Platform"
-HOMEPAGE="http://netbeans.org/features/platform/"
+HOMEPAGE="https://netbeans.org/features/platform/"
 SLOT="$(get_version_component_range 1-2)"
-SOURCE_URL="http://download.${PN:0:8}.org/${PN:0:8}/${SLOT}/final/zip/${PN:0:8}-${SLOT}-201609300101-src.zip"
+SOURCE_URL="https://download.${PN:0:8}.org/${PN:0:8}/${SLOT}/final/zip/${PN:0:8}-${SLOT}-201609300101-src.zip"
 SRC_URI="${SOURCE_URL}
 	http://dev.gentoo.org/~fordfrog/distfiles/${PN:0:8}-${SLOT}-build.xml.patch.bz2
 	http://hg.netbeans.org/binaries/2F7553F50B0D14ED811B849C282DA8C1FFC32AAE-asm-all-5.0.1.jar
