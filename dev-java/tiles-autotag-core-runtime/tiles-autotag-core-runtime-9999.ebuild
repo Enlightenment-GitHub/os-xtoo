@@ -23,7 +23,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Apache Autotag project ${PN:14}"
-HOMEPAGE="http://tiles.apache.org/${MY_PN}/"
+HOMEPAGE="https://tiles.apache.org/${MY_PN}/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
