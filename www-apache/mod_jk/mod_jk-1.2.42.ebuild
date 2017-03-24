@@ -10,7 +10,7 @@ MY_P="tomcat-connectors-${PV#-*}-src"
 KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="Module for connecting Tomcat and Apache using the ajp13 protocol"
-HOMEPAGE="http://tomcat.apache.org/connectors-doc/"
+HOMEPAGE="https://tomcat.apache.org/connectors-doc/"
 SRC_URI="mirror://apache/tomcat/tomcat-connectors/jk/${MY_P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
