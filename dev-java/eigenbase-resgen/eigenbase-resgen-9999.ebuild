@@ -20,7 +20,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Generator of type-safe wrappers for Java resource files"
-HOMEPAGE="http://www.hydromatic.net/${PN:10}/"
+HOMEPAGE="https://www.hydromatic.net/${PN:10}/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
