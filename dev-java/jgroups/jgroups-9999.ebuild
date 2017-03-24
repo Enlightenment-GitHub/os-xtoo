@@ -23,7 +23,7 @@ fi
 inherit java-pkg-2 java-pkg-simple java-osgi ${ECLASS}
 
 DESCRIPTION="JGroups is a toolkit for reliable multicast communication"
-HOMEPAGE="http://www.jgroups.org/"
+HOMEPAGE="https://www.jgroups.org/"
 LICENSE="LGPL-2.1"
 SLOT="$(get_major_version)"
 
