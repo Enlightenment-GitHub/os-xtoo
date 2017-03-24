@@ -23,7 +23,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="XML object model for Java"
-HOMEPAGE="http://www.hydromatic.net/xom/"
+HOMEPAGE="https://www.hydromatic.net/xom/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
