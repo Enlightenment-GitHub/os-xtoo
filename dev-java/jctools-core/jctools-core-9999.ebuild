@@ -23,7 +23,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Java Concurrency Tools"
-HOMEPAGE="http://jctools.github.io/${MY_PN}/"
+HOMEPAGE="https://jctools.github.io/${MY_PN}/"
 LICENSE="Apache-2.0"
 
 if [[ "$(get_major_version)" == "1" ]]; then
