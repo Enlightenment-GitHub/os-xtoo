@@ -23,7 +23,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="HtmlUnit's Rhino fork: JavaScript in Java"
-HOMEPAGE="http://htmlunit.sourceforge.net/"
+HOMEPAGE="https://htmlunit.sourceforge.net/"
 LICENSE="MPL-2.0"
 SLOT="0"
 
