@@ -6,7 +6,7 @@ EAPI="6"
 inherit udev user
 
 DESCRIPTION="KVM group and device node file"
-HOMEPAGE="http://www.gentoo.org/"
+HOMEPAGE="https://www.gentoo.org/"
 KEYWORDS="~amd64"
 LICENSE="GPL-2"
 SRC_URI=""
