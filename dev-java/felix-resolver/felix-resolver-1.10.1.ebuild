@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="Felix Framework"
-HOMEPAGE="http://felix.apache.org/documentation/subprojects/apache-felix-framework.html"
+HOMEPAGE="https://felix.apache.org/documentation/subprojects/apache-felix-framework.html"
 LICENSE="Apache-2.0"
 
 MY_PN="org.apache.felix.resolver"
