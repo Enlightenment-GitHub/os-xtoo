@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="OSGi Service Platform Enterprise API (Companion Code)"
-HOMEPAGE="http://www.osgi.org/Specifications/HomePage"
+HOMEPAGE="https://www.osgi.org/Specifications/HomePage"
 SRC_URI="https://www.osgi.org/download/r$(get_major_version)/osgi.enterprise-${PV}.jar"
 
 LICENSE="Apache-2.0"
