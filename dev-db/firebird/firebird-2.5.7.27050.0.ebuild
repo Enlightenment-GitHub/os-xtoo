@@ -10,7 +10,7 @@ MY_P=${PN/f/F}-$(replace_version_separator 4 -)
 MY_MM="$(get_version_component_range 1-2)"
 
 DESCRIPTION="A relational database offering many ANSI SQL:2003 and some SQL:2008 features"
-HOMEPAGE="http://www.firebirdsql.org/"
+HOMEPAGE="https://www.firebirdsql.org/"
 SRC_URI="
 	mirror://sourceforge/firebird/${MY_P}.tar.bz2
 	doc? (	ftp://ftpc.inprise.com/pub/interbase/techpubs/ib_b60_doc.zip )"
