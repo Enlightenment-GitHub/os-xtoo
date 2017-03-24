@@ -18,7 +18,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="JSR 354 - Money and Currency API"
-HOMEPAGE="http://javamoney.github.io/"
+HOMEPAGE="https://javamoney.github.io/"
 LICENSE="JSR-354"
 SLOT="0"
 
