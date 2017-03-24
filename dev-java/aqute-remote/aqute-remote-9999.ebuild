@@ -20,7 +20,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="aQute Remote provides remote debugging for bnd projects"
-HOMEPAGE="http://www.aqute.biz/Bnd/Bnd"
+HOMEPAGE="https://www.aqute.biz/Bnd/Bnd"
 LICENSE="Apache-2.0"
 SLOT="3"
 
