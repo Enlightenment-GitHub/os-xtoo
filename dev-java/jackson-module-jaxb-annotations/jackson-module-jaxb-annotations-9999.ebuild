@@ -20,7 +20,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Module adds JAXB annotations alternative to Jackson annotations"
-HOMEPAGE="http://wiki.fasterxml.com/JacksonJAXBAnnotations"
+HOMEPAGE="https://wiki.fasterxml.com/JacksonJAXBAnnotations"
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
 
