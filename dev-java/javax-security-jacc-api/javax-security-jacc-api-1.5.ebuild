@@ -12,7 +12,7 @@ MY_PN="${MY_PN/.ap/-ap}"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Java Authorization Contract For Containers API"
-HOMEPAGE="http://jcp.org/en/jsr/detail?id=115"
+HOMEPAGE="https://jcp.org/en/jsr/detail?id=115"
 SRC_URI="https://central.maven.org/maven2/${PN:0:5}/${PN:6:8}/${PN:15:4}/${MY_PN}/${PV}/${MY_P}-sources.jar"
 
 LICENSE="CDDL GPL-2-with-linking-exception"
