@@ -10,7 +10,7 @@ inherit java-pkg-2 java-ant-2
 MY_P="rel_${PV//./_}_ga"
 
 DESCRIPTION="Javassist makes Java bytecode manipulation simple"
-HOMEPAGE="http://jboss-javassist.github.io/javassist/"
+HOMEPAGE="https://jboss-javassist.github.io/javassist/"
 SRC_URI="https://github.com/jboss-${PN}/${PN}/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MPL-1.1"
