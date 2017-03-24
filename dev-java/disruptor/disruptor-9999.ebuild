@@ -17,7 +17,7 @@ fi
 
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
-HOMEPAGE="http://lmax-exchange.github.io/${PN}/"
+HOMEPAGE="https://lmax-exchange.github.io/${PN}/"
 DESCRIPTION="High Performance Inter-Thread Messaging Library"
 LICENSE="Apache-2.0"
 SLOT="$(get_version_component_range 1-2)"
