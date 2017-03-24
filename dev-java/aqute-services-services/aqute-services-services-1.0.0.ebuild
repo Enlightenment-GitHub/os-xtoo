@@ -11,7 +11,7 @@ MY_PN=${PN/aqute/aQute}
 MY_PN=${MY_PN//-/.}
 
 DESCRIPTION="aQute Remote provides remote debugging for bnd projects"
-HOMEPAGE="http://www.aqute.biz/Bnd/Bnd"
+HOMEPAGE="https://www.aqute.biz/Bnd/Bnd"
 SRC_URI="https://github.com/pkriens/aQute.repo/blob/master/repo/${MY_PN}/${MY_PN}-${PV}.jar?raw=true -> ${P}.jar"
 
 LICENSE="Apache-2.0"
