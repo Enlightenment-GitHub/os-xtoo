@@ -9,7 +9,7 @@ JAVA_NO_COMMONS=1
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="Java continuation object creator"
-HOMEPAGE="http://commons.apache.org/sandbox/${PN}/"
+HOMEPAGE="https://commons.apache.org/sandbox/${PN}/"
 SRC_URI="https://repo1.maven.org/maven2/com/google/code/maven-play-plugin/org/apache/${PN:0:7}/${PN}/1590792-patched-play-${PV}/${PN}-1590792-patched-play-${PV}-sources.jar"
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64"
