@@ -14,7 +14,7 @@ MY_MM="$(get_version_component_range 1-2)"
 SLOT="$(get_version_component_range 1)"
 SRC_URI="https://github.com/${PN}/${PN}/archive/${PV}.tar.gz -> ${PN}-${PV}.tar.gz
 	http://repository.jboss.org/nexus/content/groups/public/net/sf/${PN}/${PN}/${PV}/${P}.jar"
-HOMEPAGE="http://${PN}.github.io/"
+HOMEPAGE="https://${PN}.github.io/"
 KEYWORDS="~amd64"
 LICENSE="Apache-2.0"
 
