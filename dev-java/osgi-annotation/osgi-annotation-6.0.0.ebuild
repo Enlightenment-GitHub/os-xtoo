@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="OSGi Core Annotation Code"
-HOMEPAGE="http://www.osgi.org/Specifications/HomePage"
+HOMEPAGE="https://www.osgi.org/Specifications/HomePage"
 # Broken URL :(
 #SRC_URI="https://www.osgi.org/download/r$(get_major_version)/${PN/-/.}-${PV}.jar"
 # Backup also :(
