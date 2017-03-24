@@ -25,7 +25,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="A multi-faceted language for the Java platform"
-HOMEPAGE="http://www.groovy-lang.org/"
+HOMEPAGE="https://www.groovy-lang.org/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
