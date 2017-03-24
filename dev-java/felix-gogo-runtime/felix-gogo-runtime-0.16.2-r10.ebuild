@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -6,7 +6,7 @@ EAPI="6"
 inherit java-pkg-2 java-ant-2 java-osgi
 
 DESCRIPTION="Felix Gogo Runtime"
-HOMEPAGE="http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html"
+HOMEPAGE="https://felix.apache.org/documentation/subprojects/apache-felix-gogo.html"
 LICENSE="Apache-2.0"
 
 MY_PN="org.apache.felix.gogo.runtime"
