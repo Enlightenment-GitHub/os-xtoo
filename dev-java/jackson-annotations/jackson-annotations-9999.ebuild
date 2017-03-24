@@ -20,7 +20,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Core annotations for Jackson data processor"
-HOMEPAGE="http://wiki.fasterxml.com/JacksonHome"
+HOMEPAGE="https://wiki.fasterxml.com/JacksonHome"
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
 
