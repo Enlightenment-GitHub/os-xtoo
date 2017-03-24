@@ -10,7 +10,7 @@ inherit java-pkg-2 java-pkg-simple
 DESCRIPTION="SQLJet pure Java implementation of SQLite."
 SLOT="0"
 SRC_URI="https://${PN}.com/files/${P}-src.zip"
-HOMEPAGE="http://${PN}.com/"
+HOMEPAGE="https://${PN}.com/"
 KEYWORDS="~amd64"
 LICENSE="GPL-2"
 
