@@ -18,7 +18,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Open source framework for processing XML"
-HOMEPAGE="http://${PN}.github.io"
+HOMEPAGE="https://${PN}.github.io"
 LICENSE="${PN}"
 SLOT="$(get_major_version)"
 
