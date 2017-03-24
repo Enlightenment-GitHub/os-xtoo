@@ -20,7 +20,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Jackson support for serializing POJOs as XML"
-HOMEPAGE="http://wiki.fasterxml.com/JacksonExtensionXmlDataBinding"
+HOMEPAGE="https://wiki.fasterxml.com/JacksonExtensionXmlDataBinding"
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
 
