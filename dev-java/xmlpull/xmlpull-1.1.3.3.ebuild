@@ -10,7 +10,7 @@ inherit java-pkg-2 java-pkg-simple
 MY_P="${PN}-parent-${PV}"
 
 DESCRIPTION="XML Pull Parsing"
-HOMEPAGE="http://www.xmlpull.org/"
+HOMEPAGE="https://www.xmlpull.org/"
 SRC_URI="https://github.com/karlmdavis/${PN}/archive/${MY_P}.tar.gz"
 
 LICENSE="public-domain"
