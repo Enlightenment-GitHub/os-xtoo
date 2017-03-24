@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source examples"
 inherit java-pkg-2 java-ant-2 java-osgi
 
 DESCRIPTION="JSch is a pure Java implementation of SSH2"
-HOMEPAGE="http://www.jcraft.com/jsch/"
+HOMEPAGE="https://www.jcraft.com/jsch/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
 LICENSE="BSD"
 SLOT="0"
