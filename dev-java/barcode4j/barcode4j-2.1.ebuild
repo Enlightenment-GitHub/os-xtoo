@@ -9,7 +9,7 @@ JAVA_NO_COMMONS=1
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="Flexible generator for barcodes written in Java"
-HOMEPAGE="http://${PN}.sourceforge.net"
+HOMEPAGE="https://${PN}.sourceforge.net"
 SRC_URI="https://repo1.maven.org/maven2/net/sf/${PN}/${PN}/${PV}/${P}-sources.jar"
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64"
