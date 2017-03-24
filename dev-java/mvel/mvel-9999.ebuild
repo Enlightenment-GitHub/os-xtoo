@@ -23,7 +23,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="MVFLEX Expression Language"
-HOMEPAGE="http://${PN}.documentnode.com/"
+HOMEPAGE="https://${PN}.documentnode.com/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
