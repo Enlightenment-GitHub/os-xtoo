@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 inherit java-pkg-2 java-ant-2
 
 DESCRIPTION="Simple Logging Facade for Java"
-HOMEPAGE="http://www.slf4j.org/"
+HOMEPAGE="https://www.slf4j.org/"
 SRC_URI="https://www.slf4j.org/dist/${P/-ext/}.tar.gz"
 
 LICENSE="MIT"
