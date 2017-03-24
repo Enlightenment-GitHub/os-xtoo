@@ -22,7 +22,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Hibernate Validator ${PN:20}"
-HOMEPAGE="http://hibernate.org/validator"
+HOMEPAGE="https://hibernate.org/validator"
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
 IUSE="javafx"
