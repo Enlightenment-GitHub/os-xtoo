@@ -12,7 +12,7 @@ MY_P="${MY_PN}-${MY_PV}"
 inherit java-pkg-2 java-pkg-simple
 
 DESCRIPTION="Hibernate Validator ${PN:20}"
-HOMEPAGE="http://hibernate.org/validator"
+HOMEPAGE="https://hibernate.org/validator"
 SRC_URI="https://github.com/${PN:0:9}/${MY_PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 KEYWORDS="~amd64"
