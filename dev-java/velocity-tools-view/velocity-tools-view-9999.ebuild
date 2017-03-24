@@ -23,7 +23,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Set of tools that ease Velocity integration ${PN:15}"
-HOMEPAGE="http://velocity.apache.org/tools/"
+HOMEPAGE="https://velocity.apache.org/tools/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
