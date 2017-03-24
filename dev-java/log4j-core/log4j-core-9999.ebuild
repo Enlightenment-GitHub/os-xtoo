@@ -23,7 +23,7 @@ inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Apache Logging Log4J2 ${PN#log4j-}"
 
-HOMEPAGE="http://logging.apache.org/log4j/"
+HOMEPAGE="https://logging.apache.org/log4j/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
