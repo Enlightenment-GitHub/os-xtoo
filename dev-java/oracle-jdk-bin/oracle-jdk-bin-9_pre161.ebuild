@@ -24,7 +24,7 @@ AT_amd64="jdk-${MY_PV}_linux-x64_bin.tar.gz"
 #AT_x64_macos="jdk-${MY_PV}_osx-x64_bin.dmg"
 
 DESCRIPTION="Oracle's Java SE Development Kit"
-HOMEPAGE="http://www.oracle.com/technetwork/java/javase/"
+HOMEPAGE="https://www.oracle.com/technetwork/java/javase/"
 SRC_URI="${AT_amd64}"
 #for d in "${AT_AVAILABLE[@]}"; do
 #	SRC_URI+=" ${d}? ( $(eval "echo \${$(echo AT_${d/-/_})}")"
