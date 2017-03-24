@@ -8,7 +8,7 @@ inherit eutils java-pkg-2 java-ant-2
 
 MY_PN="${PN/jdbc-/}"
 DESCRIPTION="JDBC Type 2 and 4 drivers for Firebird SQL server"
-HOMEPAGE="http://jaybirdwiki.firebirdsql.org/"
+HOMEPAGE="https://jaybirdwiki.firebirdsql.org/"
 SRC_URI="https://github.com/FirebirdSQL/${MY_PN}/archive/v${PV}.tar.gz -> Jaybird-${PV}-src.tar.gz"
 LICENSE="LGPL-2"
 SLOT="0"
