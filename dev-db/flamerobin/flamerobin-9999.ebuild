@@ -16,7 +16,7 @@ WX_GTK_VER="3.0"
 inherit eutils wxwidgets ${ECLASS}
 
 DESCRIPTION="A database administration tool for Firebird DBMS"
-HOMEPAGE="http://www.flamerobin.org/"
+HOMEPAGE="https://www.flamerobin.org/"
 
 LICENSE="MIT IBPP-1.1 LGPL-2.1+"
 SLOT="0"
