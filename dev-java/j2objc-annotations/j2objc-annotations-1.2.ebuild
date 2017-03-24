@@ -11,7 +11,7 @@ MY_PN="${PN/-annotations/}"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Java to iOS Objective-C Annotations"
-HOMEPAGE="http://j2objc.org/"
+HOMEPAGE="https://j2objc.org/"
 SRC_URI="https://github.com/google/${MY_PN}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
