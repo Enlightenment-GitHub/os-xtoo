@@ -20,7 +20,7 @@ fi
 inherit eutils java-pkg-2 java-pkg-simple
 
 DESCRIPTION="Java-based Ruby interpreter implementation"
-HOMEPAGE="http://${PN}.org/"
+HOMEPAGE="https://${PN}.org/"
 LICENSE="|| ( EPL-1.0 GPL-2 LGPL-2.1 )"
 SLOT="0"
 
