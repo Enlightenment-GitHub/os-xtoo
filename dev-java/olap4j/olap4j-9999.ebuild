@@ -23,7 +23,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Open Java API for OLAP"
-HOMEPAGE="http://www.${PN}.org/"
+HOMEPAGE="https://www.${PN}.org/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
