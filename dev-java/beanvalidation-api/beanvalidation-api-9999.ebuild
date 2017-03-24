@@ -22,7 +22,7 @@ fi
 
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
-HOMEPAGE="http://${PN:0:14}.org"
+HOMEPAGE="https://${PN:0:14}.org"
 DESCRIPTION="Bean Validation API JSR 303 Slot 1.0 & JSR 380 Slot 1.1"
 LICENSE="Apache-2.0"
 SLOT="$(get_version_component_range 1-2)"
