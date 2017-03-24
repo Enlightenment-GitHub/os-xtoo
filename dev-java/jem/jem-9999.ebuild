@@ -18,7 +18,7 @@ inherit cmake-utils ${ECLASS}
 MY_P="${P}-Source"
 
 DESCRIPTION="A java environment manager"
-HOMEPAGE="http://www.o-sinc.com/#!/software/${PN}"
+HOMEPAGE="https://www.o-sinc.com/#!/software/${PN}"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE="debug doc +java-config source test"
