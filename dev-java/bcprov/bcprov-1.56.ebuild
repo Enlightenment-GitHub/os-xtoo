@@ -10,7 +10,7 @@ inherit java-pkg-2 java-pkg-simple
 MY_P="${PN}-jdk15on-${PV/./}"
 
 DESCRIPTION="Java cryptography APIs"
-HOMEPAGE="http://www.bouncycastle.org/java.html"
+HOMEPAGE="https://www.bouncycastle.org/java.html"
 SRC_URI="https://www.bouncycastle.org/download/${MY_P}.tar.gz"
 
 LICENSE="BSD"
