@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -13,7 +13,7 @@ MY_MM="$(get_version_component_range 1-2)"
 DOC_URI=" http://www.${PN}sql.org/file/documentation/"
 
 DESCRIPTION="A relational database offering many ANSI SQL:2003 and some SQL:2008 features"
-HOMEPAGE="http://www.firebirdsql.org/"
+HOMEPAGE="https://www.firebirdsql.org/"
 SRC_URI="
 	mirror://sourceforge/${PN}/${PN}/${MY_MM}-Release/${MY_P}.tar.bz2
 	doc? (
