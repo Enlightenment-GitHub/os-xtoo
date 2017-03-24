@@ -26,7 +26,7 @@ fi
 inherit autotools versionator java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Fork of Tomcat Native that incorporates various patches"
-HOMEPAGE="http://netty.io/wiki/forked-${PN}.html"
+HOMEPAGE="https://netty.io/wiki/forked-${PN}.html"
 LICENSE="Apache-2.0"
 
 if [[ "$(get_major_version)" == "1" ]]; then
