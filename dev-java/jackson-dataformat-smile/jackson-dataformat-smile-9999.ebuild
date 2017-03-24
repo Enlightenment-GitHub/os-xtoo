@@ -24,7 +24,7 @@ fi
 inherit java-pkg-2 java-pkg-simple ${ECLASS}
 
 DESCRIPTION="Uber-project for standard Jackson binary format backends"
-HOMEPAGE="http://wiki.fasterxml.com/SmileFormat"
+HOMEPAGE="https://wiki.fasterxml.com/SmileFormat"
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
 
