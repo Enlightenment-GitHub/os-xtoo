@@ -11,7 +11,7 @@ MY_PN="netty"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Async event-driven framework for high performance network applications"
-HOMEPAGE="http://${MY_PN}.io/"
+HOMEPAGE="https://${MY_PN}.io/"
 SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/${MY_P}.Final.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
