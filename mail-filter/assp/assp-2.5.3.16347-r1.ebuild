@@ -6,7 +6,7 @@ EAPI="6"
 inherit eutils user versionator
 
 DESCRIPTION="Anti-Spam SMTP Proxy written in Perl"
-HOMEPAGE="http://${PN}.sourceforge.net/"
+HOMEPAGE="https://${PN}.sourceforge.net/"
 MY_PN=ASSP_$(replace_version_separator 3 '_')_install
 SRC_URI="mirror://sourceforge/${PN}/${MY_PN}.zip"
 LICENSE="GPL-2"
