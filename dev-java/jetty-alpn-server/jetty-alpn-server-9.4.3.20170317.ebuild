@@ -31,7 +31,4 @@ RDEPEND="${CP_DEPEND}
 DEPEND="${CP_DEPEND}
 	>=virtual/jdk-1.8"
 
-S="${WORKDIR}/${MY_PN}.project-${MY_P}/${PN/-server/}/"
-
-JAVA_SRC_DIR="${PN}/src/main/java"
-
+S="${WORKDIR}/${MY_PN}.project-${MY_P}/${PN/-server/}/${PN}"
