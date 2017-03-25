@@ -22,7 +22,7 @@ inherit java-pkg-2 java-pkg-simple ${ECLASS}
 DESCRIPTION="OSGi Bundle Repository Indexer cli"
 HOMEPAGE="https://www.aqute.biz/Bnd/Bnd"
 LICENSE="Apache-2.0"
-SLOT="3"
+SLOT="$(get_major_version)"
 
 CP_DEPEND="
 	dev-java/args4j:2
