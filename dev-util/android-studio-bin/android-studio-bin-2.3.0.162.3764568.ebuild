@@ -35,29 +35,29 @@ DEPEND="app-arch/unzip"
 
 RDEPEND=">=virtual/jdk-1.8
 	selinux? ( sec-policy/selinux-android )
-	>=app-arch/bzip2-1.0.6-r4
+	app-arch/bzip2
 	dev-java/commons-logging:0
 	dev-java/guava:18
 	dev-java/log4j:0
-	>=dev-libs/expat-2.1.0-r3
+	dev-libs/expat
 	>=dev-libs/libffi-3.0.13-r1
-	>=media-libs/fontconfig-2.10.92
-	>=media-libs/freetype-2.5.5
-	>=media-libs/libpng-1.2.51
-	>=media-libs/mesa-10.2.8
+	media-libs/fontconfig
+	media-libs/freetype
+	media-libs/libpng
+	media-libs/mesa
 	kvm? ( sys-fs/kvm )
-	|| ( >=sys-libs/ncurses-5.9-r3:5/5 >=sys-libs/ncurses-5.9-r3:0/5 )
-	>=sys-libs/zlib-1.2.8-r1
-	>=x11-libs/libX11-1.6.2
-	>=x11-libs/libXau-1.0.7-r1
+	sys-libs/ncurses
+	sys-libs/zlib
+	x11-libs/libX11
+	x11-libs/libXau
 	>=x11-libs/libXdamage-1.1.4-r1
-	>=x11-libs/libXdmcp-1.1.1-r1
+	x11-libs/libXdmcp
 	>=x11-libs/libXext-1.3.2
-	>=x11-libs/libXfixes-5.0.1
-	>=x11-libs/libXrender-0.9.8
+	x11-libs/libXfixes
+	x11-libs/libXrender
 	>=x11-libs/libXxf86vm-1.1.3
-	>=x11-libs/libdrm-2.4.46
-	>=x11-libs/libxcb-1.9.1
+	x11-libs/libdrm
+	x11-libs/libxcb
 	>=x11-libs/libxshmfence-1.1"
 
 S=${WORKDIR}/${MY_PN}
