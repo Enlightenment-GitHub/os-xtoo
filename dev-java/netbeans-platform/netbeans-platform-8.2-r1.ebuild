@@ -5,7 +5,6 @@ EAPI="6"
 
 inherit eutils java-pkg-2 java-ant-2
 
-
 DESCRIPTION="Netbeans Platform"
 HOMEPAGE="https://netbeans.org/features/platform/"
 SLOT="$(get_version_component_range 1-2)"
