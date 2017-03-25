@@ -45,6 +45,3 @@ RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
 
 S="${WORKDIR}/${MY_S}/${PN}"
-
-JAVA_SRC_DIR="src/main/java/"
-
