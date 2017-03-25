@@ -20,7 +20,7 @@ inherit java-pkg-2 java-pkg-simple ${ECLASS}
 DESCRIPTION="Lots of small utilities for bnd, a swiss army knife for OSGi"
 HOMEPAGE="https://www.aqute.biz/Bnd/Bnd"
 LICENSE="Apache-2.0"
-SLOT="3"
+SLOT="$(get_major_version)"
 
 CP_DEPEND="
 	dev-java/osgi-util:0
