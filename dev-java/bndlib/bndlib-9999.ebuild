@@ -22,7 +22,7 @@ inherit java-pkg-2 java-pkg-simple ${ECLASS}
 DESCRIPTION="A swiss army knife for OSGi"
 HOMEPAGE="https://www.aqute.biz/Bnd/Bnd"
 LICENSE="Apache-2.0"
-SLOT="3"
+SLOT="$(get_major_version)"
 
 OSGI_SLOT="6"
 
