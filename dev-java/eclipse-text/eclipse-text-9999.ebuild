@@ -43,4 +43,4 @@ RDEPEND="${CP_DEPEND}
 
 S="${WORKDIR}/${MY_S}/org.${PN//-/.}/"
 
-JAVA_SRC_DIR="src"
+JAVA_SRC_DIR="projection src"
