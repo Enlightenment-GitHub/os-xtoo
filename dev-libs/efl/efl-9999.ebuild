@@ -10,7 +10,7 @@ if [[ ${PV} == 9999 ]]; then
 	ECLASS="autotools git-r3"
 	EGIT_REPO_URI="https://git.enlightenment.org/libs/${PN}.git"
 else
-	SRC_URI="http://download.enlightenment.org/rel/libs/${PN}/${P}.tar.gz"
+	SRC_URI="http://download.enlightenment.org/rel/libs/${PN}/${P/_/-}.tar.gz"
 	KEYWORDS="~amd64"
 fi
 
